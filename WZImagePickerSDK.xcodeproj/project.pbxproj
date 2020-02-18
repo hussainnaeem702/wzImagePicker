@@ -12,6 +12,12 @@
 		C25143BE23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25143BD23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift */; };
 		C25143C023FBE8F300E6B6D8 /* WZImagePickerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25143AA23FBCC9300E6B6D8 /* WZImagePickerSDK.framework */; };
 		C25143C723FBEBC500E6B6D8 /* HelloWorldSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C25143C623FBEBC500E6B6D8 /* HelloWorldSDK.podspec */; };
+		C25143FD23FBFFD800E6B6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25143FC23FBFFD800E6B6D8 /* AppDelegate.swift */; };
+		C25143FF23FBFFD800E6B6D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25143FE23FBFFD800E6B6D8 /* SceneDelegate.swift */; };
+		C251440123FBFFD800E6B6D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251440023FBFFD800E6B6D8 /* ViewController.swift */; };
+		C251440423FBFFD800E6B6D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C251440223FBFFD800E6B6D8 /* Main.storyboard */; };
+		C251440623FBFFDB00E6B6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C251440523FBFFDB00E6B6D8 /* Assets.xcassets */; };
+		C251440923FBFFDB00E6B6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C251440723FBFFDB00E6B6D8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +39,14 @@
 		C25143BD23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZImagePickerSDKTests.swift; sourceTree = "<group>"; };
 		C25143BF23FBE8F300E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C25143C623FBEBC500E6B6D8 /* HelloWorldSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HelloWorldSDK.podspec; sourceTree = "<group>"; };
+		C25143FA23FBFFD800E6B6D8 /* WzImpagePickerTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WzImpagePickerTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25143FC23FBFFD800E6B6D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C25143FE23FBFFD800E6B6D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C251440023FBFFD800E6B6D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C251440323FBFFD800E6B6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C251440523FBFFDB00E6B6D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C251440823FBFFDB00E6B6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C251440A23FBFFDB00E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +65,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C25143F723FBFFD800E6B6D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +80,7 @@
 			children = (
 				C25143AC23FBCC9300E6B6D8 /* WZImagePickerSDK */,
 				C25143BC23FBE8F300E6B6D8 /* WZImagePickerSDKTests */,
+				C25143FB23FBFFD800E6B6D8 /* WzImpagePickerTestApp */,
 				C25143AB23FBCC9300E6B6D8 /* Products */,
 				C25143C623FBEBC500E6B6D8 /* HelloWorldSDK.podspec */,
 			);
@@ -69,6 +91,7 @@
 			children = (
 				C25143AA23FBCC9300E6B6D8 /* WZImagePickerSDK.framework */,
 				C25143BB23FBE8F300E6B6D8 /* WZImagePickerSDKTests.xctest */,
+				C25143FA23FBFFD800E6B6D8 /* WzImpagePickerTestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +113,20 @@
 				C25143BF23FBE8F300E6B6D8 /* Info.plist */,
 			);
 			path = WZImagePickerSDKTests;
+			sourceTree = "<group>";
+		};
+		C25143FB23FBFFD800E6B6D8 /* WzImpagePickerTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				C25143FC23FBFFD800E6B6D8 /* AppDelegate.swift */,
+				C25143FE23FBFFD800E6B6D8 /* SceneDelegate.swift */,
+				C251440023FBFFD800E6B6D8 /* ViewController.swift */,
+				C251440223FBFFD800E6B6D8 /* Main.storyboard */,
+				C251440523FBFFDB00E6B6D8 /* Assets.xcassets */,
+				C251440723FBFFDB00E6B6D8 /* LaunchScreen.storyboard */,
+				C251440A23FBFFDB00E6B6D8 /* Info.plist */,
+			);
+			path = WzImpagePickerTestApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +179,23 @@
 			productReference = C25143BB23FBE8F300E6B6D8 /* WZImagePickerSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C25143F923FBFFD800E6B6D8 /* WzImpagePickerTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C251440B23FBFFDB00E6B6D8 /* Build configuration list for PBXNativeTarget "WzImpagePickerTestApp" */;
+			buildPhases = (
+				C25143F623FBFFD800E6B6D8 /* Sources */,
+				C25143F723FBFFD800E6B6D8 /* Frameworks */,
+				C25143F823FBFFD800E6B6D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WzImpagePickerTestApp;
+			productName = WzImpagePickerTestApp;
+			productReference = C25143FA23FBFFD800E6B6D8 /* WzImpagePickerTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -157,6 +211,9 @@
 						LastSwiftMigration = 1130;
 					};
 					C25143BA23FBE8F300E6B6D8 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					C25143F923FBFFD800E6B6D8 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -176,6 +233,7 @@
 			targets = (
 				C25143A923FBCC9300E6B6D8 /* WZImagePickerSDK */,
 				C25143BA23FBE8F300E6B6D8 /* WZImagePickerSDKTests */,
+				C25143F923FBFFD800E6B6D8 /* WzImpagePickerTestApp */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +251,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C25143F823FBFFD800E6B6D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C251440923FBFFDB00E6B6D8 /* LaunchScreen.storyboard in Resources */,
+				C251440623FBFFDB00E6B6D8 /* Assets.xcassets in Resources */,
+				C251440423FBFFD800E6B6D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +283,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C25143F623FBFFD800E6B6D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C251440123FBFFD800E6B6D8 /* ViewController.swift in Sources */,
+				C25143FD23FBFFD800E6B6D8 /* AppDelegate.swift in Sources */,
+				C25143FF23FBFFD800E6B6D8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -224,6 +302,25 @@
 			targetProxy = C25143C123FBE8F300E6B6D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C251440223FBFFD800E6B6D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C251440323FBFFD800E6B6D8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C251440723FBFFDB00E6B6D8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C251440823FBFFDB00E6B6D8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C25143B023FBCC9300E6B6D8 /* Debug */ = {
@@ -435,6 +532,42 @@
 			};
 			name = Release;
 		};
+		C251440C23FBFFDB00E6B6D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CY33736R3D;
+				INFOPLIST_FILE = WzImpagePickerTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.WzImpagePickerTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C251440D23FBFFDB00E6B6D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CY33736R3D;
+				INFOPLIST_FILE = WzImpagePickerTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.WzImpagePickerTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -461,6 +594,15 @@
 			buildConfigurations = (
 				C25143C423FBE8F300E6B6D8 /* Debug */,
 				C25143C523FBE8F300E6B6D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C251440B23FBFFDB00E6B6D8 /* Build configuration list for PBXNativeTarget "WzImpagePickerTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C251440C23FBFFDB00E6B6D8 /* Debug */,
+				C251440D23FBFFDB00E6B6D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
