@@ -11,13 +11,13 @@
 		C25143B623FBE53F00E6B6D8 /* WzPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25143B523FBE53F00E6B6D8 /* WzPicker.swift */; };
 		C25143BE23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25143BD23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift */; };
 		C25143C023FBE8F300E6B6D8 /* WZImagePickerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25143AA23FBCC9300E6B6D8 /* WZImagePickerSDK.framework */; };
-		C25143C723FBEBC500E6B6D8 /* HelloWorldSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C25143C623FBEBC500E6B6D8 /* HelloWorldSDK.podspec */; };
 		C25143FD23FBFFD800E6B6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25143FC23FBFFD800E6B6D8 /* AppDelegate.swift */; };
 		C25143FF23FBFFD800E6B6D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25143FE23FBFFD800E6B6D8 /* SceneDelegate.swift */; };
 		C251440123FBFFD800E6B6D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251440023FBFFD800E6B6D8 /* ViewController.swift */; };
 		C251440423FBFFD800E6B6D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C251440223FBFFD800E6B6D8 /* Main.storyboard */; };
 		C251440623FBFFDB00E6B6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C251440523FBFFDB00E6B6D8 /* Assets.xcassets */; };
 		C251440923FBFFDB00E6B6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C251440723FBFFDB00E6B6D8 /* LaunchScreen.storyboard */; };
+		C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		C25143BB23FBE8F300E6B6D8 /* WZImagePickerSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WZImagePickerSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25143BD23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZImagePickerSDKTests.swift; sourceTree = "<group>"; };
 		C25143BF23FBE8F300E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C25143C623FBEBC500E6B6D8 /* HelloWorldSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HelloWorldSDK.podspec; sourceTree = "<group>"; };
 		C25143FA23FBFFD800E6B6D8 /* WzImpagePickerTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WzImpagePickerTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25143FC23FBFFD800E6B6D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C25143FE23FBFFD800E6B6D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		C251440523FBFFDB00E6B6D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C251440823FBFFDB00E6B6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C251440A23FBFFDB00E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WZImagePickerSDK.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 				C25143BC23FBE8F300E6B6D8 /* WZImagePickerSDKTests */,
 				C25143FB23FBFFD800E6B6D8 /* WzImpagePickerTestApp */,
 				C25143AB23FBCC9300E6B6D8 /* Products */,
-				C25143C623FBEBC500E6B6D8 /* HelloWorldSDK.podspec */,
+				C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,7 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C25143C723FBEBC500E6B6D8 /* HelloWorldSDK.podspec in Resources */,
+				C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
