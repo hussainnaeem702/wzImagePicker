@@ -38,6 +38,19 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
     // MARK: -  -------------------------- View Controllers life Cycle --------------------
     /**************************************************************************************/
     
+    init() {
+           var assetBundle = Bundle(for: type(of: self))
+           let bundlePath = assetBundle.path(forResource: "WZImagePickerSDK", ofType: "bundle")
+           if bundlePath != nil {
+               assetBundle = Bundle(path: bundlePath ?? "")!
+           }
+           super.init(nibName: "WZAlbumsViewController", bundle: assetBundle)
+       }
+       
+       required init?(coder: NSCoder) {
+           fatalError("init(coder:) has not been implemented")
+       }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -118,13 +131,6 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
             
             }
         }
-        
-        var assetBundle = Bundle(for: type(of: self))
-        let bundlePath = assetBundle.path(forResource: "WZImagePickerSDK", ofType: "bundle")
-        if bundlePath != nil {
-            assetBundle = Bundle(path: bundlePath ?? "")!
-        }
-
         
         collectionviewPictures.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
         collectionViewAlbums.register(UINib(nibName: "WZAlbumCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAlbumCollectionViewCell")
