@@ -119,7 +119,12 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
             }
         }
         
-        
+        var assetBundle = Bundle(for: type(of: self))
+        let bundlePath = assetBundle.path(forResource: "WZImagePickerSDK", ofType: "bundle")
+        if bundlePath != nil {
+            assetBundle = Bundle(path: bundlePath ?? "")!
+        }
+
         
         collectionviewPictures.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
         collectionViewAlbums.register(UINib(nibName: "WZAlbumCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAlbumCollectionViewCell")
