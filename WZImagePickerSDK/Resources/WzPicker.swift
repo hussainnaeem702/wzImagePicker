@@ -12,7 +12,7 @@ import UIKit
 
 public class WZPickerBase {
     
-    let shared : WZPickerBase = WZPickerBase()
+    static let shared : WZPickerBase = WZPickerBase()
     
     private init() {}
     
