@@ -18,6 +18,16 @@
 		C251440623FBFFDB00E6B6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C251440523FBFFDB00E6B6D8 /* Assets.xcassets */; };
 		C251440923FBFFDB00E6B6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C251440723FBFFDB00E6B6D8 /* LaunchScreen.storyboard */; };
 		C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */; };
+		C2AF125E23FCFA6D00442C18 /* AssestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF125C23FCFA6D00442C18 /* AssestViewController.swift */; };
+		C2AF125F23FCFA6D00442C18 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF125D23FCFA6D00442C18 /* AlbumsViewController.swift */; };
+		C2AF126C23FCFAF200442C18 /* CustomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF126623FCFAF200442C18 /* CustomMethods.swift */; };
+		C2AF126D23FCFAF200442C18 /* TopAlignCollectionviewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF126723FCFAF200442C18 /* TopAlignCollectionviewFlowLayout.swift */; };
+		C2AF126E23FCFAF200442C18 /* AssestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF126A23FCFAF200442C18 /* AssestCollectionViewCell.swift */; };
+		C2AF126F23FCFAF200442C18 /* AlbumsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF126B23FCFAF200442C18 /* AlbumsCollectionViewCell.swift */; };
+		C2AF127323FD012400442C18 /* WZAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF127123FD012400442C18 /* WZAlbumsViewController.swift */; };
+		C2AF127423FD012400442C18 /* WZAlbumsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AF127223FD012400442C18 /* WZAlbumsViewController.xib */; };
+		C2AF127723FD014900442C18 /* WZAssestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF127523FD014900442C18 /* WZAssestViewController.swift */; };
+		C2AF127823FD014900442C18 /* WZAssestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AF127623FD014900442C18 /* WZAssestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,16 @@
 		C251440823FBFFDB00E6B6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C251440A23FBFFDB00E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WZImagePickerSDK.podspec; sourceTree = "<group>"; };
+		C2AF125C23FCFA6D00442C18 /* AssestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssestViewController.swift; sourceTree = "<group>"; };
+		C2AF125D23FCFA6D00442C18 /* AlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		C2AF126623FCFAF200442C18 /* CustomMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMethods.swift; sourceTree = "<group>"; };
+		C2AF126723FCFAF200442C18 /* TopAlignCollectionviewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignCollectionviewFlowLayout.swift; sourceTree = "<group>"; };
+		C2AF126A23FCFAF200442C18 /* AssestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssestCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2AF126B23FCFAF200442C18 /* AlbumsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2AF127123FD012400442C18 /* WZAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZAlbumsViewController.swift; sourceTree = "<group>"; };
+		C2AF127223FD012400442C18 /* WZAlbumsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WZAlbumsViewController.xib; sourceTree = "<group>"; };
+		C2AF127523FD014900442C18 /* WZAssestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZAssestViewController.swift; sourceTree = "<group>"; };
+		C2AF127623FD014900442C18 /* WZAssestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WZAssestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +122,10 @@
 				C25143AD23FBCC9300E6B6D8 /* WZImagePickerSDK.h */,
 				C25143AE23FBCC9300E6B6D8 /* Info.plist */,
 				C25143B523FBE53F00E6B6D8 /* WzPicker.swift */,
+				C2AF127023FD00F400442C18 /* WZGalleryControllers */,
+				C2AF126523FCFAF200442C18 /* Utilities */,
+				C2AF126823FCFAF200442C18 /* Views */,
+				C2AF125B23FCFA6D00442C18 /* GalleryControllers */,
 			);
 			path = WZImagePickerSDK;
 			sourceTree = "<group>";
@@ -127,6 +151,52 @@
 				C251440A23FBFFDB00E6B6D8 /* Info.plist */,
 			);
 			path = WzImpagePickerTestApp;
+			sourceTree = "<group>";
+		};
+		C2AF125B23FCFA6D00442C18 /* GalleryControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF125C23FCFA6D00442C18 /* AssestViewController.swift */,
+				C2AF125D23FCFA6D00442C18 /* AlbumsViewController.swift */,
+			);
+			path = GalleryControllers;
+			sourceTree = "<group>";
+		};
+		C2AF126523FCFAF200442C18 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF126623FCFAF200442C18 /* CustomMethods.swift */,
+				C2AF126723FCFAF200442C18 /* TopAlignCollectionviewFlowLayout.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C2AF126823FCFAF200442C18 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF126923FCFAF200442C18 /* GalleryView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2AF126923FCFAF200442C18 /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF126A23FCFAF200442C18 /* AssestCollectionViewCell.swift */,
+				C2AF126B23FCFAF200442C18 /* AlbumsCollectionViewCell.swift */,
+			);
+			path = GalleryView;
+			sourceTree = "<group>";
+		};
+		C2AF127023FD00F400442C18 /* WZGalleryControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF127123FD012400442C18 /* WZAlbumsViewController.swift */,
+				C2AF127223FD012400442C18 /* WZAlbumsViewController.xib */,
+				C2AF127523FD014900442C18 /* WZAssestViewController.swift */,
+				C2AF127623FD014900442C18 /* WZAssestViewController.xib */,
+			);
+			path = WZGalleryControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */,
+				C2AF127423FD012400442C18 /* WZAlbumsViewController.xib in Resources */,
+				C2AF127823FD014900442C18 /* WZAssestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +344,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C25143B623FBE53F00E6B6D8 /* WzPicker.swift in Sources */,
+				C2AF126D23FCFAF200442C18 /* TopAlignCollectionviewFlowLayout.swift in Sources */,
+				C2AF126C23FCFAF200442C18 /* CustomMethods.swift in Sources */,
+				C2AF127323FD012400442C18 /* WZAlbumsViewController.swift in Sources */,
+				C2AF125E23FCFA6D00442C18 /* AssestViewController.swift in Sources */,
+				C2AF125F23FCFA6D00442C18 /* AlbumsViewController.swift in Sources */,
+				C2AF126E23FCFAF200442C18 /* AssestCollectionViewCell.swift in Sources */,
+				C2AF126F23FCFAF200442C18 /* AlbumsCollectionViewCell.swift in Sources */,
+				C2AF127723FD014900442C18 /* WZAssestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
