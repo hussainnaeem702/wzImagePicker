@@ -12,9 +12,7 @@ import UIKit
 
 public class WZPickerBase {
     
-    static let shared : WZPickerBase = WZPickerBase()
-    
-    private init() {}
+    init() {}
     
     public func showPickerController(_ fromViewController : UIViewController)
     {
