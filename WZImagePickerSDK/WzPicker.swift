@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 public class HelloWorld {
@@ -17,10 +18,9 @@ public class HelloWorld {
         return "Hello \(whom)"
     }
     
-    public func showPickerController() -> WZAlbumsViewController
+    public func showPickerController(_ fromViewController : UIViewController)
     {
         let wzPicker = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: nil)
-        return wzPicker
-        //fromController.present(wzPicker, animated: true, completion: nil)
+        fromController.present(wzPicker, animated: true, completion: nil)
     }
 }
