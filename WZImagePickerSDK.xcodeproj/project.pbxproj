@@ -18,8 +18,6 @@
 		C251440623FBFFDB00E6B6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C251440523FBFFDB00E6B6D8 /* Assets.xcassets */; };
 		C251440923FBFFDB00E6B6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C251440723FBFFDB00E6B6D8 /* LaunchScreen.storyboard */; };
 		C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */; };
-		C2AF125E23FCFA6D00442C18 /* AssestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF125C23FCFA6D00442C18 /* AssestViewController.swift */; };
-		C2AF125F23FCFA6D00442C18 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF125D23FCFA6D00442C18 /* AlbumsViewController.swift */; };
 		C2AF126C23FCFAF200442C18 /* CustomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF126623FCFAF200442C18 /* CustomMethods.swift */; };
 		C2AF126D23FCFAF200442C18 /* TopAlignCollectionviewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF126723FCFAF200442C18 /* TopAlignCollectionviewFlowLayout.swift */; };
 		C2AF126E23FCFAF200442C18 /* AssestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF126A23FCFAF200442C18 /* AssestCollectionViewCell.swift */; };
@@ -57,8 +55,6 @@
 		C251440823FBFFDB00E6B6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C251440A23FBFFDB00E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WZImagePickerSDK.podspec; sourceTree = "<group>"; };
-		C2AF125C23FCFA6D00442C18 /* AssestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssestViewController.swift; sourceTree = "<group>"; };
-		C2AF125D23FCFA6D00442C18 /* AlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		C2AF126623FCFAF200442C18 /* CustomMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMethods.swift; sourceTree = "<group>"; };
 		C2AF126723FCFAF200442C18 /* TopAlignCollectionviewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignCollectionviewFlowLayout.swift; sourceTree = "<group>"; };
 		C2AF126A23FCFAF200442C18 /* AssestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -125,7 +121,6 @@
 				C2AF127023FD00F400442C18 /* WZGalleryControllers */,
 				C2AF126523FCFAF200442C18 /* Utilities */,
 				C2AF126823FCFAF200442C18 /* Views */,
-				C2AF125B23FCFA6D00442C18 /* GalleryControllers */,
 			);
 			path = WZImagePickerSDK;
 			sourceTree = "<group>";
@@ -151,15 +146,6 @@
 				C251440A23FBFFDB00E6B6D8 /* Info.plist */,
 			);
 			path = WzImpagePickerTestApp;
-			sourceTree = "<group>";
-		};
-		C2AF125B23FCFA6D00442C18 /* GalleryControllers */ = {
-			isa = PBXGroup;
-			children = (
-				C2AF125C23FCFA6D00442C18 /* AssestViewController.swift */,
-				C2AF125D23FCFA6D00442C18 /* AlbumsViewController.swift */,
-			);
-			path = GalleryControllers;
 			sourceTree = "<group>";
 		};
 		C2AF126523FCFAF200442C18 /* Utilities */ = {
@@ -347,8 +333,6 @@
 				C2AF126D23FCFAF200442C18 /* TopAlignCollectionviewFlowLayout.swift in Sources */,
 				C2AF126C23FCFAF200442C18 /* CustomMethods.swift in Sources */,
 				C2AF127323FD012400442C18 /* WZAlbumsViewController.swift in Sources */,
-				C2AF125E23FCFA6D00442C18 /* AssestViewController.swift in Sources */,
-				C2AF125F23FCFA6D00442C18 /* AlbumsViewController.swift in Sources */,
 				C2AF126E23FCFAF200442C18 /* AssestCollectionViewCell.swift in Sources */,
 				C2AF126F23FCFAF200442C18 /* AlbumsCollectionViewCell.swift in Sources */,
 				C2AF127723FD014900442C18 /* WZAssestViewController.swift in Sources */,

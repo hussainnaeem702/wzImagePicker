@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class WZAlbumsViewController: UIViewController {
+public class WZAlbumsViewController: UIViewController {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
@@ -38,7 +38,7 @@ class WZAlbumsViewController: UIViewController {
     // MARK: -  -------------------------- View Controllers life Cycle --------------------
     /**************************************************************************************/
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         
