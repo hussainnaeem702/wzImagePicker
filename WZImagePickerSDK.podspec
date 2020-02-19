@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
     :git => "https://github.com/hussainnaeem702/wzImagePicker.git",
     :tag => "#{s.version}"
   }
-  s.source_files        = "WZImagePickerSDK/**/*.{h,m,swift}"
+  s.source_files        = "WZImagePickerSDK/**/*.{h,m,swift, xib}"
   s.public_header_files = "WZImagePickerSDK/**/*.h"
 end
