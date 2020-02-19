@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class WZAssestViewController: UIViewController {
+class WZAssestViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
@@ -66,6 +66,8 @@ class WZAssestViewController: UIViewController {
         }
         
         print(resultCollection)
+        
+        collectionviewForAllImages.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
     }
 
     /**************************************************************************************/
@@ -81,7 +83,7 @@ class WZAssestViewController: UIViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell                = collectionView.dequeueReusableCell(withReuseIdentifier: "AssestCollectionViewCell", for: indexPath) as! AssestCollectionViewCell
+        let cell                = collectionView.dequeueReusableCell(withReuseIdentifier: "WZAssestCollectionViewCell", for: indexPath) as! WZAssestCollectionViewCell
         let assest              = resultCollection?[indexPath.item]
         let assestImage         = imagesAndAssestForAllPhotots[assest?.localIdentifier ?? ""]
         if (selectedIndex[indexPath.item] == true)

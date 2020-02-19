@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-public class WZAlbumsViewController: UIViewController {
+public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
@@ -118,13 +118,18 @@ public class WZAlbumsViewController: UIViewController {
             
             }
         }
+        
+        
+        
+        collectionviewPictures.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
+        collectionViewAlbums.register(UINib(nibName: "WZAlbumCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAlbumCollectionViewCell")
     }
 
     /**************************************************************************************/
     // MARK: -  ---------------- Collection View Delegate and DataSource ---------------
     /**************************************************************************************/
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         if collectionView == collectionViewAlbums
         {
@@ -138,11 +143,11 @@ public class WZAlbumsViewController: UIViewController {
     
     /**************************************************************************************/
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         if collectionView == collectionViewAlbums
         {
-            let cell    = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumsCollectionViewCell", for: indexPath) as! AlbumsCollectionViewCell
+            let cell    = collectionView.dequeueReusableCell(withReuseIdentifier: "WZAlbumCollectionViewCell", for: indexPath) as! WZAlbumCollectionViewCell
             let assest  = assestsCollection[indexPath.item]
             cell.setBorderWidth(1 / UIScreen.main.scale)
             
@@ -151,7 +156,7 @@ public class WZAlbumsViewController: UIViewController {
         }
         else
         {
-            let cell                = collectionView.dequeueReusableCell(withReuseIdentifier: "AssestCollectionViewCell", for: indexPath) as! AssestCollectionViewCell
+            let cell                = collectionView.dequeueReusableCell(withReuseIdentifier: "WZAssestCollectionViewCell", for: indexPath) as! WZAssestCollectionViewCell
             let assest              = allPhotos?[indexPath.item]
             let assestImage         = imagesAndAssestForAllPhotots[assest?.localIdentifier ?? ""]
             if (selectedIndex[indexPath.item] == true)
@@ -170,21 +175,21 @@ public class WZAlbumsViewController: UIViewController {
     
     /**************************************************************************************/
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         CustomMethods.standardSizeOfcollectionviewCell()
     }
 
     /**************************************************************************************/
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         if collectionView == collectionViewAlbums
         {
-            let assestVc                = self.storyboard?.instantiateViewController(withIdentifier: "AssestViewController") as! AssestViewController
+            let assestVc                = WZAssestViewController() // self.storyboard?.instantiateViewController(withIdentifier: "WZAssestViewController") as!
             assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
             assestVc.phassetCollection  = assestsCollection[indexPath.item]
-            self.navigationController?.pushViewController(assestVc, animated: true)
+            self.present(assestVc, animated: true, completion: nil)//navigationController?.pushViewController(assestVc, animated: true)
         }
         else
         {

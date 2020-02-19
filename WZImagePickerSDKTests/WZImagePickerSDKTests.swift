@@ -40,5 +40,6 @@ class WZImagePickerSDKTests: XCTestCase {
         // test internal property
         XCTAssertEqual(hw.greet, "Hello")
     }
+    
 
 }
