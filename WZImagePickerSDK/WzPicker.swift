@@ -17,16 +17,4 @@ public class HelloWorld {
     public func hello(to whom: String) -> String {
         return "Hello \(whom)"
     }
-    
-    public func showPickerController(_ fromViewController : UIViewController)
-    {
-        var assetBundle = Bundle(for: type(of: self))
-        let bundlePath = assetBundle.path(forResource: "WZImagePickerSDK", ofType: "bundle")
-        if bundlePath != nil {
-            assetBundle = Bundle(path: bundlePath ?? "")!
-        }
-        //let assetBundle = Bundle(for: type(of: self))
-        let wzPicker = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: assetBundle)
-        fromViewController.present(wzPicker, animated: true, completion: nil)
-    }
 }

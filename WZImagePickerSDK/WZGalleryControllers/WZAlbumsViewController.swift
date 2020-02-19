@@ -38,7 +38,7 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
     // MARK: -  -------------------------- View Controllers life Cycle --------------------
     /**************************************************************************************/
     
-    init() {
+    public init() {
            var assetBundle = Bundle(for: type(of: self))
            let bundlePath = assetBundle.path(forResource: "WZImagePickerSDK", ofType: "bundle")
            if bundlePath != nil {
