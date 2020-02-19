@@ -16,4 +16,11 @@ public class HelloWorld {
     public func hello(to whom: String) -> String {
         return "Hello \(whom)"
     }
+    
+    public func showPickerController() -> WZAlbumsViewController
+    {
+        let wzPicker = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: nil)
+        return wzPicker
+        //fromController.present(wzPicker, animated: true, completion: nil)
+    }
 }
