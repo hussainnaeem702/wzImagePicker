@@ -121,7 +121,7 @@
 			children = (
 				C25143AD23FBCC9300E6B6D8 /* WZImagePickerSDK.h */,
 				C25143AE23FBCC9300E6B6D8 /* Info.plist */,
-				C25143B523FBE53F00E6B6D8 /* WzPicker.swift */,
+				C2AF12BF23FD616600442C18 /* Resources */,
 				C2AF12A723FD1DCC00442C18 /* WZGalleryControllers */,
 				C2AF129E23FD1DB100442C18 /* Views */,
 				C2AF129923FD1D9200442C18 /* Utilities */,
@@ -166,8 +166,6 @@
 			children = (
 				C2AF129F23FD1DB100442C18 /* WZAssestCollectionViewCell.swift */,
 				C2AF12A023FD1DB100442C18 /* WZAlbumCollectionViewCell.swift */,
-				C2AF12A123FD1DB100442C18 /* WZAssestCollectionViewCell.xib */,
-				C2AF12A223FD1DB100442C18 /* WZAlbumCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,12 +173,22 @@
 		C2AF12A723FD1DCC00442C18 /* WZGalleryControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C2AF12A823FD1DCC00442C18 /* WZAssestViewController.xib */,
 				C2AF12A923FD1DCC00442C18 /* WZAlbumsViewController.swift */,
-				C2AF12AD23FD1DCC00442C18 /* WZAlbumsViewController.xib */,
 				C2AF12AE23FD1DCC00442C18 /* WZAssestViewController.swift */,
 			);
 			path = WZGalleryControllers;
+			sourceTree = "<group>";
+		};
+		C2AF12BF23FD616600442C18 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF12AD23FD1DCC00442C18 /* WZAlbumsViewController.xib */,
+				C2AF12A823FD1DCC00442C18 /* WZAssestViewController.xib */,
+				C2AF12A123FD1DB100442C18 /* WZAssestCollectionViewCell.xib */,
+				C25143B523FBE53F00E6B6D8 /* WzPicker.swift */,
+				C2AF12A223FD1DB100442C18 /* WZAlbumCollectionViewCell.xib */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

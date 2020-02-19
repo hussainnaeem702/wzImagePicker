@@ -39,12 +39,14 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
     /**************************************************************************************/
     
     public init() {
-           var assetBundle = Bundle(for: type(of: self))
-           let bundlePath = assetBundle.path(forResource: "WZImagePickerSDK", ofType: "bundle")
-           if bundlePath != nil {
-               assetBundle = Bundle(path: bundlePath ?? "")!
-           }
-           super.init(nibName: "WZAlbumsViewController", bundle: assetBundle)
+//           var assetBundle = Bundle(for: type(of: self))
+//           let bundlePath = assetBundle.path(forResource: "WZImagePickerSDK", ofType: "bundle")
+//           if bundlePath != nil {
+//               assetBundle = Bundle(path: bundlePath ?? "")!
+//           }
+//           super.init(nibName: "WZAlbumsViewController", bundle: assetBundle)
+        let bundle = Bundle(for: self.classForCoder())
+        return bundle.loadNibNamed("YOUR_XIB_FILE_NAME", owner: nil, options: nil)?.first
        }
        
        required init?(coder: NSCoder) {
