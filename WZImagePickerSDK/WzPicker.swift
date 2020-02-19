@@ -21,6 +21,6 @@ public class HelloWorld {
     public func showPickerController(_ fromViewController : UIViewController)
     {
         let wzPicker = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: nil)
-        fromController.present(wzPicker, animated: true, completion: nil)
+        fromViewController.present(wzPicker, animated: true, completion: nil)
     }
 }
