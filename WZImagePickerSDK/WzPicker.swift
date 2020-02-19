@@ -20,10 +20,10 @@ public class HelloWorld {
     
     public func showPickerController(_ fromViewController : UIViewController)
     {
-        let assetBundle = Bundle(for: type(of: self))
+        var assetBundle = Bundle(for: type(of: self))
         let bundlePath = assetBundle.path(forResource: "WZImagePickerSDK", ofType: "bundle")
         if bundlePath != nil {
-            assetBundle = Bundle(path: bundlePath ?? "")
+            assetBundle = Bundle(path: bundlePath ?? "")!
         }
         //let assetBundle = Bundle(for: type(of: self))
         let wzPicker = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: assetBundle)
