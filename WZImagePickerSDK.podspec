@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version       = "0.0.1"
   s.summary       = "iOS SDK for ImagePicker"
   s.description   = "iOS SDK for ImagePicker, including example app"
-  s.homepage      = "https://github.com/hussainnaeem702/
+  s.homepage      = "https://github.com/hussainnaeem702/"
   s.license       = "MIT"
   s.author        = "peteranny"
   s.platform      = :ios, "11.0"
