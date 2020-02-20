@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author        = "peteranny"
   s.platform      = :ios, "11.0"
   s.swift_version = "5.0"
-  s.resource_bundles = { "WZImagePickerSDK" => "WZImagePickerSDK/*.{lproj,xib}" }
+  s.resource_bundles = { "WZImagePickerSDK" => "WZImagePickerSDK/Resources*.{lproj,xib}" }
   s.source        = {
     :git => "https://github.com/hussainnaeem702/wzImagePicker.git",
     :tag => "#{s.version}"
