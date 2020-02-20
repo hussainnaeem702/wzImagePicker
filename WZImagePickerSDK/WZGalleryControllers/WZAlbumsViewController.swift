@@ -38,6 +38,28 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
     // MARK: -  -------------------------- View Controllers life Cycle --------------------
     /**************************************************************************************/
     
+    var bundle = Bundle()
+    
+    public convenience init() {
+        self.init(bundle: nil)
+    }
+    
+    init(bundle: Bundle?) {
+        //self.imageURL = imageURL
+        self.bundle          = Bundle.init(for: type(of: self))
+        let bundelPath       = self.bundle.path(forResource: "WZAlbumsViewController", ofType: "xib")
+        if bundelPath       != nil{
+            self.bundle = Bundle.init(path: bundelPath!)!
+        }
+        
+        //super.init(nibName: nil, bundle: bundle)
+        super.init(nibName: "WZAlbumsViewController", bundle: bundle)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
 

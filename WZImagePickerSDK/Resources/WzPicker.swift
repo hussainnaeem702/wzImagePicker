@@ -16,8 +16,8 @@ public class WZPickerBase {
     
     public func showPickerController(_ fromViewController : UIViewController)
     {
-        let assetBundle = Bundle(for: type(of: self))
-        let wzPicker = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: assetBundle)
-        fromViewController.present(wzPicker, animated: true, completion: nil)
+//        let assetBundle = Bundle(for: type(of: self))
+//        let wzPicker = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: assetBundle)
+//        fromViewController.present(wzPicker, animated: true, completion: nil)
     }
 }
