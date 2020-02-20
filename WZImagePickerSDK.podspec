@@ -15,6 +15,4 @@ Pod::Spec.new do |s|
   }
   s.source_files     = 'WZImagePickerSDK/WZImagePickerSDK/**/*.{h,m,swift,xib,strings,stringsdict}'
   s.public_header_files = "WZImagePickerSDK/**/*.h"
-  
-  s.framework        = 'Foundation', 'UIKit'
 end
