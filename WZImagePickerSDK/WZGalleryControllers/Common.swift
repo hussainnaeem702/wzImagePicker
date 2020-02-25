@@ -39,7 +39,15 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
     
     public func show(_ fromController : UIViewController)
     {
-        let wzAlbums                = WZAlbumsViewController()
+        //let wzAlbums                = WZAlbumsViewController()
+        let podBundle   = Bundle(for: type(of: self))
+        let data        = podBundle.url(forResource: "WZImagePickerSDK", withExtension: "bundle")
+        var bundle      : Bundle? = nil
+        if let data     = data {
+            bundle      = Bundle(url: data)
+        }
+        let wzAlbums    = WZAlbumsViewController.init(nibName: "WZAlbumsViewController", bundle: bundle)
+        
         if (backgroundColor != nil)
         {
             wzAlbums.backgroundColor    = backgroundColor
