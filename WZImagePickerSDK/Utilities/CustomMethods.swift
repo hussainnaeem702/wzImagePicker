@@ -15,16 +15,28 @@ import Photos
 
 //let placeHolderImage = UIImage(named: "image-placeholder")!
 
+public enum SelectedMediaType : Int
+{
+    case images = 1
+    case videos = 2
+}
+
+public enum SelectionType : String
+{
+    case singleSelection = "1"
+    case multipleSelection = "2"
+}
+
 class CustomMethods: NSObject {
     
-    static func standardSizeOfcollectionviewCell() -> CGSize
+    static func standardSizeOfcollectionviewCell(_ presentedViewWith : CGFloat) -> CGSize
     {
-        let widthOfView = UIScreen.main.bounds.width / 4//self.view.frame.size.width / 4;
-        if widthOfView > 110
-        {
-            return CGSize(width: widthOfView, height: widthOfView)
-        }
-        return CGSize(width: 110    , height: 110)
+        /// NH: 40 margin is due to because , we left space from left and right on each cell ,
+        let screenWidthWithSidesMargen  = presentedViewWith - 40.5
+        let widthOfView                 = screenWidthWithSidesMargen / 3
+        
+        let heighMargin                 = widthOfView * 0.1607
+        return CGSize(width: widthOfView, height: widthOfView + heighMargin)
     }
     
     static func getAssetThumbnail(asset: PHAsset) -> UIImage
@@ -33,8 +45,9 @@ class CustomMethods: NSObject {
         let option = PHImageRequestOptions()
         var thumbnail = UIImage()
         option.isSynchronous = true
+        
         manager.requestImage(for: asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .aspectFill, options: option, resultHandler: {(result, info)->Void in
-                thumbnail = result!
+            thumbnail = result ?? CustomMethods.placeholderImageWithSize(CGSize(width: 150, height: 150))!
         })
         return thumbnail
     }
@@ -78,7 +91,6 @@ class CustomMethods: NSObject {
         
         return image
     }
-    
     
     static func getStringValue(keyString:String, dictionary dict:[String:Any]) -> String
     {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class WZAssestCollectionViewCell: UICollectionViewCell {
 
@@ -33,5 +34,21 @@ class WZAssestCollectionViewCell: UICollectionViewCell {
         {
             imageView.image = CustomMethods.placeholderImageWithSize(imageView.bounds.size)
         }
+    }
+    
+    func populateCellDataWithAssets(_ assest : PHAsset?)
+    {
+        if let imgAsset = assest
+        {
+            let image  = CustomMethods.getAssetThumbnail(asset: imgAsset)
+            
+            imageView.image = image
+        }
+        else
+        {
+            imageView.image = CustomMethods.placeholderImageWithSize(imageView.bounds.size)
+        }
+        
+        
     }
 }

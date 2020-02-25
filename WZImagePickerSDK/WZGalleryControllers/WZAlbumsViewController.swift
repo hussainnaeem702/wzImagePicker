@@ -9,7 +9,12 @@
 import UIKit
 import Photos
 
-public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+protocol WzSelectedPictureDelegate {
+    func didFinishSelection(_ mediaAssest : [PHAsset])
+    func didCancel()
+}
+
+class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, WzSelectedSingleAlbumsPictureDelegate {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
@@ -17,125 +22,170 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
     
     var assestsCollection               = [PHAssetCollection]()
     var allPhotos                       : PHFetchResult<PHAsset>? = nil
-    var imagesAndAssestForAllAlbums     = [String : UIImage?]()
-    var imagesAndAssestForAllPhotots    = [String : UIImage]()
-    var selectedIndex                   = [Int : Bool]()
+    var delegate                        : WzSelectedPictureDelegate?
+    var selectedImagesIndex             = [Int]()
+    
+    /// declarations for customisation of UI
+    var backgroundColor                 : UIColor?              = nil
+    var topSectionColor                 : UIColor?              = nil
+    var highLightedIndicatorColor       : UIColor?              = nil
+    var topButtonsTextColor             : UIColor?              = nil
+    var albumsCellBackgoundColor        : UIColor?              = nil
+    var albumsImageBorderColor          : UIColor?              = nil
+    var albumsTextColor                 : UIColor?              = nil
+    var selectedImageColor              : UIColor?              = nil
+    var imagesBorderWidth               : CGFloat?              = nil
+    var albumsBorderCorners             : CGFloat?              = nil
+    var imagesCorners                   : CGFloat?              = nil
+    var selectedType                    : SelectedMediaType?    = nil
+    var selectionType                   : SelectionType?        = SelectionType.multipleSelection
     
     /**************************************************************************************/
     // MARK: -  --------------------------- Outlets ------------------------------
     /**************************************************************************************/
     
-    @IBOutlet weak var collectionViewAlbums : UICollectionView!
-    @IBOutlet weak var collectionviewPictures: UICollectionView!
-    @IBOutlet weak var picturesView: UIView!
-    @IBOutlet weak var albumsView: UIView!
-    @IBOutlet weak var albumsButton: UIButton!
-    @IBOutlet weak var picturesButton: UIButton!
+    @IBOutlet weak var collectionViewAlbums         : UICollectionView!
+    @IBOutlet weak var collectionviewPictures       : UICollectionView!
+    @IBOutlet weak var picturesView                 : UIView!
+    @IBOutlet weak var albumsView                   : UIView!
+    @IBOutlet weak var albumsButton                 : UIButton!
+    @IBOutlet weak var picturesButton               : UIButton!
     @IBOutlet weak var leadingConstOfHighLightedView: NSLayoutConstraint!
-    @IBOutlet weak var activityIndicator : UIActivityIndicatorView!
+    @IBOutlet weak var activityIndicator            : UIActivityIndicatorView!
+    @IBOutlet weak var backgorundView               : UIView!
+    @IBOutlet weak var topSectionView               : UIView!
+    @IBOutlet weak var highLightedIndicatorView     : UIView!
+    @IBOutlet weak var doneBarButton                : UIBarButtonItem!
+    @IBOutlet weak var cancelBarButton              : UIBarButtonItem!
     
     /**************************************************************************************/
     // MARK: -  -------------------------- View Controllers life Cycle --------------------
     /**************************************************************************************/
     
-    var assetBundle = Bundle()
-        
-        public convenience init() {
-            self.init(bundle: nil)
-        }
-        
-        init(bundle: Bundle?) {
-            
-            assetBundle = Bundle(for: WZAlbumsViewController.self)
-            let nib     = UINib(nibName: "WZAlbumsViewController", bundle: assetBundle)
-            //self.imageURL = imageURL
-    //        self.bundle          = Bundle.init(for: type(of: self))
-    //        let bundelPath       = self.bundle.path(forResource: "WZAlbumsViewController", ofType: "xib")
-    //        if bundelPath       != nil{
-    //            self.bundle = Bundle.init(path: bundelPath!)!
-    //        }
-    //
-    //        //super.init(nibName: nil, bundle: bundle)
-            super.init(nibName: "WZAlbumsViewController", bundle: assetBundle)
-        }
-        
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-        }
-    
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         /// CODE FOR ALBUMS TAB
+        /**************************************************************************************/
+        
         
         let smartAlbum = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
-        let userAlbum  = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: nil)
-        
+        //let userAlbum  = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: nil)
+
         let fetchResult = [smartAlbum] // , userAlbum
         for result in fetchResult
         {
             result.enumerateObjects({(collection, index, object) in
-                let photoInAlbum = PHAsset.fetchAssets(in: collection, options: nil)
-                print(photoInAlbum.count)
-                print(collection.localizedTitle ?? "")
-            
-                self.assestsCollection.append(collection)
                 
+                let fetchOptions                = PHFetchOptions()
+                fetchOptions.sortDescriptors    = [NSSortDescriptor(key: "creationDate", ascending: false)]
                 
-                let fetchOptions = PHFetchOptions()
-                fetchOptions.predicate = NSPredicate(format: "mediaType == %d", PHAssetMediaType.image.rawValue)
-                let fetchAssetsResult = PHAsset.fetchAssets(in: collection, options: fetchOptions)
-                let imageManager     = PHImageManager()
-                if (fetchAssetsResult.count == 0)
+                if (self.selectedType != nil)
                 {
-                    self.imagesAndAssestForAllAlbums[collection.localIdentifier] = nil
+                    fetchOptions.predicate = NSPredicate(format: "mediaType == \(self.selectedType?.rawValue ?? 1)")
                 }
                 else
                 {
-                    imageManager.requestImage(for: fetchAssetsResult[fetchAssetsResult.count - 1], targetSize: CGSize(width: 100,height: 100), contentMode: .aspectFill, options: nil) { (image, dict) in
-                        
-                        self.imagesAndAssestForAllAlbums[collection.localIdentifier] = image
-                    }
+                    fetchOptions.predicate = NSPredicate(format: "mediaType = %d || mediaType = %d", PHAssetMediaType.image.rawValue, PHAssetMediaType.video.rawValue)
                 }
+                
+                let photoInAlbum                = PHAsset.fetchAssets(in: collection, options: fetchOptions)
+                print(photoInAlbum.count)
+                print(collection.localizedTitle ?? "")
+                
+                if photoInAlbum.count != 0
+                {
+                    self.assestsCollection.append(collection)
+                }
+                
+//                let fetchAssetsResult   = PHAsset.fetchAssets(in: collection, options: fetchOptions)
+//                let imageManager        = PHImageManager()
+//                if (fetchAssetsResult.count == 0)
+//                {
+//                    self.imagesAndAssestForAllAlbums[collection.localIdentifier] = nil
+//                }
+//                else
+//                {
+//                    imageManager.requestImage(for: fetchAssetsResult[fetchAssetsResult.count - 1], targetSize: CGSize(width: 100,height: 100), contentMode: .aspectFill, options: nil) { (image, dict) in
+//
+//                        self.imagesAndAssestForAllAlbums[collection.localIdentifier] = image
+//                    }
+//                }
             })
         }
         
         /// CODE FOR PICTURES TAB
+        /**************************************************************************************/
         
-        activityIndicator.startAnimating()
-        picturesView.isHidden = true
+//        activityIndicator.startAnimating()
+        picturesView.isHidden   = true
+        doneBarButton.isEnabled =  false
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .authorized:
                 print("Good to proceed")
-                let fetchOptions = PHFetchOptions()
+                let fetchOptions             = PHFetchOptions()
                 fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-                self.allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-                
-                if let photos = self.allPhotos
+                if (self.selectedType != nil)
                 {
-                    for number in 0..<photos.count
+                    fetchOptions.predicate = NSPredicate(format: "mediaType == \(self.selectedType?.rawValue ?? 1)")
+                }
+                else
+                {
+                    fetchOptions.predicate = NSPredicate(format: "mediaType = %d || mediaType = %d", PHAssetMediaType.image.rawValue, PHAssetMediaType.video.rawValue)
+                }
+                
+                if (self.selectedType != nil)
+                {
+                    if self.selectedType?.rawValue == 1
                     {
-                        if let val = self.selectedIndex[number]
-                        {
-                            self.selectedIndex[number] = val
-                        }
-                        else
-                        {
-                            self.selectedIndex[number] = false
-                        }
-                        
-                        let assest = photos[number]
-                        let image  = CustomMethods.getAssetThumbnail(asset: assest)
-                        self.imagesAndAssestForAllPhotots[assest.localIdentifier] = image
+                        self.allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+                    }
+                    else
+                    {
+                        self.allPhotos = PHAsset.fetchAssets(with: .video, options: fetchOptions)
                     }
                 }
-                
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.collectionviewPictures.reloadData()
+                else
+                {
+                    self.allPhotos = PHAsset.fetchAssets(with: fetchOptions)
                 }
+                
+//                if let photos = self.allPhotos
+//                {
+//                    if photos.count > self.pagePerMedia
+//                    {
+//                        self.totalCountReq = photos.count / self.pagePerMedia
+//                    }
+//                    else
+//                    {
+//                        self.totalCountReq = 0
+//                    }
+//                    self.getMediaInChunks()
+//                }
+//                    for number in 0..<photos.count
+//                    {
+//                        if let val = self.selectedIndex[number]
+//                        {
+//                            self.selectedIndex[number] = val
+//                        }
+//                        else
+//                        {
+//                            self.selectedIndex[number] = false
+//                        }
+//
+//                        let assest = photos[number]
+//                        let image  = CustomMethods.getAssetThumbnail(asset: assest)
+//                        self.imagesAndAssestForAllPhotots[assest.localIdentifier] = image
+//                    }
+//                }
+//
+//                DispatchQueue.main.async {
+//                    self.activityIndicator.stopAnimating()
+//                    self.collectionviewPictures.reloadData()
+//                }
+                
             case .denied, .restricted:
                 print("Not allowed")
             case .notDetermined:
@@ -144,15 +194,51 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
             }
         }
         
+        /// customise UI changes according to set
+        /**************************************************************************************/
+        
+        if (backgroundColor != nil)
+        {
+            backgorundView.backgroundColor = backgroundColor
+        }
+        
+        if (topSectionColor != nil)
+        {
+            topSectionView.backgroundColor = topSectionColor
+        }
+        
+        if (highLightedIndicatorColor != nil)
+        {
+            highLightedIndicatorView.backgroundColor = highLightedIndicatorColor
+        }
+        
+        if (topButtonsTextColor != nil)
+        {
+            albumsButton.setTitleColor(topButtonsTextColor, for: .normal)
+            picturesButton.setTitleColor(topButtonsTextColor, for: .normal)
+        }
+        
+        
+        /// customise UI changes according to set
+        /**************************************************************************************/
+        
         collectionviewPictures.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
         collectionViewAlbums.register(UINib(nibName: "WZAlbumCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAlbumCollectionViewCell")
+    }
+    
+    /**************************************************************************************/
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
 
     /**************************************************************************************/
     // MARK: -  ---------------- Collection View Delegate and DataSource ---------------
     /**************************************************************************************/
     
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         if collectionView == collectionViewAlbums
         {
@@ -166,65 +252,138 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
     
     /**************************************************************************************/
     
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
+        
+        /// collection view albums
+        /**************************************************************************************/
+        
         if collectionView == collectionViewAlbums
         {
             let cell    = collectionView.dequeueReusableCell(withReuseIdentifier: "WZAlbumCollectionViewCell", for: indexPath) as! WZAlbumCollectionViewCell
             let assest  = assestsCollection[indexPath.item]
             cell.setBorderWidth(1 / UIScreen.main.scale)
             
-            cell.setAssestInCollectionview(assest, indexPath, imagesAndAssestForAllAlbums[assest.localIdentifier] ?? nil)
+            cell.setAssestInCollectionview(assest, indexPath, self.selectedType?.rawValue )
+            
+            if (albumsCellBackgoundColor != nil)
+            {
+                cell.mainBackgroundView.backgroundColor = albumsCellBackgoundColor
+            }
+            
+            if (albumsTextColor != nil)
+            {
+                cell.albumsTitle.textColor = albumsTextColor
+                cell.numberOfPhotos.textColor = albumsTextColor
+            }
+            
+            if (albumsBorderCorners != nil)
+            {
+                cell.mainBackgroundView.layer.cornerRadius   = albumsBorderCorners!
+                
+            }
+            
+            /// for images handling
+            if (albumsImageBorderColor != nil)
+            {
+                cell.albumImageBackground.backgroundColor = UIColor.clear
+                cell.imageview2.layer.borderColor   = albumsImageBorderColor?.cgColor
+            }
+            
+            if (imagesBorderWidth != nil)
+            {
+                cell.imageview2.layer.borderWidth   = imagesBorderWidth!
+                //cell.albumImageBackground.layer.borderWidth = imagesBorderWidth!
+            }
+            
+            if (imagesCorners != nil)
+            {
+                //cell.albumImageBackground.layer.cornerRadius = albumsBorderCorners!
+                //cell.albumImageBackground.layer.borderWidth = albumsBorderCorners
+                cell.imageview2.layer.cornerRadius   = imagesCorners!
+            }
+            
             return cell
         }
         else
         {
+            /// collection view Images
+            /**************************************************************************************/
+            
             let cell                = collectionView.dequeueReusableCell(withReuseIdentifier: "WZAssestCollectionViewCell", for: indexPath) as! WZAssestCollectionViewCell
             let assest              = allPhotos?[indexPath.item]
-            let assestImage         = imagesAndAssestForAllPhotots[assest?.localIdentifier ?? ""]
-            if (selectedIndex[indexPath.item] == true)
+            
+            if selectedImagesIndex.contains(indexPath.item)
             {
-                cell.selectedIndicator.backgroundColor = .blue
+                var selectColor = UIColor()
+                if selectedImageColor != nil
+                {
+                    selectColor = selectedImageColor!
+                }
+                else
+                {
+                    selectColor = .blue
+                }
+                cell.selectedIndicator.backgroundColor = selectColor
             }
             else
             {
                 cell.selectedIndicator.backgroundColor = UIColor.white
             }
             
-            cell.populateCellsData(assestImage ?? nil)
+            if (imagesCorners != nil)
+            {
+                cell.imageView.layer.cornerRadius   = imagesCorners!
+            }
+            
+            cell.populateCellDataWithAssets(assest)
+            
             return cell
         }
     }
     
     /**************************************************************************************/
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        CustomMethods.standardSizeOfcollectionviewCell()
+        CustomMethods.standardSizeOfcollectionviewCell(collectionView.frame.width)
     }
 
     /**************************************************************************************/
     
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         if collectionView == collectionViewAlbums
         {
             let assestVc                = WZAssestViewController() // self.storyboard?.instantiateViewController(withIdentifier: "WZAssestViewController") as!
             assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
             assestVc.phassetCollection  = assestsCollection[indexPath.item]
-            self.present(assestVc, animated: true, completion: nil)//navigationController?.pushViewController(assestVc, animated: true)
+            assestVc.backgroundColor    = backgroundColor
+            assestVc.imagesCorners      = imagesCorners
+            assestVc.selectedImageColor = selectedImageColor
+            assestVc.selectedMediaType  = self.selectedType?.rawValue
+            assestVc.delegate           = self
+            assestVc.selectionType      = selectionType
+            self.present(assestVc, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(assestVc, animated: true)
         }
         else
         {
-            if selectedIndex[indexPath.item] == true
+            if selectionType == SelectionType.singleSelection
             {
-                selectedIndex[indexPath.item] = false
+                selectedImagesIndex = [indexPath.item]
             }
             else
             {
-                selectedIndex[indexPath.item] = true
+                if selectedImagesIndex.contains(indexPath.item)
+                {
+                    selectedImagesIndex.removeAll{$0 == indexPath.item}
+                }
+                else
+                {
+                    selectedImagesIndex.append(indexPath.item)
+                }
             }
-            
             collectionviewPictures.reloadData()
         }
     }
@@ -237,7 +396,7 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
     {
         picturesView.isHidden = true
         albumsView.isHidden   = false
-        
+        doneBarButton.isEnabled =  false
         UIView.animate(withDuration: 0.3) {
             self.leadingConstOfHighLightedView.constant = 0
             self.view.layoutIfNeeded()
@@ -245,10 +404,13 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
         
     }
     
+    /**************************************************************************************/
+    
     @IBAction func picturesButtonTapped(_ sender: Any)
     {
         picturesView.isHidden = false
         albumsView.isHidden   = true
+        doneBarButton.isEnabled =  true
         
         UIView.animate(withDuration: 0.3) {
             self.leadingConstOfHighLightedView.constant = self.albumsButton.bounds.width
@@ -256,4 +418,42 @@ public class WZAlbumsViewController: UIViewController, UICollectionViewDelegate,
         }
     }
 
+    /**************************************************************************************/
+    
+    @IBAction func cancelBarButtonTapped(_ sender: UIBarButtonItem)
+    {
+        delegate?.didCancel()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    /**************************************************************************************/
+    
+    @IBAction func doneBarButtonTapped(_ sender: UIBarButtonItem)
+    {
+        var imageToTransfer = [PHAsset]()
+        for index in selectedImagesIndex
+        {
+            if let assest                      = allPhotos?[index]
+            {
+                imageToTransfer.append(assest)
+            }
+        }
+        
+        delegate?.didFinishSelection(imageToTransfer)
+    }
+    
+    /**************************************************************************************/
+    // MARK: -  ---------------- Custom Delegate Methods ---------------
+    /**************************************************************************************/
+    
+    func didFinishSelectionOfAlbumsPicture(_ mediaAssest: [PHAsset]) {
+        delegate?.didFinishSelection(mediaAssest)
+    }
+    
+    /**************************************************************************************/
+    
+    func didCancelForSelection() {
+        delegate?.didCancel()
+    }
+    
 }
