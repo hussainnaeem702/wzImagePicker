@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WZAlbumsViewController" customModule="imagePickerWz" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WZAlbumsViewController" customModule="WZImagePickerSDK" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="3Mp-3U-T8t" id="0u9-zx-TmC"/>
                 <outlet property="albumsButton" destination="H2j-Jk-K6a" id="tYh-MG-mlz"/>
@@ -95,7 +95,7 @@
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5VG-2Z-Rgs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jz0-6p-mQU" customClass="TopAlignedCollectionViewFlowLayout" customModule="imagePickerWz" customModuleProvider="target">
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jz0-6p-mQU" customClass="TopAlignedCollectionViewFlowLayout" customModule="WZImagePickerSDK" customModuleProvider="target">
                                         <size key="itemSize" width="165" height="136"/>
                                         <size key="estimatedItemSize" width="170" height="165"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -123,7 +123,7 @@
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vCX-2D-LP5">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Maf-78-bNT" customClass="TopAlignedCollectionViewFlowLayout" customModule="imagePickerWz" customModuleProvider="target">
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Maf-78-bNT" customClass="TopAlignedCollectionViewFlowLayout" customModule="WZImagePickerSDK" customModuleProvider="target">
                                         <size key="itemSize" width="158" height="157"/>
                                         <size key="estimatedItemSize" width="158" height="157"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
