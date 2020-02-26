@@ -34,29 +34,17 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
     public var imagesBorderWidth             : CGFloat?               = nil ///  accessable varibale for set images border
     public var selectedMediaType             : SelectedMediaType?     = nil ///  accessable varibale for set media type either video or image if nil than both
     public var selectionType                 : SelectionType?         = nil ///  accessable varibale for set single selection or multiple selection
-    public var delegate                      : WZImagePickerDelegate? = nil ///  accessable varibale for set delagte
+    public var delegate                      : WZImagePickerDelegate? = nil///  accessable varibale for set delagte
+                
     
-    
-    public func showTest(_ fromController: UIViewController)
-    {
-        let bundle = Bundle(for: type(of: self))
-        let testVC = TestViewController(nibName: "TestViewController", bundle: bundle)
-        fromController.present(testVC, animated: true, completion: nil)
-    }
     
     public func show(_ fromController : UIViewController)
     {
-        //let wzAlbums                = WZAlbumsViewController()
-        let podBundle   = Bundle(for: type(of: self))
-        //        let data        = podBundle.url(forResource: "WZImagePickerSDK", withExtension: "bundle")
-        //        var bundle      : Bundle? = nil
-        //        if let data     = data {
-        //            bundle      = Bundle(url: data)
-        //        }
+        //        let wzAlbums                = WZAlbumsViewController()
         
-        let wzAlbums = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: podBundle)
-        
-        //let wzAlbums    = WZAlbumsViewController.init(nibName: "WZAlbumsViewController", bundle: podBundle)
+        let podBundle  = Bundle(for: type(of: self))
+        let storyboard = UIStoryboard(name: "WzPicker", bundle: podBundle)
+        let wzAlbums   = storyboard.instantiateViewController(withIdentifier: "WZAlbumsViewController") as! WZAlbumsViewController
         
         if (backgroundColor != nil)
         {
@@ -124,6 +112,8 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
         }
         
         wzAlbums.delegate = self
+        
+        
         fromController.present(wzAlbums, animated: true, completion: nil)
     }
     

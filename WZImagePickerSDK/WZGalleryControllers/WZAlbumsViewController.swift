@@ -222,8 +222,8 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
         /// customise UI changes according to set
         /**************************************************************************************/
         
-        collectionviewPictures.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: Bundle(for: type(of: self)) ), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
-        collectionViewAlbums.register(UINib(nibName: "WZAlbumCollectionViewCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "WZAlbumCollectionViewCell")
+//        collectionviewPictures.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
+//        collectionViewAlbums.register(UINib(nibName: "WZAlbumCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAlbumCollectionViewCell")
     }
     
     /**************************************************************************************/
@@ -355,7 +355,11 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
     {
         if collectionView == collectionViewAlbums
         {
-            let assestVc                = WZAssestViewController(nibName: "WZAssestViewController", bundle: Bundle(for: type(of: self))) // self.storyboard?.instantiateViewController(withIdentifier: "WZAssestViewController") as!
+            //let assestVc                = WZAssestViewController() // self.storyboard?.instantiateViewController(withIdentifier: "WZAssestViewController") as!
+            
+            let storyboard  = UIStoryboard(name: "WzPicker", bundle: nil)
+            let assestVc    = storyboard.instantiateViewController(withIdentifier: "WZAssestViewController") as! WZAssestViewController
+            
             assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
             assestVc.phassetCollection  = assestsCollection[indexPath.item]
             assestVc.backgroundColor    = backgroundColor
@@ -364,6 +368,7 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             assestVc.selectedMediaType  = self.selectedType?.rawValue
             assestVc.delegate           = self
             assestVc.selectionType      = selectionType
+            
             self.present(assestVc, animated: true, completion: nil)
 //            self.navigationController?.pushViewController(assestVc, animated: true)
         }
