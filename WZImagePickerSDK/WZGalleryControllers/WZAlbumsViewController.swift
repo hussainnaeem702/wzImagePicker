@@ -181,10 +181,9 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
 //                    }
 //                }
 //
-//                DispatchQueue.main.async {
-//                    self.activityIndicator.stopAnimating()
-//                    self.collectionviewPictures.reloadData()
-//                }
+                DispatchQueue.main.async {
+                    self.collectionviewPictures.reloadData()
+                }
                 
             case .denied, .restricted:
                 print("Not allowed")
