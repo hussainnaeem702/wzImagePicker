@@ -17,7 +17,7 @@ public protocol WZImagePickerDelegate {
     func didCancelPickImage()
 }
 
-public class WZPickerController: NSObject , WzSelectedPictureDelegate{
+public class WZPickerController: NSObject, WzSelectedPictureDelegate {
     
     
     /// if these variables are nil than use default behaviour
@@ -46,7 +46,13 @@ public class WZPickerController: NSObject , WzSelectedPictureDelegate{
     
     public func show(_ fromController : UIViewController)
     {
+        //let wzAlbums                = WZAlbumsViewController()
         let podBundle   = Bundle(for: type(of: self))
+        //        let data        = podBundle.url(forResource: "WZImagePickerSDK", withExtension: "bundle")
+        //        var bundle      : Bundle? = nil
+        //        if let data     = data {
+        //            bundle      = Bundle(url: data)
+        //        }
         
         let wzAlbums = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: podBundle)
         

@@ -14,7 +14,7 @@ protocol WzSelectedPictureDelegate {
     func didCancel()
 }
 
-class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, WzSelectedSingleAlbumsPictureDelegate {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
@@ -258,9 +258,9 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
         /// collection view albums
         /**************************************************************************************/
         
-        let cell    = collectionView.dequeueReusableCell(withReuseIdentifier: "WZAlbumCollectionViewCell", for: indexPath) as! WZAlbumCollectionViewCell
         if collectionView == collectionViewAlbums
         {
+            let cell    = collectionView.dequeueReusableCell(withReuseIdentifier: "WZAlbumCollectionViewCell", for: indexPath) as! WZAlbumCollectionViewCell
             let assest  = assestsCollection[indexPath.item]
             cell.setBorderWidth(1 / UIScreen.main.scale)
             
@@ -305,42 +305,41 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             
             return cell
         }
-        return cell
-//        else
-//        {
-//            /// collection view Images
-//            /**************************************************************************************/
-//
-//            let cell                = collectionView.dequeueReusableCell(withReuseIdentifier: "WZAssestCollectionViewCell", for: indexPath) as! WZAssestCollectionViewCell
-//            let assest              = allPhotos?[indexPath.item]
-//
-//            if selectedImagesIndex.contains(indexPath.item)
-//            {
-//                var selectColor = UIColor()
-//                if selectedImageColor != nil
-//                {
-//                    selectColor = selectedImageColor!
-//                }
-//                else
-//                {
-//                    selectColor = .blue
-//                }
-//                cell.selectedIndicator.backgroundColor = selectColor
-//            }
-//            else
-//            {
-//                cell.selectedIndicator.backgroundColor = UIColor.white
-//            }
-//
-//            if (imagesCorners != nil)
-//            {
-//                cell.imageView.layer.cornerRadius   = imagesCorners!
-//            }
-//
-//            cell.populateCellDataWithAssets(assest)
-//
-//            return cell
-//        }
+        else
+        {
+            /// collection view Images
+            /**************************************************************************************/
+            
+            let cell                = collectionView.dequeueReusableCell(withReuseIdentifier: "WZAssestCollectionViewCell", for: indexPath) as! WZAssestCollectionViewCell
+            let assest              = allPhotos?[indexPath.item]
+            
+            if selectedImagesIndex.contains(indexPath.item)
+            {
+                var selectColor = UIColor()
+                if selectedImageColor != nil
+                {
+                    selectColor = selectedImageColor!
+                }
+                else
+                {
+                    selectColor = .blue
+                }
+                cell.selectedIndicator.backgroundColor = selectColor
+            }
+            else
+            {
+                cell.selectedIndicator.backgroundColor = UIColor.white
+            }
+            
+            if (imagesCorners != nil)
+            {
+                cell.imageView.layer.cornerRadius   = imagesCorners!
+            }
+            
+            cell.populateCellDataWithAssets(assest)
+            
+            return cell
+        }
     }
     
     /**************************************************************************************/
@@ -356,16 +355,17 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
     {
         if collectionView == collectionViewAlbums
         {
-//            let assestVc                = WZAssestViewController(nibName: "WZAssestViewController", bundle: Bundle(for: type(of: self))) // self.storyboard?.instantiateViewController(withIdentifier: "WZAssestViewController") as!
-//            assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
-//            assestVc.phassetCollection  = assestsCollection[indexPath.item]
-//            assestVc.backgroundColor    = backgroundColor
-//            assestVc.imagesCorners      = imagesCorners
-//            assestVc.selectedImageColor = selectedImageColor
-//            assestVc.selectedMediaType  = self.selectedType?.rawValue
-//            assestVc.delegate           = self
-//            assestVc.selectionType      = selectionType
-//            self.present(assestVc, animated: true, completion: nil)
+            let assestVc                = WZAssestViewController(nibName: "WZAssestViewController", bundle: Bundle(for: type(of: self))) // self.storyboard?.instantiateViewController(withIdentifier: "WZAssestViewController") as!
+            assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
+            assestVc.phassetCollection  = assestsCollection[indexPath.item]
+            assestVc.backgroundColor    = backgroundColor
+            assestVc.imagesCorners      = imagesCorners
+            assestVc.selectedImageColor = selectedImageColor
+            assestVc.selectedMediaType  = self.selectedType?.rawValue
+            assestVc.delegate           = self
+            assestVc.selectionType      = selectionType
+            self.present(assestVc, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(assestVc, animated: true)
         }
         else
         {
