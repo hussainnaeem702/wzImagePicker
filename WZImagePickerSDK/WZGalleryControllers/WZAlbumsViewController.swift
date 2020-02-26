@@ -228,10 +228,10 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     /**************************************************************************************/
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     /**************************************************************************************/
@@ -355,7 +355,6 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
     {
         if collectionView == collectionViewAlbums
         {
-            //let assestVc                = WZAssestViewController() // self.storyboard?.instantiateViewController(withIdentifier: "WZAssestViewController") as!
             
             let storyboard  = UIStoryboard(name: "WzPicker", bundle: Bundle(for: type(of: self)))
             let assestVc    = storyboard.instantiateViewController(withIdentifier: "WZAssestViewController") as! WZAssestViewController
@@ -369,8 +368,8 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             assestVc.delegate           = self
             assestVc.selectionType      = selectionType
             
-            self.present(assestVc, animated: true, completion: nil)
-//            self.navigationController?.pushViewController(assestVc, animated: true)
+//            self.present(assestVc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(assestVc, animated: true)
         }
         else
         {

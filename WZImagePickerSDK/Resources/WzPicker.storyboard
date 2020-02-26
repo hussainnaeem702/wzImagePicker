@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u4W-mt-97b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y0Z-ho-8TD">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,7 +12,7 @@
         <!--Albums View Controller-->
         <scene sceneID="3VN-GO-fcQ">
             <objects>
-                <viewController storyboardIdentifier="WZAlbumsViewController" id="u4W-mt-97b" customClass="WZAlbumsViewController" customModule="imagePickerWz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WZAlbumsViewController" id="u4W-mt-97b" customClass="WZAlbumsViewController" customModule="WZImagePickerSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1gv-ql-cIv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Be-Mv-l3a">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="unG-AO-ZP9" customClass="TopAlignedCollectionViewFlowLayout" customModule="imagePickerWz" customModuleProvider="target">
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="unG-AO-ZP9" customClass="TopAlignedCollectionViewFlowLayout" customModule="WZImagePickerSDK" customModuleProvider="target">
                                                     <size key="itemSize" width="165" height="136"/>
                                                     <size key="estimatedItemSize" width="170" height="165"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -90,7 +90,7 @@
                                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WZAlbumCollectionViewCell" id="WAS-hh-t4v" customClass="WZAlbumCollectionViewCell" customModule="imagePickerWz" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WZAlbumCollectionViewCell" id="WAS-hh-t4v" customClass="WZAlbumCollectionViewCell" customModule="WZImagePickerSDK" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="172" height="156"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MnG-1A-ybb">
@@ -209,7 +209,7 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lif-SE-joY">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PUQ-vH-Gvx" customClass="TopAlignedCollectionViewFlowLayout" customModule="imagePickerWz" customModuleProvider="target">
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PUQ-vH-Gvx" customClass="TopAlignedCollectionViewFlowLayout" customModule="WZImagePickerSDK" customModuleProvider="target">
                                                     <size key="itemSize" width="172" height="156"/>
                                                     <size key="estimatedItemSize" width="158" height="157"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -217,7 +217,7 @@
                                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WZAssestCollectionViewCell" id="OTU-4L-tX4" customClass="WZAssestCollectionViewCell" customModule="imagePickerWz" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WZAssestCollectionViewCell" id="OTU-4L-tX4" customClass="WZAssestCollectionViewCell" customModule="WZImagePickerSDK" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="166" height="175"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uwe-XM-Xjf">
@@ -342,6 +342,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7W5-D2-oaw"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Tl7-k7-hJi"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Zav-9q-Yw6" id="LSz-h4-I7V"/>
                         <outlet property="albumsButton" destination="3Xn-c1-oJV" id="IrG-hc-gTv"/>
@@ -360,12 +361,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCD-zA-qdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146.40000000000001" y="149.77511244377811"/>
+            <point key="canvasLocation" x="792.79999999999995" y="149.77511244377811"/>
         </scene>
         <!--Assest View Controller-->
         <scene sceneID="zXP-TU-mat">
             <objects>
-                <viewController storyboardIdentifier="WZAssestViewController" id="nYW-pO-eH0" customClass="WZAssestViewController" customModule="imagePickerWz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WZAssestViewController" id="nYW-pO-eH0" customClass="WZAssestViewController" customModule="WZImagePickerSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hsl-iI-xzD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +377,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qFS-Bg-oBp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WRC-ot-EH5" customClass="TopAlignedCollectionViewFlowLayout" customModule="imagePickerWz" customModuleProvider="target">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WRC-ot-EH5" customClass="TopAlignedCollectionViewFlowLayout" customModule="WZImagePickerSDK" customModuleProvider="target">
                                             <size key="itemSize" width="166" height="175"/>
                                             <size key="estimatedItemSize" width="158" height="157"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -384,7 +385,7 @@
                                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WZAssestCollectionViewCell" id="lNO-V4-HJd" customClass="WZAssestCollectionViewCell" customModule="imagePickerWz" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WZAssestCollectionViewCell" id="lNO-V4-HJd" customClass="WZAssestCollectionViewCell" customModule="WZImagePickerSDK" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="10" width="166" height="175"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hhx-P8-Ho3">
@@ -500,7 +501,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQk-kV-NT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.60000000000002" y="149.77511244377811"/>
+            <point key="canvasLocation" x="1720.8" y="149.77511244377811"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2xy-Cm-bFV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y0Z-ho-8TD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TSA-0S-lvg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u4W-mt-97b" kind="relationship" relationship="rootViewController" id="PRe-d2-GRb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jO3-60-soS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146.40000000000001" y="149.77511244377811"/>
         </scene>
     </scenes>
 </document>
