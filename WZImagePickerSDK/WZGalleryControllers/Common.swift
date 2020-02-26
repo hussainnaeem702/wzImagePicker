@@ -17,7 +17,7 @@ public protocol WZImagePickerDelegate {
     func didCancelPickImage()
 }
 
-public class WZPickerController: NSObject, WzSelectedPictureDelegate {
+public class WZPickerController: NSObject {
     
     
     /// if these variables are nil than use default behaviour
@@ -44,88 +44,88 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
         fromController.present(testVC, animated: true, completion: nil)
     }
     
-    public func show(_ fromController : UIViewController)
-    {
-        //let wzAlbums                = WZAlbumsViewController()
-        let podBundle   = Bundle(for: type(of: self))
-        //        let data        = podBundle.url(forResource: "WZImagePickerSDK", withExtension: "bundle")
-        //        var bundle      : Bundle? = nil
-        //        if let data     = data {
-        //            bundle      = Bundle(url: data)
-        //        }
-        
-        let wzAlbums = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: podBundle)
-        
-        //let wzAlbums    = WZAlbumsViewController.init(nibName: "WZAlbumsViewController", bundle: podBundle)
-        
-        if (backgroundColor != nil)
-        {
-            wzAlbums.backgroundColor    = backgroundColor
-        }
-        
-        if (topSelectionButtonColor != nil)
-        {
-            wzAlbums.topSectionColor    = topSelectionButtonColor
-        }
-        
-        if (topHighlightedIndicatorColor != nil)
-        {
-            wzAlbums.highLightedIndicatorColor    = topHighlightedIndicatorColor
-        }
-        
-        if (albumsCellBackgoundColor != nil)
-        {
-            wzAlbums.albumsCellBackgoundColor    = albumsCellBackgoundColor
-        }
-        
-        if (albumsImageBorderColors != nil)
-        {
-            wzAlbums.albumsImageBorderColor    = albumsImageBorderColors
-        }
-        
-        if (albumsBorderCorners != nil)
-        {
-            wzAlbums.albumsBorderCorners    = albumsBorderCorners
-        }
-        
-        if (imagesCorners != nil)
-        {
-            wzAlbums.imagesCorners    = imagesCorners
-        }
-        
-        if (imagesBorderWidth != nil)
-        {
-            wzAlbums.imagesBorderWidth    = imagesBorderWidth
-        }
-        
-        if (albumsTextColor != nil)
-        {
-            wzAlbums.albumsTextColor    = albumsTextColor
-        }
-        
-        if (selectedImageColor != nil)
-        {
-            wzAlbums.selectedImageColor    = selectedImageColor
-        }
-        
-        if (topButtonTextColor != nil)
-        {
-            wzAlbums.topButtonsTextColor     = topButtonTextColor
-        }
-        
-        if (selectedMediaType != nil)
-        {
-            wzAlbums.selectedType       = selectedMediaType
-        }
-        
-        if (selectionType != nil)
-        {
-            wzAlbums.selectionType      = selectionType
-        }
-        
-        wzAlbums.delegate = self
-        fromController.present(wzAlbums, animated: true, completion: nil)
-    }
+//    public func show(_ fromController : UIViewController)
+//    {
+//        //let wzAlbums                = WZAlbumsViewController()
+//        let podBundle   = Bundle(for: type(of: self))
+//        //        let data        = podBundle.url(forResource: "WZImagePickerSDK", withExtension: "bundle")
+//        //        var bundle      : Bundle? = nil
+//        //        if let data     = data {
+//        //            bundle      = Bundle(url: data)
+//        //        }
+//        
+//        let wzAlbums = WZAlbumsViewController(nibName: "WZAlbumsViewController", bundle: podBundle)
+//        
+//        //let wzAlbums    = WZAlbumsViewController.init(nibName: "WZAlbumsViewController", bundle: podBundle)
+//        
+//        if (backgroundColor != nil)
+//        {
+//            wzAlbums.backgroundColor    = backgroundColor
+//        }
+//        
+//        if (topSelectionButtonColor != nil)
+//        {
+//            wzAlbums.topSectionColor    = topSelectionButtonColor
+//        }
+//        
+//        if (topHighlightedIndicatorColor != nil)
+//        {
+//            wzAlbums.highLightedIndicatorColor    = topHighlightedIndicatorColor
+//        }
+//        
+//        if (albumsCellBackgoundColor != nil)
+//        {
+//            wzAlbums.albumsCellBackgoundColor    = albumsCellBackgoundColor
+//        }
+//        
+//        if (albumsImageBorderColors != nil)
+//        {
+//            wzAlbums.albumsImageBorderColor    = albumsImageBorderColors
+//        }
+//        
+//        if (albumsBorderCorners != nil)
+//        {
+//            wzAlbums.albumsBorderCorners    = albumsBorderCorners
+//        }
+//        
+//        if (imagesCorners != nil)
+//        {
+//            wzAlbums.imagesCorners    = imagesCorners
+//        }
+//        
+//        if (imagesBorderWidth != nil)
+//        {
+//            wzAlbums.imagesBorderWidth    = imagesBorderWidth
+//        }
+//        
+//        if (albumsTextColor != nil)
+//        {
+//            wzAlbums.albumsTextColor    = albumsTextColor
+//        }
+//        
+//        if (selectedImageColor != nil)
+//        {
+//            wzAlbums.selectedImageColor    = selectedImageColor
+//        }
+//        
+//        if (topButtonTextColor != nil)
+//        {
+//            wzAlbums.topButtonsTextColor     = topButtonTextColor
+//        }
+//        
+//        if (selectedMediaType != nil)
+//        {
+//            wzAlbums.selectedType       = selectedMediaType
+//        }
+//        
+//        if (selectionType != nil)
+//        {
+//            wzAlbums.selectionType      = selectionType
+//        }
+//        
+//        wzAlbums.delegate = self
+//        fromController.present(wzAlbums, animated: true, completion: nil)
+//    }
     
     /**************************************************************************************/
     // MARK: -  ---------------- Custom Delegate Methods ---------------
