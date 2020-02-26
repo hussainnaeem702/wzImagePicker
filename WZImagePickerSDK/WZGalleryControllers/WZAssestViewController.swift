@@ -79,12 +79,6 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
 //        collectionviewForAllImages.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
     /**************************************************************************************/
     // MARK: -  ------------- CollectionView Delegate and DataSource -----------------
     /**************************************************************************************/

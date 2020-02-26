@@ -230,8 +230,6 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     /**************************************************************************************/
@@ -368,8 +366,8 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             assestVc.delegate           = self
             assestVc.selectionType      = selectionType
             
-//            self.present(assestVc, animated: true, completion: nil)
-            self.navigationController?.pushViewController(assestVc, animated: true)
+            self.present(assestVc, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(assestVc, animated: true)
         }
         else
         {
