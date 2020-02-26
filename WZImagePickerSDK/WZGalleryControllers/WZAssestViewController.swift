@@ -76,7 +76,7 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
             pictureBackgoundView.backgroundColor = backgroundColor
         }
         
-        collectionviewForAllImages.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
+        collectionviewForAllImages.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
     }
 
     /**************************************************************************************/
