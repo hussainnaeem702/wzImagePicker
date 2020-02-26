@@ -357,7 +357,7 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
         {
             //let assestVc                = WZAssestViewController() // self.storyboard?.instantiateViewController(withIdentifier: "WZAssestViewController") as!
             
-            let storyboard  = UIStoryboard(name: "WzPicker", bundle: nil)
+            let storyboard  = UIStoryboard(name: "WzPicker", bundle: Bundle(for: type(of: self)))
             let assestVc    = storyboard.instantiateViewController(withIdentifier: "WZAssestViewController") as! WZAssestViewController
             
             assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
