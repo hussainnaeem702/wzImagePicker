@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
     s.framework             = "Photos"
     
     s.source_files          = "WZImagePickerSDK/**/*.{h,m,swift, xib}"
-    s.resources             = "WZImagePickerSDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+    s.resources             = 'WZImagePickerSDK/Resources/*.xib'
     
     s.swift_version         = "4.2"
     
