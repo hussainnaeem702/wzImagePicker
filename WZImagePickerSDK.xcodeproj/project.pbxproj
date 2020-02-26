@@ -14,8 +14,6 @@
 		C25143C023FBE8F300E6B6D8 /* WZImagePickerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25143AA23FBCC9300E6B6D8 /* WZImagePickerSDK.framework */; };
 		C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */; };
 		C2A7BD0724052BAE004E1DFD /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7BD0624052BAD004E1DFD /* Common.swift */; };
-		C2A7BD0A24052BC1004E1DFD /* WZAssestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7BD0824052BC1004E1DFD /* WZAssestCollectionViewCell.swift */; };
-		C2A7BD0B24052BC1004E1DFD /* WZAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7BD0924052BC1004E1DFD /* WZAlbumCollectionViewCell.swift */; };
 		C2A7BD0E24052BD5004E1DFD /* CustomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7BD0C24052BD5004E1DFD /* CustomMethods.swift */; };
 		C2A7BD0F24052BD5004E1DFD /* TopAlignCollectionviewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A7BD0D24052BD5004E1DFD /* TopAlignCollectionviewFlowLayout.swift */; };
 /* End PBXBuildFile section */
@@ -41,8 +39,6 @@
 		C25143BF23FBE8F300E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WZImagePickerSDK.podspec; sourceTree = "<group>"; };
 		C2A7BD0624052BAD004E1DFD /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		C2A7BD0824052BC1004E1DFD /* WZAssestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZAssestCollectionViewCell.swift; sourceTree = "<group>"; };
-		C2A7BD0924052BC1004E1DFD /* WZAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2A7BD0C24052BD5004E1DFD /* CustomMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMethods.swift; sourceTree = "<group>"; };
 		C2A7BD0D24052BD5004E1DFD /* TopAlignCollectionviewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignCollectionviewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,8 +115,6 @@
 		C2AF129E23FD1DB100442C18 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C2A7BD0924052BC1004E1DFD /* WZAlbumCollectionViewCell.swift */,
-				C2A7BD0824052BC1004E1DFD /* WZAssestCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,10 +248,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2A7BD0B24052BC1004E1DFD /* WZAlbumCollectionViewCell.swift in Sources */,
 				C2440EA124068B9A00F39604 /* TestViewController.swift in Sources */,
 				C2A7BD0E24052BD5004E1DFD /* CustomMethods.swift in Sources */,
-				C2A7BD0A24052BC1004E1DFD /* WZAssestCollectionViewCell.swift in Sources */,
 				C2A7BD0724052BAE004E1DFD /* Common.swift in Sources */,
 				C2A7BD0F24052BD5004E1DFD /* TopAlignCollectionviewFlowLayout.swift in Sources */,
 			);
