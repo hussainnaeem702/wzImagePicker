@@ -37,6 +37,13 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
     public var delegate                      : WZImagePickerDelegate? = nil ///  accessable varibale for set delagte
     
     
+    public func showTest(_ fromController: UIViewController)
+    {
+        let bundle = Bundle(for: type(of: self))
+        let testVC = TestViewController(nibName: "TestViewController", bundle: bundle)
+        fromController.present(testVC, animated: true, completion: nil)
+    }
+    
     public func show(_ fromController : UIViewController)
     {
         //let wzAlbums                = WZAlbumsViewController()

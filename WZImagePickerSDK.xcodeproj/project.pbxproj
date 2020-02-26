@@ -11,6 +11,8 @@
 		C2440E5F2406550600F39604 /* WZAssestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2440E5B2406550600F39604 /* WZAssestViewController.xib */; };
 		C2440E602406550600F39604 /* WZAlbumsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2440E5C2406550600F39604 /* WZAlbumsViewController.xib */; };
 		C2440E612406550600F39604 /* WZAssestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2440E5D2406550600F39604 /* WZAssestCollectionViewCell.xib */; };
+		C2440EA124068B9A00F39604 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2440E9F24068B9A00F39604 /* TestViewController.swift */; };
+		C2440EA224068B9A00F39604 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2440EA024068B9A00F39604 /* TestViewController.xib */; };
 		C25143AF23FBCC9300E6B6D8 /* WZImagePickerSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C25143AD23FBCC9300E6B6D8 /* WZImagePickerSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C25143BE23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25143BD23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift */; };
 		C25143C023FBE8F300E6B6D8 /* WZImagePickerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25143AA23FBCC9300E6B6D8 /* WZImagePickerSDK.framework */; };
@@ -39,6 +41,8 @@
 		C2440E5B2406550600F39604 /* WZAssestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZAssestViewController.xib; sourceTree = "<group>"; };
 		C2440E5C2406550600F39604 /* WZAlbumsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZAlbumsViewController.xib; sourceTree = "<group>"; };
 		C2440E5D2406550600F39604 /* WZAssestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZAssestCollectionViewCell.xib; sourceTree = "<group>"; };
+		C2440E9F24068B9A00F39604 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		C2440EA024068B9A00F39604 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		C25143AA23FBCC9300E6B6D8 /* WZImagePickerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WZImagePickerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25143AD23FBCC9300E6B6D8 /* WZImagePickerSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZImagePickerSDK.h; sourceTree = "<group>"; };
 		C25143AE23FBCC9300E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A7BD0324052B64004E1DFD /* WZAlbumsViewController.swift */,
+				C2440E9F24068B9A00F39604 /* TestViewController.swift */,
 				C2A7BD0224052B64004E1DFD /* WZAssestViewController.swift */,
 				C2A7BD0624052BAD004E1DFD /* Common.swift */,
 			);
@@ -150,6 +155,7 @@
 				C2440E5C2406550600F39604 /* WZAlbumsViewController.xib */,
 				C2440E5D2406550600F39604 /* WZAssestCollectionViewCell.xib */,
 				C2440E5B2406550600F39604 /* WZAssestViewController.xib */,
+				C2440EA024068B9A00F39604 /* TestViewController.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				C2440E5E2406550600F39604 /* WZAlbumCollectionViewCell.xib in Resources */,
 				C2440E5F2406550600F39604 /* WZAssestViewController.xib in Resources */,
 				C2440E612406550600F39604 /* WZAssestCollectionViewCell.xib in Resources */,
+				C2440EA224068B9A00F39604 /* TestViewController.xib in Resources */,
 				C2440E602406550600F39604 /* WZAlbumsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +278,7 @@
 			files = (
 				C2A7BD0B24052BC1004E1DFD /* WZAlbumCollectionViewCell.swift in Sources */,
 				C2A7BD0524052B64004E1DFD /* WZAlbumsViewController.swift in Sources */,
+				C2440EA124068B9A00F39604 /* TestViewController.swift in Sources */,
 				C2A7BD0424052B64004E1DFD /* WZAssestViewController.swift in Sources */,
 				C2A7BD0E24052BD5004E1DFD /* CustomMethods.swift in Sources */,
 				C2A7BD0A24052BC1004E1DFD /* WZAssestCollectionViewCell.swift in Sources */,
