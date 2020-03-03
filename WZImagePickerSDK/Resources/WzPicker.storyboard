@@ -313,7 +313,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.1214335039" green="0.116267778" blue="0.1784081757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Albums" id="cgp-kJ-q2O">
+                                    <navigationItem id="cgp-kJ-q2O">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="H3W-mO-vdf">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>

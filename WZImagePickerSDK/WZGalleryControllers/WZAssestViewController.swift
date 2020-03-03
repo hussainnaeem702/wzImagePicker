@@ -69,7 +69,7 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
         fetchOptions.sortDescriptors    = [NSSortDescriptor(key: "creationDate", ascending: false)]
         resultCollection                = PHAsset.fetchAssets(in: phassetCollection!, options: fetchOptions)
         
-        print(resultCollection)
+        //print(resultCollection)
         
         if (backgroundColor != nil)
         {
@@ -182,7 +182,12 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
                 assestToTransfer.append(assest)
             }
         }
-        delegate?.didFinishSelectionOfAlbumsPicture(assestToTransfer)
+        
+        if assestToTransfer.count > 0
+        {
+            delegate?.didFinishSelectionOfAlbumsPicture(assestToTransfer)
+        }
+        
     }
     
     

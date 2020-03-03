@@ -127,7 +127,7 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
     }
     
     func didCancel() {
-        print("Cancelled")
+        //print("Cancelled")
         delegate?.didCancelPickImage()
     }
     

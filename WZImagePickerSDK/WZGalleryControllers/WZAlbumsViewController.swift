@@ -91,8 +91,6 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
                 }
                 
                 let photoInAlbum                = PHAsset.fetchAssets(in: collection, options: fetchOptions)
-                print(photoInAlbum.count)
-                print(collection.localizedTitle ?? "")
                 
                 if photoInAlbum.count != 0
                 {
@@ -124,7 +122,6 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .authorized:
-                print("Good to proceed")
                 let fetchOptions             = PHFetchOptions()
                 fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
                 if (self.selectedType != nil)
@@ -186,9 +183,9 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
                 }
                 
             case .denied, .restricted:
-                print("Not allowed")
+                //print("Not allowed")
             case .notDetermined:
-                print("Not determined yet")
+                //print("Not determined yet")
             
             }
         }
@@ -440,7 +437,10 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         }
         
-        delegate?.didFinishSelection(imageToTransfer)
+        if imageToTransfer.count > 0
+        {
+            delegate?.didFinishSelection(imageToTransfer)
+        }
     }
     
     /**************************************************************************************/
