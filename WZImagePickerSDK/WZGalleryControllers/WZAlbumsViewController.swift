@@ -183,10 +183,11 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
                 }
                 
             case .denied, .restricted:
-                //print("Not allowed")
+                print("Not allowed")
+                break;
             case .notDetermined:
-                //print("Not determined yet")
-            
+                print("Not determined yet")
+                break;
             }
         }
         
