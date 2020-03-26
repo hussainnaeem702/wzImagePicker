@@ -154,11 +154,11 @@
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" horizontalCompressionResistancePriority="1" text="Number of Photos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-TF-usb">
                                                                             <rect key="frame" x="4" y="124.5" width="164" height="27.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                             <color key="textColor" red="0.39206528660000001" green="0.39647400379999997" blue="0.37563651799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                             <variation key="heightClass=regular-widthClass=compact">
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                             </variation>
                                                                         </label>
                                                                     </subviews>
@@ -319,6 +319,11 @@
                                     <constraint firstAttribute="bottom" secondItem="Dsu-rv-yqs" secondAttribute="bottom" id="sga-VM-GML"/>
                                     <constraint firstItem="LHY-MM-Jys" firstAttribute="leading" secondItem="Ztq-bz-BcD" secondAttribute="leading" id="xVU-k2-94H"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Dsu-rv-yqs"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fl9-Xu-DmV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
