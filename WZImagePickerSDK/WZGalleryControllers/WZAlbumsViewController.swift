@@ -97,19 +97,6 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
                     self.assestsCollection.append(collection)
                 }
                 
-//                let fetchAssetsResult   = PHAsset.fetchAssets(in: collection, options: fetchOptions)
-//                let imageManager        = PHImageManager()
-//                if (fetchAssetsResult.count == 0)
-//                {
-//                    self.imagesAndAssestForAllAlbums[collection.localIdentifier] = nil
-//                }
-//                else
-//                {
-//                    imageManager.requestImage(for: fetchAssetsResult[fetchAssetsResult.count - 1], targetSize: CGSize(width: 100,height: 100), contentMode: .aspectFill, options: nil) { (image, dict) in
-//
-//                        self.imagesAndAssestForAllAlbums[collection.localIdentifier] = image
-//                    }
-//                }
             })
         }
         
