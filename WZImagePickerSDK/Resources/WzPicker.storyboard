@@ -111,19 +111,19 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="172" height="156"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="e8I-8A-LdG">
-                                                                            <rect key="frame" x="0.0" y="8" width="172" height="136"/>
+                                                                            <rect key="frame" x="42" y="8" width="88" height="88"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="HEH-z8-OLJ">
-                                                                                    <rect key="frame" x="14.5" y="0.0" width="143" height="113.5"/>
+                                                                                    <rect key="frame" x="7.5" y="0.0" width="73" height="73.5"/>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yjb-f0-Ba6">
-                                                                                    <rect key="frame" x="25.5" y="7.5" width="121" height="121"/>
+                                                                                    <rect key="frame" x="5" y="5" width="78" height="78"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="Yjb-f0-Ba6" secondAttribute="height" multiplier="1:1" id="fLF-yZ-61v"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="gDg-6p-Nb5">
-                                                                                    <rect key="frame" x="5" y="7.5" width="162" height="128.5"/>
+                                                                                    <rect key="frame" x="2.5" y="5" width="83" height="83"/>
                                                                                 </imageView>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,6 +133,7 @@
                                                                                 <constraint firstItem="Yjb-f0-Ba6" firstAttribute="height" secondItem="e8I-8A-LdG" secondAttribute="height" multiplier="0.888889" id="Q8d-TW-WiE"/>
                                                                                 <constraint firstAttribute="centerX" secondItem="HEH-z8-OLJ" secondAttribute="centerX" id="SpE-VQ-TW4"/>
                                                                                 <constraint firstItem="gDg-6p-Nb5" firstAttribute="height" secondItem="e8I-8A-LdG" secondAttribute="height" multiplier="0.944444" id="Wkk-p3-Rmu"/>
+                                                                                <constraint firstAttribute="width" constant="88" id="edB-9Q-UeJ"/>
                                                                                 <constraint firstItem="HEH-z8-OLJ" firstAttribute="top" secondItem="e8I-8A-LdG" secondAttribute="top" id="eoa-G3-CDK"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="gDg-6p-Nb5" secondAttribute="bottom" id="gGN-T4-xhn"/>
                                                                                 <constraint firstItem="HEH-z8-OLJ" firstAttribute="width" secondItem="e8I-8A-LdG" secondAttribute="width" multiplier="0.833333" id="hVx-Xd-PcM"/>
@@ -143,7 +144,7 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="250" text="Album Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="9K8-KU-HY8">
-                                                                            <rect key="frame" x="4" y="148" width="164" height="0.0"/>
+                                                                            <rect key="frame" x="4" y="100" width="164" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                             <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -152,7 +153,7 @@
                                                                             </variation>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" horizontalCompressionResistancePriority="1" text="Number of Photos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-TF-usb">
-                                                                            <rect key="frame" x="4" y="152" width="164" height="0.0"/>
+                                                                            <rect key="frame" x="4" y="124.5" width="164" height="27.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" red="0.39206528660000001" green="0.39647400379999997" blue="0.37563651799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -165,7 +166,6 @@
                                                                     <constraints>
                                                                         <constraint firstItem="ABs-TF-usb" firstAttribute="top" secondItem="9K8-KU-HY8" secondAttribute="bottom" constant="4" id="6mp-d6-K8b"/>
                                                                         <constraint firstItem="e8I-8A-LdG" firstAttribute="centerX" secondItem="8Tw-yK-WLj" secondAttribute="centerX" id="MYC-9t-mkN"/>
-                                                                        <constraint firstItem="e8I-8A-LdG" firstAttribute="width" secondItem="8Tw-yK-WLj" secondAttribute="width" id="NYY-ST-d7q"/>
                                                                         <constraint firstAttribute="trailing" secondItem="9K8-KU-HY8" secondAttribute="trailing" constant="4" id="Ohr-Ss-L6z"/>
                                                                         <constraint firstItem="ABs-TF-usb" firstAttribute="leading" secondItem="8Tw-yK-WLj" secondAttribute="leading" constant="4" id="RwI-sW-h8w"/>
                                                                         <constraint firstItem="9K8-KU-HY8" firstAttribute="top" secondItem="e8I-8A-LdG" secondAttribute="bottom" constant="4" id="TGN-Nl-g1D"/>
@@ -196,6 +196,7 @@
                                                             <outlet property="imageview3" destination="gDg-6p-Nb5" id="EHy-PS-KUn"/>
                                                             <outlet property="mainBackgroundView" destination="8Tw-yK-WLj" id="anF-u7-OLI"/>
                                                             <outlet property="numberOfPhotos" destination="ABs-TF-usb" id="qSO-Ui-rJC"/>
+                                                            <outlet property="widthOfImageViewInCell" destination="edB-9Q-UeJ" id="8UW-Lt-z6M"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>

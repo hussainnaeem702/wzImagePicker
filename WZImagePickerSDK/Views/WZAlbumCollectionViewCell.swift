@@ -18,7 +18,7 @@ class WZAlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet var numberOfPhotos        : UILabel!
     @IBOutlet var mainBackgroundView    : UIView!
     @IBOutlet var albumImageBackground  : UIView!
-//    @IBOutlet weak var widthOfImageViewInCell: NSLayoutConstraint!
+    @IBOutlet weak var widthOfImageViewInCell: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,9 +35,9 @@ class WZAlbumCollectionViewCell: UICollectionViewCell {
         imageview2.layer.borderWidth = borderWidth
         imageview3.layer.borderWidth = borderWidth
         
-//        let screenWidthWithSidesMargen  = UIScreen.main.bounds.width - 21
-//        widthOfImageViewInCell.constant = screenWidthWithSidesMargen / 3
-//        self.layoutIfNeeded()
+        let screenWidthWithSidesMargen  = UIScreen.main.bounds.width - 21
+        widthOfImageViewInCell.constant = screenWidthWithSidesMargen / 3
+        self.layoutIfNeeded()
     }
     
     
