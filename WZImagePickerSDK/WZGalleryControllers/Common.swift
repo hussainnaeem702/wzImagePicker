@@ -29,6 +29,7 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
     public var albumsImageBorderColors       : UIColor?               = nil ///  accessable varibale for set each cells border color
     public var albumsTextColor               : UIColor?               = nil ///  accessable varibale for set each cells text color
     public var selectedImageColor            : UIColor?               = nil ///  accessable varibale for set selected images indicator color
+    public var topButtonSepratorViewColor    : UIColor?               = nil ///  accessable varibale for set buttons seprator view background color 
     public var albumsBorderCorners           : CGFloat?               = nil ///  accessable varibale for set each cell border
     public var imagesCorners                 : CGFloat?               = nil ///  accessable varibale for set images corners
     public var imagesBorderWidth             : CGFloat?               = nil ///  accessable varibale for set images border
@@ -109,6 +110,11 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
         if (selectionType != nil)
         {
             wzAlbums.selectionType      = selectionType
+        }
+        
+        if (topButtonSepratorViewColor != nil)
+        {
+            wzAlbums.topButtonsSepratorviewBGColor    = topButtonSepratorViewColor
         }
         
         wzAlbums.delegate = self

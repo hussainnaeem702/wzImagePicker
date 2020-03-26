@@ -34,6 +34,7 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
     var albumsImageBorderColor          : UIColor?              = nil
     var albumsTextColor                 : UIColor?              = nil
     var selectedImageColor              : UIColor?              = nil
+    var topButtonsSepratorviewBGColor   : UIColor?              = nil
     var imagesBorderWidth               : CGFloat?              = nil
     var albumsBorderCorners             : CGFloat?              = nil
     var imagesCorners                   : CGFloat?              = nil
@@ -57,6 +58,7 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var highLightedIndicatorView     : UIView!
     @IBOutlet weak var doneBarButton                : UIBarButtonItem!
     @IBOutlet weak var cancelBarButton              : UIBarButtonItem!
+    @IBOutlet weak var topButtonsSepretorView       : UIView!
     
     /**************************************************************************************/
     // MARK: -  -------------------------- View Controllers life Cycle --------------------
@@ -202,6 +204,10 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             picturesButton.setTitleColor(topButtonsTextColor, for: .normal)
         }
         
+        if (topButtonsSepratorviewBGColor != nil)
+        {
+            topButtonsSepretorView.backgroundColor = topButtonsSepratorviewBGColor
+        }
         
         /// customise UI changes according to set
         /**************************************************************************************/
