@@ -35,9 +35,9 @@ class WZAlbumCollectionViewCell: UICollectionViewCell {
         imageview2.layer.borderWidth = borderWidth
         imageview3.layer.borderWidth = borderWidth
         
-        let screenWidthWithSidesMargen  = UIScreen.main.bounds.width - 21
-        widthOfImageViewInCell.constant = screenWidthWithSidesMargen / 3
-        self.layoutIfNeeded()
+//        let screenWidthWithSidesMargen  = UIScreen.main.bounds.width - 21
+//        widthOfImageViewInCell.constant = screenWidthWithSidesMargen / 3
+//        self.layoutIfNeeded()
     }
     
     
