@@ -32,7 +32,7 @@ class CustomMethods: NSObject {
     static func standardSizeOfcollectionviewCell(_ presentedViewWith : CGFloat) -> CGSize
     {
         /// NH: 40 margin is due to because , we left space from left and right on each cell ,
-        let screenWidthWithSidesMargen  = presentedViewWith - 20.5
+        let screenWidthWithSidesMargen  = presentedViewWith - 21
         let widthOfView                 = screenWidthWithSidesMargen / 3
         
         let heighMargin                 = widthOfView * 0.1607
