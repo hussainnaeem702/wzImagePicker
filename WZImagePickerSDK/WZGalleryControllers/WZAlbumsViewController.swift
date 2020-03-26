@@ -291,6 +291,10 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
                 cell.imageview2.layer.cornerRadius   = imagesCorners!
             }
             
+            let screenWidthWithSidesMargen  = collectionViewAlbums.frame.width - 21
+            cell.widthOfImageViewInCell.constant = screenWidthWithSidesMargen / 3
+            cell.layoutIfNeeded()
+            
             return cell
         }
         else
