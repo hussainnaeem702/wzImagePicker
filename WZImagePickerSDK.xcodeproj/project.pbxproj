@@ -19,6 +19,7 @@
 		C25143BE23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25143BD23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift */; };
 		C25143C023FBE8F300E6B6D8 /* WZImagePickerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25143AA23FBCC9300E6B6D8 /* WZImagePickerSDK.framework */; };
 		C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */; };
+		C251CE9E242DCDB4000DF13B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251CE9D242DCDB4000DF13B /* MainTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C25143BD23FBE8F300E6B6D8 /* WZImagePickerSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZImagePickerSDKTests.swift; sourceTree = "<group>"; };
 		C25143BF23FBE8F300E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WZImagePickerSDK.podspec; sourceTree = "<group>"; };
+		C251CE9D242DCDB4000DF13B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				C2440ED42406947B00F39604 /* WZAlbumsViewController.swift */,
-				C2440ED52406947B00F39604 /* Common.swift */,
 				C2440ED62406947B00F39604 /* WZAssestViewController.swift */,
 			);
 			path = WZGalleryControllers;
@@ -147,6 +148,8 @@
 		C251CE99242DC969000DF13B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C251CE9D242DCDB4000DF13B /* MainTabBarViewController.swift */,
+				C2440ED52406947B00F39604 /* Common.swift */,
 				C251CE9C242DC99E000DF13B /* CameraController */,
 				C251CE9A242DC97F000DF13B /* GalleryController */,
 			);
@@ -156,8 +159,8 @@
 		C251CE9A242DC97F000DF13B /* GalleryController */ = {
 			isa = PBXGroup;
 			children = (
-				C2440ED02406947B00F39604 /* Views */,
 				C2440ED32406947B00F39604 /* WZGalleryControllers */,
+				C2440ED02406947B00F39604 /* Views */,
 			);
 			path = GalleryController;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2440ED92406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift in Sources */,
+				C251CE9E242DCDB4000DF13B /* MainTabBarViewController.swift in Sources */,
 				C2440EDE2406947B00F39604 /* WZAssestViewController.swift in Sources */,
 				C2440ED82406947B00F39604 /* CustomMethods.swift in Sources */,
 				C2440EDA2406947B00F39604 /* WZAssestCollectionViewCell.swift in Sources */,
