@@ -112,7 +112,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     /**************************************************************************************/
 
     func didFinishCapturePicture(_ mediaAssest: [PHAsset]?, _ images: [UIImage]?) {
-        delegateCall?.didFinishSelectionTabBar(mediaAssest, camImages)
+        delegateCall?.didFinishSelectionTabBar(mediaAssest, images)
     }
     
     func didCancelCaptures() {
