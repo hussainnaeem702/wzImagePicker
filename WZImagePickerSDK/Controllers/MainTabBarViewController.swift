@@ -8,11 +8,14 @@
 
 import UIKit
 
-class MainTabBarViewController: UITabBarController {
+
+class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
     /**************************************************************************************/
+    
+    var tabbarSelectedItem = Int()
     
     /// declarations for customisation of UI
     var backgroundColor                 : UIColor?              = nil
@@ -30,21 +33,58 @@ class MainTabBarViewController: UITabBarController {
     var selectedType                    : SelectedMediaType?    = nil
     var selectionType                   : SelectionType?        = SelectionType.multipleSelection
     
+    /**************************************************************************************/
+    // MARK: -  ------------------------ Controllers LifeCycle -----------------------------
+    /**************************************************************************************/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+         self.delegate = self
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    /**************************************************************************************/
+    // MARK: -  ------------------------ tabbar Delegate Methods -----------------------------
+    /**************************************************************************************/
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("Selected item")
+        tabbarSelectedItem = item.tag
+        
+        if item.tag == 0
+        {
+            print("WzPicker ... controller selected ..................")
+        }
+        else if item.tag == 1
+        {
+            print("camera ... controller selected ..................")
+        }
+        else if item.tag = 2
+        {
+            print("insta ... controller selected ..................")
+        }
+        else
+        {
+            print("facebook ... controller selected ..................")
+        }
     }
-    */
+    
+    /**************************************************************************************/
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("selected view controller \(tabbarSelectedItem)")
+        print("Selected view Controller is \(viewController)")
+        
+        if viewController.isKind(of: WZAlbumsViewController.self)
+        {
+            print("WzPicker ... controller selected ..................")
+        }
+        else
+        {
+            print("nothinf ffnffinjdnjcdnc cinence ")
+        }
+        
+    }
 
 }
