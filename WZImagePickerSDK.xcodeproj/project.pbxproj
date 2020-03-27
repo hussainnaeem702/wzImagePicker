@@ -20,6 +20,7 @@
 		C25143C023FBE8F300E6B6D8 /* WZImagePickerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25143AA23FBCC9300E6B6D8 /* WZImagePickerSDK.framework */; };
 		C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */; };
 		C251CE9E242DCDB4000DF13B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251CE9D242DCDB4000DF13B /* MainTabBarViewController.swift */; };
+		C251CEBA242E1E1A000DF13B /* WZCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251CEB9242E1E1A000DF13B /* WZCameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C25143BF23FBE8F300E6B6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WZImagePickerSDK.podspec; sourceTree = "<group>"; };
 		C251CE9D242DCDB4000DF13B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		C251CEB9242E1E1A000DF13B /* WZCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZCameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		C251CE9C242DC99E000DF13B /* CameraController */ = {
 			isa = PBXGroup;
 			children = (
+				C251CEB9242E1E1A000DF13B /* WZCameraViewController.swift */,
 			);
 			path = CameraController;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				C251CE9E242DCDB4000DF13B /* MainTabBarViewController.swift in Sources */,
 				C2440EDE2406947B00F39604 /* WZAssestViewController.swift in Sources */,
 				C2440ED82406947B00F39604 /* CustomMethods.swift in Sources */,
+				C251CEBA242E1E1A000DF13B /* WZCameraViewController.swift in Sources */,
 				C2440EDA2406947B00F39604 /* WZAssestCollectionViewCell.swift in Sources */,
 				C2440EDC2406947B00F39604 /* WZAlbumsViewController.swift in Sources */,
 				C2440EDD2406947B00F39604 /* Common.swift in Sources */,

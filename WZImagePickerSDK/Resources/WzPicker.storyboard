@@ -589,23 +589,54 @@
         <!--Camera-->
         <scene sceneID="FIl-5p-eh6">
             <objects>
-                <viewController id="gwh-NX-i9l" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WZCameraViewController" id="gwh-NX-i9l" customClass="WZCameraViewController" customModule="WZImagePickerSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAT-Eg-CZV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9R-VL-AGE">
-                                <rect key="frame" x="156" y="323" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnH-Lx-eji">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCr-fE-y2V">
+                                        <rect key="frame" x="147.5" y="538" width="80" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAk-QO-b76">
+                                                <rect key="frame" x="5" y="5" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="qAk-QO-b76" firstAttribute="leading" secondItem="NCr-fE-y2V" secondAttribute="leading" constant="5" id="T2O-ek-9On"/>
+                                            <constraint firstItem="qAk-QO-b76" firstAttribute="top" secondItem="NCr-fE-y2V" secondAttribute="top" constant="5" id="feg-Mb-ofs"/>
+                                            <constraint firstAttribute="width" secondItem="NCr-fE-y2V" secondAttribute="height" multiplier="1:1" id="gLi-xU-DD7"/>
+                                            <constraint firstAttribute="bottom" secondItem="qAk-QO-b76" secondAttribute="bottom" constant="5" id="nNg-Ga-lcC"/>
+                                            <constraint firstAttribute="trailing" secondItem="qAk-QO-b76" secondAttribute="trailing" constant="5" id="tyu-gW-Ukb"/>
+                                            <constraint firstAttribute="width" constant="80" id="wdn-BP-xeg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="NCr-fE-y2V" firstAttribute="centerX" secondItem="dnH-Lx-eji" secondAttribute="centerX" id="U1E-LA-KbD"/>
+                                    <constraint firstAttribute="bottom" secondItem="NCr-fE-y2V" secondAttribute="bottom" id="mGf-IF-Vkr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4a8-Wq-xIz" firstAttribute="bottom" secondItem="dnH-Lx-eji" secondAttribute="bottom" id="4vd-3I-FMN"/>
+                            <constraint firstItem="dnH-Lx-eji" firstAttribute="top" secondItem="jAT-Eg-CZV" secondAttribute="top" id="oD4-pG-MjY"/>
+                            <constraint firstItem="dnH-Lx-eji" firstAttribute="leading" secondItem="jAT-Eg-CZV" secondAttribute="leading" id="sTt-Pq-xYY"/>
+                            <constraint firstAttribute="trailing" secondItem="dnH-Lx-eji" secondAttribute="trailing" id="yMe-N6-AWd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4a8-Wq-xIz"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Camera" id="GIE-C7-eyc"/>
+                    <connections>
+                        <outlet property="cameraView" destination="dnH-Lx-eji" id="KDl-S3-vWz"/>
+                        <outlet property="capturButton" destination="qAk-QO-b76" id="Fyr-sh-OwY"/>
+                        <outlet property="captureButtonView" destination="NCr-fE-y2V" id="yi7-IL-HV3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EaV-Rz-aNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
