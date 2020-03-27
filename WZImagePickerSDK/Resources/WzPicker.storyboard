@@ -319,11 +319,6 @@
                                     <constraint firstAttribute="bottom" secondItem="Dsu-rv-yqs" secondAttribute="bottom" id="sga-VM-GML"/>
                                     <constraint firstItem="LHY-MM-Jys" firstAttribute="leading" secondItem="Ztq-bz-BcD" secondAttribute="leading" id="xVU-k2-94H"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="Dsu-rv-yqs"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fl9-Xu-DmV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
