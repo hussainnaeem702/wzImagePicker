@@ -130,8 +130,7 @@
 				C25143AE23FBCC9300E6B6D8 /* Info.plist */,
 				C2440ECB2406947B00F39604 /* Resources */,
 				C2440ECD2406947B00F39604 /* Utilities */,
-				C2440ED02406947B00F39604 /* Views */,
-				C2440ED32406947B00F39604 /* WZGalleryControllers */,
+				C251CE99242DC969000DF13B /* Controllers */,
 			);
 			path = WZImagePickerSDK;
 			sourceTree = "<group>";
@@ -143,6 +142,31 @@
 				C25143BF23FBE8F300E6B6D8 /* Info.plist */,
 			);
 			path = WZImagePickerSDKTests;
+			sourceTree = "<group>";
+		};
+		C251CE99242DC969000DF13B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C251CE9C242DC99E000DF13B /* CameraController */,
+				C251CE9A242DC97F000DF13B /* GalleryController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C251CE9A242DC97F000DF13B /* GalleryController */ = {
+			isa = PBXGroup;
+			children = (
+				C2440ED02406947B00F39604 /* Views */,
+				C2440ED32406947B00F39604 /* WZGalleryControllers */,
+			);
+			path = GalleryController;
+			sourceTree = "<group>";
+		};
+		C251CE9C242DC99E000DF13B /* CameraController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CameraController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
