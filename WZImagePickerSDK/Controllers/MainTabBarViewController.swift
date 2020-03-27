@@ -46,8 +46,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
         super.viewDidLoad()
 
          self.delegate      = self
-        let wzAlbums        = WZAlbumsViewController()
-        wzAlbums.delegate   = self
+        self.delegate?.tabBarController?(self, didSelect: WZAlbumsViewController())
     }
     
 
