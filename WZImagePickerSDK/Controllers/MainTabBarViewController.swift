@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import Photos
 
+protocol WzPickerDelegateTabBar {
+    func didFinishSelection(_ mediaAssest : [PHAsset])
+    func didCancel()
+}
 
-class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
+class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, WzSelectedPictureDelegate {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
     /**************************************************************************************/
     
     var tabbarSelectedItem = Int()
+    var delegateCall       : WzPickerDelegateTabBar?
     
     /// declarations for customisation of UI
     var backgroundColor                 : UIColor?              = nil
@@ -85,6 +91,22 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             print("nothinf ffnffinjdnjcdnc cinence ")
         }
         
+    }
+    
+    /**************************************************************************************/
+    // MARK: -  ------------------------ Custom delegate methods for pick media -----------------------------
+    /**************************************************************************************/
+    
+    func didFinishSelection(_ mediaAssest: [PHAsset])
+    {
+        delegateCall?.didFinishSelection(mediaAssest)
+    }
+    
+    /********************************************/
+    
+    func didCancel()
+    {
+        delegateCall?.didCancel()
     }
 
 }

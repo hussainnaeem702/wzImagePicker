@@ -17,7 +17,7 @@ public protocol WZImagePickerDelegate {
     func didCancelPickImage()
 }
 
-public class WZPickerController: NSObject, WzSelectedPictureDelegate {
+public class WZPickerController: NSObject, WzPickerDelegateTabBar {
     
     
     /// if these variables are nil than use default behaviour
@@ -117,7 +117,7 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
                 wzTabBar.topButtonsSepratorviewBGColor    = topButtonSepratorViewColor
             }
             
-            wzAlbums.delegate = self
+            wzTabBar.delegateCall = self
             
             
             fromController.present(wzTabBar, animated: true, completion: nil)
