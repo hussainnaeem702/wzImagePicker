@@ -11,13 +11,13 @@ import Photos
 
 class WZAlbumCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var imageview1            : UIImageView!
-    @IBOutlet var imageview2            : UIImageView!
-    @IBOutlet var imageview3            : UIImageView!
-    @IBOutlet var albumsTitle           : UILabel!
-    @IBOutlet var numberOfPhotos        : UILabel!
-    @IBOutlet var mainBackgroundView    : UIView!
-    @IBOutlet var albumImageBackground  : UIView!
+    @IBOutlet weak var imageview1            : UIImageView!
+    @IBOutlet weak var imageview2            : UIImageView!
+    @IBOutlet weak var imageview3            : UIImageView!
+    @IBOutlet weak var albumsTitle           : UILabel!
+    @IBOutlet weak var numberOfPhotos        : UILabel!
+    @IBOutlet weak var mainBackgroundView    : UIView!
+    @IBOutlet weak var albumImageBackground  : UIView!
     @IBOutlet weak var widthOfImageViewInCell: NSLayoutConstraint!
     
     override func awakeFromNib() {
@@ -35,8 +35,8 @@ class WZAlbumCollectionViewCell: UICollectionViewCell {
         imageview2.layer.borderWidth = borderWidth
         imageview3.layer.borderWidth = borderWidth
         
-        //let screenWidthWithSidesMargen  = UIScreen.main.bounds.width - 21
-        widthOfImageViewInCell.constant = self.frame.width
+        let screenWidthWithSidesMargen  = UIScreen.main.bounds.width //- 21
+        widthOfImageViewInCell.constant = screenWidthWithSidesMargen / 3
         self.layoutIfNeeded()
     }
     
