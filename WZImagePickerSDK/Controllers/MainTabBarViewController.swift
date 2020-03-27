@@ -10,8 +10,8 @@ import UIKit
 import Photos
 
 protocol WzPickerDelegateTabBar {
-    func didFinishSelection(_ mediaAssest : [PHAsset])
-    func didCancel()
+    func didFinishSelectionTabBar(_ mediaAssest : [PHAsset])
+    func didCancelTabBar()
 }
 
 class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, WzSelectedPictureDelegate {
@@ -103,14 +103,14 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     
     func didFinishSelection(_ mediaAssest: [PHAsset])
     {
-        delegateCall?.didFinishSelection(mediaAssest)
+        delegateCall?.didFinishSelectionTabBar(mediaAssest)
     }
     
     /********************************************/
     
     func didCancel()
     {
-        delegateCall?.didCancel()
+        delegateCall?.didCancelTabBar()
     }
 
 }

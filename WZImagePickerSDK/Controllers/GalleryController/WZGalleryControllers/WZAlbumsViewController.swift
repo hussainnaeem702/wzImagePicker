@@ -445,7 +445,7 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
         delegate?.didFinishSelection(mediaAssest)
     }
     
-    /**************************************************************************************/
+    /****************************************************************/
     
     func didCancelForSelection() {
         delegate?.didCancel()

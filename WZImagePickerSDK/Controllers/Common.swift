@@ -129,12 +129,12 @@ public class WZPickerController: NSObject, WzPickerDelegateTabBar {
     /**************************************************************************************/
     
     /// after image selection done from all photos or each albums phonts than this delagte method called and same delegate will again call tu custom user class
-    func didFinishSelection(_ mediaAssest: [PHAsset]) {
+    
+    func didFinishSelectionTabBar(_ mediaAssest: [PHAsset]) {
         delegate?.didFinishPickImage(mediaAssest)
     }
     
-    func didCancel() {
-        //print("Cancelled")
+    func didCancelTabBar() {
         delegate?.didCancelPickImage()
     }
     
