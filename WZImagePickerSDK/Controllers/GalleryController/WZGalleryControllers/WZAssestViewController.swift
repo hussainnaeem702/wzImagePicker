@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 protocol WzSelectedSingleAlbumsPictureDelegate {
-    func didFinishSelectionOfAlbumsPicture(_ mediaAssest : [PHAsset])
+    func didFinishSelectionOfAlbumsPicture(_ mediaAssest : [PHAsset]?, _ images : [UIImage]?)
     func didCancelForSelection()
 }
 
@@ -185,7 +185,7 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         if assestToTransfer.count > 0
         {
-            delegate?.didFinishSelectionOfAlbumsPicture(assestToTransfer)
+            delegate?.didFinishSelectionOfAlbumsPicture(assestToTransfer, nil)
         }
         
     }

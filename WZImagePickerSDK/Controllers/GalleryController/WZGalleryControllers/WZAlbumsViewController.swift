@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 protocol WzSelectedPictureDelegate {
-    func didFinishSelection(_ mediaAssest : [PHAsset])
+    func didFinishSelection(_ mediaAssest : [PHAsset]?, _ images : [UIImage]?)
     func didCancel()
 }
 
@@ -433,7 +433,7 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         if imageToTransfer.count > 0
         {
-            delegate?.didFinishSelection(imageToTransfer)
+            delegate?.didFinishSelection(imageToTransfer, nil)
         }
     }
     
@@ -441,8 +441,8 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
     // MARK: -  ---------------- Custom Delegate Methods ---------------
     /**************************************************************************************/
     
-    func didFinishSelectionOfAlbumsPicture(_ mediaAssest: [PHAsset]) {
-        delegate?.didFinishSelection(mediaAssest)
+    func didFinishSelectionOfAlbumsPicture(_ mediaAssest: [PHAsset]?, _ images: [UIImage]?) {
+        delegate?.didFinishSelection(mediaAssest, nil)
     }
     
     /****************************************************************/

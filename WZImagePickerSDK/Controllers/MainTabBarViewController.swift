@@ -10,11 +10,11 @@ import UIKit
 import Photos
 
 protocol WzPickerDelegateTabBar {
-    func didFinishSelectionTabBar(_ mediaAssest : [PHAsset])
+    func didFinishSelectionTabBar(_ mediaAssest : [PHAsset]?, _ images : [UIImage]?)
     func didCancelTabBar()
 }
 
-class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, WzSelectedPictureDelegate {
+class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, WzSelectedPictureDelegate, WzCaptureImageCameraDelegate {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
@@ -69,29 +69,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     // MARK: -  ------------------------ tabbar Delegate Methods -----------------------------
     /**************************************************************************************/
     
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("Selected item : \(item.tag)")
-        
-        if item.tag == 0
-        {
-            print("WzPicker ... controller selected ..................")
-        }
-        else if item.tag == 1
-        {
-            print("camera ... controller selected ..................")
-        }
-        else if item.tag == 2
-        {
-            print("insta ... controller selected ..................")
-        }
-        else
-        {
-            print("facebook ... controller selected ..................")
-        }
-    }
-    
-    /**************************************************************************************/
-    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         print("Selected view Controller is \(viewController)")
         
@@ -103,20 +80,24 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
                 wzAlbums.delegate   = self
             }
         }
-        else
+        else if viewController.isKind(of: WZCameraViewController.self)
         {
             print("nothinf ffnffinjdnjcdnc cinence ")
+            if let wzCamera = viewController as? WZCameraViewController
+            {
+                wzCamera.delegate = self
+            }
         }
         
     }
     
     /**************************************************************************************/
-    // MARK: -  ------------------------ Custom delegate methods for pick media -----------------------------
+    // MARK: -  ------------------------ Custom delegate methods for pick media from Gallery -----------------------------
     /**************************************************************************************/
     
-    func didFinishSelection(_ mediaAssest: [PHAsset])
+    func didFinishSelection(_ mediaAssest: [PHAsset]?, _ images: [UIImage]?)
     {
-        delegateCall?.didFinishSelectionTabBar(mediaAssest)
+        delegateCall?.didFinishSelectionTabBar(mediaAssest, nil)
     }
     
     /********************************************/
@@ -125,5 +106,16 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     {
         delegateCall?.didCancelTabBar()
     }
+    
+    /**************************************************************************************/
+    // MARK: -  ------------------------ Custom delegate methods for pick media from Camera -----------------------------
+    /**************************************************************************************/
 
+    func didFinishCapturePicture(_ mediaAssest: [PHAsset]?, _ images: [UIImage]?) {
+        delegateCall?.didFinishSelectionTabBar(mediaAssest, images)
+    }
+    
+    func didCancelCaptures() {
+        delegateCall?.didCancelTabBar()
+    }
 }

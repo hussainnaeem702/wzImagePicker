@@ -8,6 +8,12 @@
 
 import UIKit
 import AVFoundation
+import Photos
+
+protocol WzCaptureImageCameraDelegate {
+    func didFinishCapturePicture(_ mediaAssest : [PHAsset]?, _ images : [UIImage]?)
+    func didCancelCaptures()
+}
 
 class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
@@ -26,6 +32,7 @@ class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var captureSession      : AVCaptureSession!
     var stillImageOutput    : AVCapturePhotoOutput!
     var videoPreviewLayer   : AVCaptureVideoPreviewLayer!
+    var delegate            : WzCaptureImageCameraDelegate?
     
     /**************************************************************************************/
     // MARK: -  ------------------------ Controlle's Life Cycle -----------------------------
@@ -42,11 +49,6 @@ class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
-        
-        //           self.navigationController?.navigationBar.topItem?.title = "Camera"
-        //           navigationController?.navigationBar.barTintColor        = UIColor(red: 41/255, green: 40/255, blue: 56/255, alpha: 1)
-        //           navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)]
-        //           tabBarController?.tabBar.barTintColor                   = UIColor(red: 41/255, green: 40/255, blue: 56/255, alpha: 1)
         
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = .medium
@@ -83,7 +85,7 @@ class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     /**************************************************************************************/
-    // MARK: -  ------------------------ Custom Methods -----------------------------
+    // MARK: -  ------------------------ CustomMethods -----------------------------
     /**************************************************************************************/
     
     func setupLivePreview() {
@@ -119,7 +121,7 @@ class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
        
     /**************************************************************************************/
-    // MARK: -  ------------------------ Actions -----------------------------
+    // MARK: -  ------------------------ AVCapturePhotoCaptureDelegate -----------------------------
     /**************************************************************************************/
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
@@ -127,9 +129,13 @@ class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         guard let imageData = photo.fileDataRepresentation()
             else { return }
         
-        let image = UIImage(data: imageData)
-        //        captureImageView.image = image
-        print(image)
+        if let image = UIImage(data: imageData)
+        {
+            //        captureImageView.image = image
+            print(image)
+            
+            delegate?.didFinishCapturePicture(nil, [image])
+        }
     }
 
 }
