@@ -47,6 +47,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
 
          self.delegate      = self
         
+        /// initially assign delegate WZAlbumsViewController controller 
         if let controllers = self.viewControllers
         {
             for controller in controllers
