@@ -59,10 +59,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
         if item.tag == 0
         {
             print("WzPicker ... controller selected ..................")
-            let podBundle       = Bundle(for: type(of: self))
-            let storyboard      = UIStoryboard(name: "WzPicker", bundle: podBundle)
-            let wzAlbums        = storyboard.instantiateViewController(withIdentifier: "WZAlbumsViewController") as! WZAlbumsViewController
-            wzAlbums.delegate   = self
         }
         else if item.tag == 1
         {
@@ -86,10 +82,10 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
         if viewController.isKind(of: WZAlbumsViewController.self)
         {
             print("WzPicker ... controller selected ..................")
-            let podBundle       = Bundle(for: type(of: self))
-            let storyboard      = UIStoryboard(name: "WzPicker", bundle: podBundle)
-            let wzAlbums        = storyboard.instantiateViewController(withIdentifier: "WZAlbumsViewController") as! WZAlbumsViewController
-            wzAlbums.delegate   = self
+            if let wzAlbums = viewController as? WZAlbumsViewController
+            {
+                wzAlbums.delegate   = self
+            }
         }
         else
         {
