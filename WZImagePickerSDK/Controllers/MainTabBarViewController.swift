@@ -46,7 +46,21 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
         super.viewDidLoad()
 
          self.delegate      = self
-        self.delegate?.tabBarController?(self, didSelect: WZAlbumsViewController())
+        
+        if let controllers = self.viewControllers
+        {
+            for controller in controllers
+            {
+                if controller.isKind(of: WZAlbumsViewController.self)
+                {
+                    print("WzPicker ... controller selected ..................")
+                    if let wzAlbums = controller as? WZAlbumsViewController
+                    {
+                        wzAlbums.delegate   = self
+                    }
+                }
+            }
+        }
     }
     
 
