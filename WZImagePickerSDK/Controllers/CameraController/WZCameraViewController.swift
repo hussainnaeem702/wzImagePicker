@@ -103,7 +103,7 @@ class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             //Step 13
             
             DispatchQueue.main.async {
-                self.videoPreviewLayer.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)//self.cameraView.bounds
+                self.videoPreviewLayer.frame = self.cameraView.bounds//CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)//
             }
             
         }
