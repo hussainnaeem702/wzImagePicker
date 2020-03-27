@@ -45,7 +45,7 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
         
         let podBundle  = Bundle(for: type(of: self))
         let storyboard = UIStoryboard(name: "WzPicker", bundle: podBundle)
-//        let wzAlbums   = storyboard.instantiateViewController(withIdentifier: "WZAlbumsViewController") as! WZAlbumsViewController
+        let wzAlbums   = storyboard.instantiateViewController(withIdentifier: "WZAlbumsViewController") as! WZAlbumsViewController
         if let wzTabBar = storyboard.instantiateViewController(withIdentifier: "MainTabBarViewController") as? MainTabBarViewController {
             if (backgroundColor != nil)
             {
@@ -117,7 +117,7 @@ public class WZPickerController: NSObject, WzSelectedPictureDelegate {
                 wzTabBar.topButtonsSepratorviewBGColor    = topButtonSepratorViewColor
             }
             
-//            wzTabBar.delegate = self
+            wzAlbums.delegate = self
             
             
             fromController.present(wzTabBar, animated: true, completion: nil)
