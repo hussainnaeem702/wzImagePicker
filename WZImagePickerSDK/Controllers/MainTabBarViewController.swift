@@ -20,7 +20,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     // MARK: -  ------------------------ Declarations -----------------------------
     /**************************************************************************************/
     
-    var tabbarSelectedItem = Int()
     var delegateCall       : WzPickerDelegateTabBar?
     
     /// declarations for customisation of UI
@@ -55,12 +54,15 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     /**************************************************************************************/
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("Selected item")
-        tabbarSelectedItem = item.tag
+        print("Selected item : \(item.tag)")
         
         if item.tag == 0
         {
             print("WzPicker ... controller selected ..................")
+            let podBundle       = Bundle(for: type(of: self))
+            let storyboard      = UIStoryboard(name: "WzPicker", bundle: podBundle)
+            let wzAlbums        = storyboard.instantiateViewController(withIdentifier: "WZAlbumsViewController") as! WZAlbumsViewController
+            wzAlbums.delegate   = self
         }
         else if item.tag == 1
         {
@@ -79,7 +81,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     /**************************************************************************************/
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("selected view controller \(tabbarSelectedItem)")
         print("Selected view Controller is \(viewController)")
         
         if viewController.isKind(of: WZAlbumsViewController.self)

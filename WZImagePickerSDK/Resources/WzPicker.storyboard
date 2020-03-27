@@ -28,7 +28,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="SJT-iG-8Fs"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Facebook" id="Xmg-5o-dfN"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Facebook" id="Xmg-5o-dfN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcc-QN-vp9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,7 +53,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="3hD-IC-0RZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Instagram" id="MFi-dM-BxS"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Instagram" id="MFi-dM-BxS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fP6-tJ-eIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -571,6 +571,7 @@
                 <tabBarController storyboardIdentifier="MainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="OJ7-Y0-Fvg" customClass="MainTabBarViewController" customModule="WZImagePickerSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oLN-El-pnG">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -604,7 +605,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4a8-Wq-xIz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="GIE-C7-eyc"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Camera" id="GIE-C7-eyc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EaV-Rz-aNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
