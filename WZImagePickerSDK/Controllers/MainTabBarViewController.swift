@@ -60,7 +60,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         {
             print("camera ... controller selected ..................")
         }
-        else if item.tag = 2
+        else if item.tag == 2
         {
             print("insta ... controller selected ..................")
         }
