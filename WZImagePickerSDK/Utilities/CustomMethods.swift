@@ -32,11 +32,11 @@ class CustomMethods: NSObject {
     static func standardSizeOfcollectionviewCell(_ presentedViewWith : CGFloat) -> CGSize
     {
         /// NH: 20 margin is due to because , we left space from left and right on each cell ,
-        let screenWidthWithSidesMargen  = presentedViewWith - 20.5
+        let screenWidthWithSidesMargen  = presentedViewWith - 21
         let widthOfView                 = screenWidthWithSidesMargen / 3
         
-        let heighMargin                 = widthOfView //* 0.1607
-        return CGSize(width: widthOfView, height: widthOfView + heighMargin)
+        //let heighMargin                 = widthOfView * 0.1607
+        return CGSize(width: widthOfView, height: widthOfView )// + heighMargin
     }
     
     static func getAssetThumbnail(asset: PHAsset) -> UIImage
