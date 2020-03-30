@@ -92,7 +92,7 @@ class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
-        videoPreviewLayer.videoGravity = .resizeAspect
+        videoPreviewLayer.videoGravity = .resizeAspectFill
         videoPreviewLayer.connection?.videoOrientation = .portrait
         cameraView.layer.addSublayer(videoPreviewLayer)
         
