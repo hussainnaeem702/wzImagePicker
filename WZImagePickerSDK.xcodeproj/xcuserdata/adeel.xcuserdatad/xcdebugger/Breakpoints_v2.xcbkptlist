@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "photoOutput(_:didFinishProcessingPhoto:error:)"
+            landmarkName = "setupLivePreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

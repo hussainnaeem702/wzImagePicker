@@ -11,10 +11,10 @@ target 'WZImagePickerSDK' do
     # Pods for testing
   end
 
-  pod 'Facebook-iOS-SDK'
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
-  pod 'SDWebImage'
-  pod 'Alamofire'
+  #pod 'Facebook-iOS-SDK'
+  #pod 'FacebookCore'
+  #pod 'FacebookLogin'
+#  pod 'SDWebImage'
+#  pod 'Alamofire'
 
 end
