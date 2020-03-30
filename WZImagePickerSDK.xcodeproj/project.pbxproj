@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33CB1BD2BBF9206E0C032C98 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA477A2C9B970D246835DAA9 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework */; };
+		5EF83A3410FE4ED9EFABBDB4 /* Pods_WZImagePickerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5778E35EFCBCE89C4D98ADDA /* Pods_WZImagePickerSDK.framework */; };
 		C2440ED72406947B00F39604 /* WzPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2440ECC2406947B00F39604 /* WzPicker.storyboard */; };
 		C2440ED82406947B00F39604 /* CustomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2440ECE2406947B00F39604 /* CustomMethods.swift */; };
 		C2440ED92406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2440ECF2406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift */; };
@@ -21,6 +23,10 @@
 		C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */; };
 		C251CE9E242DCDB4000DF13B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251CE9D242DCDB4000DF13B /* MainTabBarViewController.swift */; };
 		C251CEBA242E1E1A000DF13B /* WZCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C251CEB9242E1E1A000DF13B /* WZCameraViewController.swift */; };
+		C287AB0A2431CBD5009BF573 /* FacebookAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB092431CBD5009BF573 /* FacebookAlbumsViewController.swift */; };
+		C287AB0C2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB0B2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift */; };
+		C287AB0F2431CD47009BF573 /* FacebookMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */; };
+		C287AB112431CD59009BF573 /* InstagramMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB102431CD59009BF573 /* InstagramMediaData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02A4153EA84D54E84B9F4C89 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig"; path = "Target Support Files/Pods-WZImagePickerSDK-WZImagePickerSDKTests/Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig"; sourceTree = "<group>"; };
+		14D3F98538342E28567F3781 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig"; path = "Target Support Files/Pods-WZImagePickerSDK-WZImagePickerSDKTests/Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5778E35EFCBCE89C4D98ADDA /* Pods_WZImagePickerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZImagePickerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A0366A154483CB05DCB7CD /* Pods-WZImagePickerSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZImagePickerSDK.release.xcconfig"; path = "Target Support Files/Pods-WZImagePickerSDK/Pods-WZImagePickerSDK.release.xcconfig"; sourceTree = "<group>"; };
+		A55DA27A3D33AB2F2A03F799 /* Pods-WZImagePickerSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZImagePickerSDK.debug.xcconfig"; path = "Target Support Files/Pods-WZImagePickerSDK/Pods-WZImagePickerSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		C2440ECC2406947B00F39604 /* WzPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WzPicker.storyboard; sourceTree = "<group>"; };
 		C2440ECE2406947B00F39604 /* CustomMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMethods.swift; sourceTree = "<group>"; };
 		C2440ECF2406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignCollectionviewFlowLayout.swift; sourceTree = "<group>"; };
@@ -51,6 +62,11 @@
 		C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WZImagePickerSDK.podspec; sourceTree = "<group>"; };
 		C251CE9D242DCDB4000DF13B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		C251CEB9242E1E1A000DF13B /* WZCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZCameraViewController.swift; sourceTree = "<group>"; };
+		C287AB092431CBD5009BF573 /* FacebookAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAlbumsViewController.swift; sourceTree = "<group>"; };
+		C287AB0B2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAlbumImagesViewController.swift; sourceTree = "<group>"; };
+		C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookMediaData.swift; sourceTree = "<group>"; };
+		C287AB102431CD59009BF573 /* InstagramMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramMediaData.swift; sourceTree = "<group>"; };
+		CA477A2C9B970D246835DAA9 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EF83A3410FE4ED9EFABBDB4 /* Pods_WZImagePickerSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +83,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				C25143C023FBE8F300E6B6D8 /* WZImagePickerSDK.framework in Frameworks */,
+				33CB1BD2BBF9206E0C032C98 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FBA99D2DBD3E0217C61F1A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5778E35EFCBCE89C4D98ADDA /* Pods_WZImagePickerSDK.framework */,
+				CA477A2C9B970D246835DAA9 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		725A40468CF1904869310EE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A55DA27A3D33AB2F2A03F799 /* Pods-WZImagePickerSDK.debug.xcconfig */,
+				77A0366A154483CB05DCB7CD /* Pods-WZImagePickerSDK.release.xcconfig */,
+				14D3F98538342E28567F3781 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig */,
+				02A4153EA84D54E84B9F4C89 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C2440ECB2406947B00F39604 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +152,8 @@
 				C25143BC23FBE8F300E6B6D8 /* WZImagePickerSDKTests */,
 				C25143AB23FBCC9300E6B6D8 /* Products */,
 				C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */,
+				725A40468CF1904869310EE5 /* Pods */,
+				3FBA99D2DBD3E0217C61F1A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,7 +171,9 @@
 			children = (
 				C25143AD23FBCC9300E6B6D8 /* WZImagePickerSDK.h */,
 				C25143AE23FBCC9300E6B6D8 /* Info.plist */,
+				C287AB0D2431CD11009BF573 /* Model */,
 				C2440ECB2406947B00F39604 /* Resources */,
+				C2440ED02406947B00F39604 /* Views */,
 				C2440ECD2406947B00F39604 /* Utilities */,
 				C251CE99242DC969000DF13B /* Controllers */,
 			);
@@ -152,6 +194,7 @@
 			children = (
 				C251CE9D242DCDB4000DF13B /* MainTabBarViewController.swift */,
 				C2440ED52406947B00F39604 /* Common.swift */,
+				C287AB082431CB81009BF573 /* FacebookController */,
 				C251CE9C242DC99E000DF13B /* CameraController */,
 				C251CE9A242DC97F000DF13B /* GalleryController */,
 			);
@@ -162,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				C2440ED32406947B00F39604 /* WZGalleryControllers */,
-				C2440ED02406947B00F39604 /* Views */,
 			);
 			path = GalleryController;
 			sourceTree = "<group>";
@@ -173,6 +215,32 @@
 				C251CEB9242E1E1A000DF13B /* WZCameraViewController.swift */,
 			);
 			path = CameraController;
+			sourceTree = "<group>";
+		};
+		C287AB082431CB81009BF573 /* FacebookController */ = {
+			isa = PBXGroup;
+			children = (
+				C287AB12243206D7009BF573 /* Controllers */,
+			);
+			path = FacebookController;
+			sourceTree = "<group>";
+		};
+		C287AB0D2431CD11009BF573 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */,
+				C287AB102431CD59009BF573 /* InstagramMediaData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C287AB12243206D7009BF573 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C287AB092431CBD5009BF573 /* FacebookAlbumsViewController.swift */,
+				C287AB0B2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +261,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C25143B223FBCC9300E6B6D8 /* Build configuration list for PBXNativeTarget "WZImagePickerSDK" */;
 			buildPhases = (
+				C11B9DB252F3E607AD825A1E /* [CP] Check Pods Manifest.lock */,
 				C25143A523FBCC9300E6B6D8 /* Headers */,
 				C25143A623FBCC9300E6B6D8 /* Sources */,
 				C25143A723FBCC9300E6B6D8 /* Frameworks */,
@@ -211,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C25143C323FBE8F300E6B6D8 /* Build configuration list for PBXNativeTarget "WZImagePickerSDKTests" */;
 			buildPhases = (
+				E2E3B7E0B7F3E6D7EE23B89A /* [CP] Check Pods Manifest.lock */,
 				C25143B723FBE8F300E6B6D8 /* Sources */,
 				C25143B823FBE8F300E6B6D8 /* Frameworks */,
 				C25143B923FBE8F300E6B6D8 /* Resources */,
+				9155741A27E7E7E3B0AF1747 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,17 +353,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9155741A27E7E7E3B0AF1747 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WZImagePickerSDK-WZImagePickerSDKTests/Pods-WZImagePickerSDK-WZImagePickerSDKTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WZImagePickerSDK-WZImagePickerSDKTests/Pods-WZImagePickerSDK-WZImagePickerSDKTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WZImagePickerSDK-WZImagePickerSDKTests/Pods-WZImagePickerSDK-WZImagePickerSDKTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C11B9DB252F3E607AD825A1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WZImagePickerSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2E3B7E0B7F3E6D7EE23B89A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WZImagePickerSDK-WZImagePickerSDKTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C25143A623FBCC9300E6B6D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C287AB0A2431CBD5009BF573 /* FacebookAlbumsViewController.swift in Sources */,
 				C2440ED92406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift in Sources */,
+				C287AB0F2431CD47009BF573 /* FacebookMediaData.swift in Sources */,
 				C251CE9E242DCDB4000DF13B /* MainTabBarViewController.swift in Sources */,
 				C2440EDE2406947B00F39604 /* WZAssestViewController.swift in Sources */,
 				C2440ED82406947B00F39604 /* CustomMethods.swift in Sources */,
 				C251CEBA242E1E1A000DF13B /* WZCameraViewController.swift in Sources */,
+				C287AB112431CD59009BF573 /* InstagramMediaData.swift in Sources */,
 				C2440EDA2406947B00F39604 /* WZAssestCollectionViewCell.swift in Sources */,
+				C287AB0C2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift in Sources */,
 				C2440EDC2406947B00F39604 /* WZAlbumsViewController.swift in Sources */,
 				C2440EDD2406947B00F39604 /* Common.swift in Sources */,
 				C2440EDB2406947B00F39604 /* WZAlbumCollectionViewCell.swift in Sources */,
@@ -440,6 +579,7 @@
 		};
 		C25143B323FBCC9300E6B6D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A55DA27A3D33AB2F2A03F799 /* Pods-WZImagePickerSDK.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,6 +607,7 @@
 		};
 		C25143B423FBCC9300E6B6D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A0366A154483CB05DCB7CD /* Pods-WZImagePickerSDK.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -493,6 +634,7 @@
 		};
 		C25143C423FBE8F300E6B6D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14D3F98538342E28567F3781 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,6 +654,7 @@
 		};
 		C25143C523FBE8F300E6B6D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A4153EA84D54E84B9F4C89 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
