@@ -96,6 +96,29 @@ class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         videoPreviewLayer.connection?.videoOrientation = .portrait
         cameraView.layer.addSublayer(videoPreviewLayer)
         
+        
+        
+        let screenWidth = self.cameraView.bounds.size.width
+        let screenHeight = self.cameraView.bounds.size.height
+        var aspectRatio: CGFloat = 1.0
+
+        var viewFinderHeight: CGFloat = 0.0
+        var viewFinderWidth: CGFloat = 0.0
+        var viewFinderMarginLeft: CGFloat = 0.0
+        var viewFinderMarginTop: CGFloat = 0.0
+        
+        if screenWidth > screenHeight {
+            aspectRatio = screenHeight / screenWidth * aspectRatio
+            viewFinderWidth = self.cameraView.bounds.width
+            viewFinderHeight = self.cameraView.bounds.height * aspectRatio
+            viewFinderMarginTop *= aspectRatio
+        } else {
+            aspectRatio = screenWidth / screenHeight
+            viewFinderWidth = self.cameraView.bounds.width //* aspectRatio
+            viewFinderHeight = self.cameraView.bounds.height
+            viewFinderMarginLeft *= aspectRatio
+        }
+        
         //Step12
         
         DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
@@ -103,7 +126,7 @@ class WZCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             //Step 13
             
             DispatchQueue.main.async {
-                self.videoPreviewLayer.frame = self.cameraView.bounds//CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)//
+                self.videoPreviewLayer.frame = CGRect(x: viewFinderMarginLeft, y: viewFinderMarginTop, width: viewFinderWidth, height: viewFinderHeight) //self.cameraView.bounds//
             }
             
         }
