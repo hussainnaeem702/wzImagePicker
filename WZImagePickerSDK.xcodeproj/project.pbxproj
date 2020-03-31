@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,9 +27,6 @@
 		C287AB0C2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB0B2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift */; };
 		C287AB0F2431CD47009BF573 /* FacebookMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */; };
 		C287AB112431CD59009BF573 /* InstagramMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB102431CD59009BF573 /* InstagramMediaData.swift */; };
-		C287B0C224322A2B009BF573 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C287B0BF24322A2A009BF573 /* FBSDKLoginKit.framework */; };
-		C287B0C324322A2B009BF573 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C287B0C024322A2A009BF573 /* FBSDKCoreKit.framework */; };
-		C287B0C424322A2B009BF573 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C287B0C124322A2B009BF573 /* FBSDKShareKit.framework */; };
 		C287B0C524322C34009BF573 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C25143AE23FBCC9300E6B6D8 /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -70,9 +67,6 @@
 		C287AB0B2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAlbumImagesViewController.swift; sourceTree = "<group>"; };
 		C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookMediaData.swift; sourceTree = "<group>"; };
 		C287AB102431CD59009BF573 /* InstagramMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramMediaData.swift; sourceTree = "<group>"; };
-		C287B0BF24322A2A009BF573 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		C287B0C024322A2A009BF573 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		C287B0C124322A2B009BF573 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		CA477A2C9B970D246835DAA9 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,9 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C287B0C424322A2B009BF573 /* FBSDKShareKit.framework in Frameworks */,
-				C287B0C224322A2B009BF573 /* FBSDKLoginKit.framework in Frameworks */,
-				C287B0C324322A2B009BF573 /* FBSDKCoreKit.framework in Frameworks */,
 				5EF83A3410FE4ED9EFABBDB4 /* Pods_WZImagePickerSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,7 +163,6 @@
 			children = (
 				C25143AD23FBCC9300E6B6D8 /* WZImagePickerSDK.h */,
 				C25143AE23FBCC9300E6B6D8 /* Info.plist */,
-				C287B0BE243229BC009BF573 /* FBSDK */,
 				C287AB0D2431CD11009BF573 /* Model */,
 				C2440ECB2406947B00F39604 /* Resources */,
 				C2440ED02406947B00F39604 /* Views */,
@@ -236,16 +226,6 @@
 				C287AB102431CD59009BF573 /* InstagramMediaData.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		C287B0BE243229BC009BF573 /* FBSDK */ = {
-			isa = PBXGroup;
-			children = (
-				C287B0C024322A2A009BF573 /* FBSDKCoreKit.framework */,
-				C287B0BF24322A2A009BF573 /* FBSDKLoginKit.framework */,
-				C287B0C124322A2B009BF573 /* FBSDKShareKit.framework */,
-			);
-			path = FBSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

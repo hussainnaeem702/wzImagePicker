@@ -29,10 +29,5 @@ Pod::Spec.new do |s|
     
     s.swift_version         = "4.2"
     
-    s.dependency            'Facebook-iOS-SDK'
-    s.dependency            'FacebookCore'
-    s.dependency            'FacebookLogin'
-    s.dependency            'SDWebImage'
-    s.dependency            'Alamofire'
     
 end
