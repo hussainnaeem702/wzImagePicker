@@ -48,7 +48,5 @@ class WZAssestCollectionViewCell: UICollectionViewCell {
         {
             imageView.image = CustomMethods.placeholderImageWithSize(imageView.bounds.size)
         }
-        
-        
     }
 }

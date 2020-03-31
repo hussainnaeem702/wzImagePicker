@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZN-Z0-QT3">
+                                <rect key="frame" x="150" y="323" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29R-m6-r4F" userLabel="albumsView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
@@ -132,22 +139,17 @@
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="kl6-DV-5NG" id="Xlw-oU-YaX"/>
-                                            <outlet property="delegate" destination="kl6-DV-5NG" id="WSb-a8-dHs"/>
+                                            <outlet property="dataSource" destination="u4W-mt-97b" id="ukL-Dg-HUT"/>
+                                            <outlet property="delegate" destination="u4W-mt-97b" id="csh-YB-guq"/>
                                         </connections>
                                     </collectionView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p4K-VQ-TLV">
-                                        <rect key="frame" x="169" y="290.5" width="37" height="37"/>
-                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="hcI-r7-e53" firstAttribute="leading" secondItem="29R-m6-r4F" secondAttribute="leading" id="NDa-C9-3i5"/>
                                     <constraint firstAttribute="trailing" secondItem="hcI-r7-e53" secondAttribute="trailing" id="Vy3-mH-aKi"/>
-                                    <constraint firstItem="p4K-VQ-TLV" firstAttribute="centerX" secondItem="29R-m6-r4F" secondAttribute="centerX" id="cHL-cp-i9e"/>
                                     <constraint firstItem="hcI-r7-e53" firstAttribute="top" secondItem="29R-m6-r4F" secondAttribute="top" id="hKR-4c-NjB"/>
                                     <constraint firstAttribute="bottom" secondItem="hcI-r7-e53" secondAttribute="bottom" id="lLQ-72-Juq"/>
-                                    <constraint firstItem="p4K-VQ-TLV" firstAttribute="centerY" secondItem="29R-m6-r4F" secondAttribute="centerY" id="zHl-bx-DWa"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -161,10 +163,6 @@
                         <viewLayoutGuide key="safeArea" id="SJT-iG-8Fs"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Facebook" id="Xmg-5o-dfN"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="p4K-VQ-TLV" id="iy6-s8-2Rs"/>
-                        <outlet property="collectionviewAlbums" destination="hcI-r7-e53" id="gnP-EZ-q5n"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcc-QN-vp9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,8 +245,8 @@
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="8kj-Li-9eM" id="U1g-gF-bXO"/>
-                                            <outlet property="delegate" destination="8kj-Li-9eM" id="cnQ-Yc-SXl"/>
+                                            <outlet property="dataSource" destination="nYW-pO-eH0" id="625-rC-l0L"/>
+                                            <outlet property="delegate" destination="nYW-pO-eH0" id="yDh-wx-hMC"/>
                                         </connections>
                                     </collectionView>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dI8-E3-nOo">
@@ -298,10 +296,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FdH-fz-pYR"/>
                     </view>
-                    <connections>
-                        <outlet property="activityIndicator" destination="dI8-E3-nOo" id="zkC-eT-UXf"/>
-                        <outlet property="collectionviewImages" destination="WST-fr-Z1a" id="F2P-sj-kia"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3a-uT-oJM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

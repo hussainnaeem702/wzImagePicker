@@ -8,7 +8,6 @@
 
 import UIKit
 import Photos
-import SDWebImage
 
 class WZAlbumCollectionViewCell: UICollectionViewCell {
 
@@ -25,11 +24,11 @@ class WZAlbumCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     /**************************************************************************************/
     // MARK: -  ------------------------ Custom mehtods -----------------------------
     /**************************************************************************************/
-    
+
     func setBorderWidth (_ borderWidth : CGFloat)
     {
         imageview1.layer.borderColor = UIColor.white.cgColor
@@ -50,62 +49,62 @@ class WZAlbumCollectionViewCell: UICollectionViewCell {
     /**************************************************************************************/
     
     func setAssestInCollectionview (_ assest :  PHAssetCollection, _ indexPath : IndexPath, _ selectedMediaType : Int?)
-    {
-        self.tag = indexPath.item
-        
-        let fetchOptions = PHFetchOptions()
-        
-        if (selectedMediaType != nil)
         {
-            fetchOptions.predicate = NSPredicate(format: "mediaType == \(selectedMediaType ?? 1)")
-        }
-        else
-        {
-            fetchOptions.predicate = NSPredicate(format: "mediaType = %d || mediaType = %d", PHAssetMediaType.image.rawValue, PHAssetMediaType.video.rawValue)
-        }
-        
-        let fetchAssetsResult = PHAsset.fetchAssets(in: assest, options: fetchOptions)
-        imageview1.isHidden = true;
-        imageview3.isHidden = true;
-        
-        //            if let imageAlbum = image
-        //            {
-        //                imageview2.image = imageAlbum
-        //            }
-        //            else
-        //            {
-        //                let placeHoderImage = CustomMethods.placeholderImageWithSize(imageview1.frame.size)
-        //                imageview2.image = placeHoderImage
-        //            }
-        if (fetchAssetsResult.count == 0)
-        {
-            let placeHoderImage = CustomMethods.placeholderImageWithSize(imageview1.frame.size)
-            imageview2.image = placeHoderImage
-        }
-        else
-        {
-            let imageManager        = PHImageManager()
-            imageManager.requestImage(for: fetchAssetsResult[fetchAssetsResult.count - 1], targetSize: CGSize(width: 100,height: 100), contentMode: .aspectFill, options: nil) { (image, dict) in
-                
-                self.imageview2.image = image
+            self.tag = indexPath.item
+            
+            let fetchOptions = PHFetchOptions()
+
+            if (selectedMediaType != nil)
+            {
+                fetchOptions.predicate = NSPredicate(format: "mediaType == \(selectedMediaType ?? 1)")
             }
-        }
-        
-        
-        if fetchAssetsResult.count == 0
-        {
+            else
+            {
+                fetchOptions.predicate = NSPredicate(format: "mediaType = %d || mediaType = %d", PHAssetMediaType.image.rawValue, PHAssetMediaType.video.rawValue)
+            }
+            
+            let fetchAssetsResult = PHAsset.fetchAssets(in: assest, options: fetchOptions)
             imageview1.isHidden = true;
             imageview3.isHidden = true;
             
-            let placeHoderImage = CustomMethods.placeholderImageWithSize(imageview1.frame.size)
-            imageview3.image = placeHoderImage
-            imageview2.image = placeHoderImage
-            imageview1.image = placeHoderImage
+//            if let imageAlbum = image
+//            {
+//                imageview2.image = imageAlbum
+//            }
+//            else
+//            {
+//                let placeHoderImage = CustomMethods.placeholderImageWithSize(imageview1.frame.size)
+//                imageview2.image = placeHoderImage
+//            }
+            if (fetchAssetsResult.count == 0)
+            {
+                let placeHoderImage = CustomMethods.placeholderImageWithSize(imageview1.frame.size)
+                imageview2.image = placeHoderImage
+            }
+            else
+            {
+                let imageManager        = PHImageManager()
+                imageManager.requestImage(for: fetchAssetsResult[fetchAssetsResult.count - 1], targetSize: CGSize(width: 100,height: 100), contentMode: .aspectFill, options: nil) { (image, dict) in
+                    
+                    self.imageview2.image = image
+                }
+            }
+
+            
+            if fetchAssetsResult.count == 0
+            {
+                imageview1.isHidden = true;
+                imageview3.isHidden = true;
+                
+                let placeHoderImage = CustomMethods.placeholderImageWithSize(imageview1.frame.size)
+                imageview3.image = placeHoderImage
+                imageview2.image = placeHoderImage
+                imageview1.image = placeHoderImage
+            }
+            
+            albumsTitle.text = assest.localizedTitle
+            numberOfPhotos.text = "\(fetchAssetsResult.count)"
         }
-        
-        albumsTitle.text = assest.localizedTitle
-        numberOfPhotos.text = "\(fetchAssetsResult.count)"
-    }
     
     /**************************************************************************************/
     // MARK: -  ------------------------ Methdo for facebook SDK  -----------------------------

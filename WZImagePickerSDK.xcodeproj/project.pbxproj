@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33CB1BD2BBF9206E0C032C98 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA477A2C9B970D246835DAA9 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework */; };
-		5EF83A3410FE4ED9EFABBDB4 /* Pods_WZImagePickerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5778E35EFCBCE89C4D98ADDA /* Pods_WZImagePickerSDK.framework */; };
 		C2440ED72406947B00F39604 /* WzPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2440ECC2406947B00F39604 /* WzPicker.storyboard */; };
 		C2440ED82406947B00F39604 /* CustomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2440ECE2406947B00F39604 /* CustomMethods.swift */; };
 		C2440ED92406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2440ECF2406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift */; };
@@ -27,7 +25,6 @@
 		C287AB0C2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB0B2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift */; };
 		C287AB0F2431CD47009BF573 /* FacebookMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */; };
 		C287AB112431CD59009BF573 /* InstagramMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB102431CD59009BF573 /* InstagramMediaData.swift */; };
-		C287B0C524322C34009BF573 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C25143AE23FBCC9300E6B6D8 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02A4153EA84D54E84B9F4C89 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig"; path = "Target Support Files/Pods-WZImagePickerSDK-WZImagePickerSDKTests/Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig"; sourceTree = "<group>"; };
-		14D3F98538342E28567F3781 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig"; path = "Target Support Files/Pods-WZImagePickerSDK-WZImagePickerSDKTests/Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5778E35EFCBCE89C4D98ADDA /* Pods_WZImagePickerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZImagePickerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77A0366A154483CB05DCB7CD /* Pods-WZImagePickerSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZImagePickerSDK.release.xcconfig"; path = "Target Support Files/Pods-WZImagePickerSDK/Pods-WZImagePickerSDK.release.xcconfig"; sourceTree = "<group>"; };
-		A55DA27A3D33AB2F2A03F799 /* Pods-WZImagePickerSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZImagePickerSDK.debug.xcconfig"; path = "Target Support Files/Pods-WZImagePickerSDK/Pods-WZImagePickerSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		C2440ECC2406947B00F39604 /* WzPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WzPicker.storyboard; sourceTree = "<group>"; };
 		C2440ECE2406947B00F39604 /* CustomMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMethods.swift; sourceTree = "<group>"; };
 		C2440ECF2406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignCollectionviewFlowLayout.swift; sourceTree = "<group>"; };
@@ -67,7 +59,6 @@
 		C287AB0B2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAlbumImagesViewController.swift; sourceTree = "<group>"; };
 		C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookMediaData.swift; sourceTree = "<group>"; };
 		C287AB102431CD59009BF573 /* InstagramMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramMediaData.swift; sourceTree = "<group>"; };
-		CA477A2C9B970D246835DAA9 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EF83A3410FE4ED9EFABBDB4 /* Pods_WZImagePickerSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,33 +74,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C25143C023FBE8F300E6B6D8 /* WZImagePickerSDK.framework in Frameworks */,
-				33CB1BD2BBF9206E0C032C98 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3FBA99D2DBD3E0217C61F1A6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5778E35EFCBCE89C4D98ADDA /* Pods_WZImagePickerSDK.framework */,
-				CA477A2C9B970D246835DAA9 /* Pods_WZImagePickerSDK_WZImagePickerSDKTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		725A40468CF1904869310EE5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A55DA27A3D33AB2F2A03F799 /* Pods-WZImagePickerSDK.debug.xcconfig */,
-				77A0366A154483CB05DCB7CD /* Pods-WZImagePickerSDK.release.xcconfig */,
-				14D3F98538342E28567F3781 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig */,
-				02A4153EA84D54E84B9F4C89 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		C2440ECB2406947B00F39604 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,8 +113,6 @@
 				C25143BC23FBE8F300E6B6D8 /* WZImagePickerSDKTests */,
 				C25143AB23FBCC9300E6B6D8 /* Products */,
 				C251440E23FC045600E6B6D8 /* WZImagePickerSDK.podspec */,
-				725A40468CF1904869310EE5 /* Pods */,
-				3FBA99D2DBD3E0217C61F1A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -246,7 +213,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C25143B223FBCC9300E6B6D8 /* Build configuration list for PBXNativeTarget "WZImagePickerSDK" */;
 			buildPhases = (
-				C11B9DB252F3E607AD825A1E /* [CP] Check Pods Manifest.lock */,
 				C25143A523FBCC9300E6B6D8 /* Headers */,
 				C25143A623FBCC9300E6B6D8 /* Sources */,
 				C25143A723FBCC9300E6B6D8 /* Frameworks */,
@@ -265,7 +231,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C25143C323FBE8F300E6B6D8 /* Build configuration list for PBXNativeTarget "WZImagePickerSDKTests" */;
 			buildPhases = (
-				E2E3B7E0B7F3E6D7EE23B89A /* [CP] Check Pods Manifest.lock */,
 				C25143B723FBE8F300E6B6D8 /* Sources */,
 				C25143B823FBE8F300E6B6D8 /* Frameworks */,
 				C25143B923FBE8F300E6B6D8 /* Resources */,
@@ -325,7 +290,6 @@
 			files = (
 				C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */,
 				C2440ED72406947B00F39604 /* WzPicker.storyboard in Resources */,
-				C287B0C524322C34009BF573 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,53 +301,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C11B9DB252F3E607AD825A1E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WZImagePickerSDK-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E2E3B7E0B7F3E6D7EE23B89A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WZImagePickerSDK-WZImagePickerSDKTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C25143A623FBCC9300E6B6D8 /* Sources */ = {
@@ -547,7 +464,6 @@
 		};
 		C25143B323FBCC9300E6B6D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A55DA27A3D33AB2F2A03F799 /* Pods-WZImagePickerSDK.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -556,10 +472,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/WZImagePickerSDK/FBSDK",
-				);
 				INFOPLIST_FILE = WZImagePickerSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -579,7 +491,6 @@
 		};
 		C25143B423FBCC9300E6B6D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77A0366A154483CB05DCB7CD /* Pods-WZImagePickerSDK.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -588,10 +499,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/WZImagePickerSDK/FBSDK",
-				);
 				INFOPLIST_FILE = WZImagePickerSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -610,7 +517,6 @@
 		};
 		C25143C423FBE8F300E6B6D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14D3F98538342E28567F3781 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -630,7 +536,6 @@
 		};
 		C25143C523FBE8F300E6B6D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02A4153EA84D54E84B9F4C89 /* Pods-WZImagePickerSDK-WZImagePickerSDKTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -33,10 +33,10 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
     var selectedMediaType   : Int?                    = nil
     var selectionType                                 : SelectionType?
     
-    var totalCountReq                                 = 0
-    var currentPageCounter                            = 1
-    var currentMeidaCounter                           = 0
-    var pagePerMedia                                  = 150
+//    var totalCountReq                                 = 0
+//    var currentPageCounter                            = 1
+//    var currentMeidaCounter                           = 0
+//    var pagePerMedia                                  = 150
     
     /**************************************************************************************/
     // MARK: -  ------------------------ Outlets -----------------------------
