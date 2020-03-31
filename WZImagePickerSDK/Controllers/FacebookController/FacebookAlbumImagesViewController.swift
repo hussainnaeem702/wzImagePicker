@@ -350,7 +350,8 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
         {
             let imagesArray     = facebookAlbumsData.imagesData[i].imagesData.images
             let imageUrl        = imagesArray[imagesArray.count - 2].source
-            mediaURL.append(imageUrl)
+            guard let url             = URL(string: imageUrl) else {return}
+            mediaURL.append(url)
         }
         
         if mediaURL.count > 0
