@@ -18,5 +18,38 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb169757099798565</string>
+            </array>
+        </dict>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>com.whizpool.ezywatermark</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>ig2d31ed8d81fe4c89af47f0bd680df9d3</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>169757099798565</string>
+    <key>FacebookDisplayName</key>
+    <string>${PRODUCT_NAME}</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbauth2</string>
+        <string>instagram</string>
+        <string>instagram://</string>
+        <string>fbshareextension</string>
+        <string>fb</string>
+    </array>
 </dict>
 </plist>
