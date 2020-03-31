@@ -64,7 +64,7 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
         
         if CommonVariables.activityIndicatorBgColor != nil
         {
-            activityIndicator.backgroundColor   = CommonVariables.activityIndicatorBgColor
+            activityIndicator.color   = CommonVariables.activityIndicatorBgColor
         }
     }
     
