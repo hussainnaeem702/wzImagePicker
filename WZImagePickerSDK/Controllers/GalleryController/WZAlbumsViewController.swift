@@ -209,11 +209,6 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             topButtonsSepretorView.backgroundColor = topButtonsSepratorviewBGColor
         }
         
-        /// customise UI changes according to set
-        /**************************************************************************************/
-        
-//        collectionviewPictures.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
-//        collectionViewAlbums.register(UINib(nibName: "WZAlbumCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAlbumCollectionViewCell")
     }
     
     /**************************************************************************************/
@@ -357,7 +352,6 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             assestVc.selectionType      = selectionType
             
             self.present(assestVc, animated: true, completion: nil)
-//            self.navigationController?.pushViewController(assestVc, animated: true)
         }
         else
         {

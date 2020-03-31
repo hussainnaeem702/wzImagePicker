@@ -10,11 +10,11 @@ import UIKit
 import Photos
 
 protocol WzPickerDelegateTabBar {
-    func didFinishSelectionTabBar(_ mediaAssest : [PHAsset]?, _ images : [UIImage]?)
+    func didFinishSelectionTabBar(_ mediaAssest : [PHAsset]?, _ images : [UIImage]?, _ mediaURLs : [URL]?)
     func didCancelTabBar()
 }
 
-class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, WzSelectedPictureDelegate, WzCaptureImageCameraDelegate {
+class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, WzSelectedPictureDelegate, WzCaptureImageCameraDelegate, WzPassMediaFromFacebookDelegate {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
@@ -54,7 +54,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
             {
                 if controller.isKind(of: WZAlbumsViewController.self)
                 {
-                    print("WzPicker ... controller selected ..................")
                     if let wzAlbums = controller as? WZAlbumsViewController
                     {
                         wzAlbums.delegate   = self
@@ -70,22 +69,54 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     /**************************************************************************************/
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("Selected view Controller is \(viewController)")
         
         if viewController.isKind(of: WZAlbumsViewController.self)
         {
-            print("WzPicker ... controller selected ..................")
             if let wzAlbums = viewController as? WZAlbumsViewController
             {
-                wzAlbums.delegate   = self
+                wzAlbums.delegate                       = self
+                wzAlbums.backgroundColor                = backgroundColor
+                wzAlbums.topSectionColor                = topSectionColor
+                wzAlbums.highLightedIndicatorColor      = highLightedIndicatorColor
+                wzAlbums.topButtonsTextColor            = topButtonsTextColor
+                wzAlbums.albumsCellBackgoundColor       = albumsCellBackgoundColor
+                wzAlbums.albumsImageBorderColor         = albumsImageBorderColor
+                wzAlbums.albumsTextColor                = albumsTextColor
+                wzAlbums.selectedImageColor             = selectedImageColor
+                wzAlbums.topButtonsSepratorviewBGColor  = topButtonsSepratorviewBGColor
+                wzAlbums.imagesBorderWidth              = imagesBorderWidth
+                wzAlbums.albumsBorderCorners            = albumsBorderCorners
+                wzAlbums.imagesCorners                  = imagesCorners
+                wzAlbums.selectedType                   = selectedType
+                wzAlbums.selectionType                  = selectionType
             }
         }
         else if viewController.isKind(of: WZCameraViewController.self)
         {
-            print("nothinf ffnffinjdnjcdnc cinence ")
             if let wzCamera = viewController as? WZCameraViewController
             {
                 wzCamera.delegate = self
+            }
+        }
+        else if viewController.isKind(of: FacebookAlbumsViewController)
+        {
+            if let wzFacebook = viewController as? FacebookAlbumsViewController
+            {
+                wzFacebook.delegate                       = self
+                wzFacebook.backgroundColor                = backgroundColor
+//                wzFacebook.topSectionColor                = topSectionColor
+//                wzFacebook.highLightedIndicatorColor      = highLightedIndicatorColor
+//                wzFacebook.topButtonsTextColor            = topButtonsTextColor
+                wzFacebook.albumsCellBackgoundColor       = albumsCellBackgoundColor
+                wzFacebook.albumsImageBorderColor         = albumsImageBorderColor
+                wzFacebook.albumsTextColor                = albumsTextColor
+                wzFacebook.selectedImageColor             = selectedImageColor
+                wzFacebook.topButtonsSepratorviewBGColor  = topButtonsSepratorviewBGColor
+                wzFacebook.imagesBorderWidth              = imagesBorderWidth
+                wzFacebook.albumsBorderCorners            = albumsBorderCorners
+                wzFacebook.imagesCorners                  = imagesCorners
+                wzFacebook.selectedType                   = selectedType
+                wzFacebook.selectionType                  = selectionType
             }
         }
         
@@ -97,7 +128,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     
     func didFinishSelection(_ mediaAssest: [PHAsset]?, _ images: [UIImage]?)
     {
-        delegateCall?.didFinishSelectionTabBar(mediaAssest, nil)
+        delegateCall?.didFinishSelectionTabBar(mediaAssest, nil, nil)
     }
     
     /********************************************/
@@ -112,10 +143,22 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     /**************************************************************************************/
 
     func didFinishCapturePicture(_ mediaAssest: [PHAsset]?, _ images: [UIImage]?) {
-        delegateCall?.didFinishSelectionTabBar(mediaAssest, images)
+        delegateCall?.didFinishSelectionTabBar(mediaAssest, images, nil)
     }
     
     func didCancelCaptures() {
+        delegateCall?.didCancelTabBar()
+    }
+    
+    /**************************************************************************************/
+    // MARK: -  ------------------------ Custom delegate methods for pick media from Facebook -----------------------------
+    /**************************************************************************************/
+    
+    func didFinishSelectionMediaFromFacebook(_ selectedMeidaURLs: [URL]) {
+        delegateCall?.didFinishSelectionTabBar(nil, nil, selectedMeidaURLs)
+    }
+    
+    func didCancelFacebook() {
         delegateCall?.didCancelTabBar()
     }
 }

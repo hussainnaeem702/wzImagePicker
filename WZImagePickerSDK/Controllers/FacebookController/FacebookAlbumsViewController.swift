@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import Photos
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+protocol WzPassMediaFromFacebookDelegate {
+    func didFinishSelectionMediaFromFacebook(_ selectedMeidaURLs : [URL])
+    func didCancelFacebook()
+}
+
+class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, WzSelectedMediaFromFacebookDelegate {
 
     /**************************************************************************************/
     // MARK: -  ------------------------ Declarations -----------------------------
@@ -19,6 +25,24 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
     var facebookAlbums                  = [FacebookAlbums]()
     let loginManager                    = LoginManager()
     var loopCounterForGetImagesAndData  = 0
+    var delegate                        : WzPassMediaFromFacebookDelegate?
+    
+    /// declarations for customisation of UI
+    var backgroundColor                 : UIColor?              = nil
+    var activityIndicatorViewColor      : UIColor?              = nil
+//    var topSectionColor                 : UIColor?              = nil
+//    var highLightedIndicatorColor       : UIColor?              = nil
+//    var topButtonsTextColor             : UIColor?              = nil
+    var albumsCellBackgoundColor        : UIColor?              = nil
+    var albumsImageBorderColor          : UIColor?              = nil
+    var albumsTextColor                 : UIColor?              = nil
+    var selectedImageColor              : UIColor?              = nil
+    //var topButtonsSepratorviewBGColor   : UIColor?              = nil
+    var imagesBorderWidth               : CGFloat?              = nil
+    var albumsBorderCorners             : CGFloat?              = nil
+    var imagesCorners                   : CGFloat?              = nil
+    var selectedType                    : SelectedMediaType?    = nil
+    var selectionType                   : SelectionType?        = SelectionType.multipleSelection
     
     /**************************************************************************************/
     // MARK: -  ------------------------ Outlets  -----------------------------
@@ -26,6 +50,7 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
     
     @IBOutlet weak var collectionviewAlbums : UICollectionView!
     @IBOutlet weak var activityIndicator    : UIActivityIndicatorView!
+    @IBOutlet weak var backgroundViewColor  : UIView!
     
     /**************************************************************************************/
     // MARK: -  ------------------------ Controllers lifeCycle -----------------------------
@@ -46,6 +71,17 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
             {
                 self.getDataOfFacebookProfile()
             }
+        }
+        
+        /// customised UI
+        
+        if backgroundColor != nil
+        {
+            backgroundViewColor.backgroundColor = backgroundColor
+        }
+        if activityIndicatorViewColor != nil
+        {
+            activityIndicator.backgroundColor   = activityIndicatorViewColor
         }
     }
     
@@ -68,6 +104,43 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
         let fbAlbum = facebookAlbums[indexPath.item]
         
         cell.populateCellsDataForFacebookSDk(fbAlbum)
+        
+        if (albumsCellBackgoundColor != nil)
+        {
+            cell.mainBackgroundView.backgroundColor = albumsCellBackgoundColor
+        }
+        
+        if (albumsTextColor != nil)
+        {
+            cell.albumsTitle.textColor = albumsTextColor
+            cell.numberOfPhotos.textColor = albumsTextColor
+        }
+        
+        if (albumsBorderCorners != nil)
+        {
+            cell.mainBackgroundView.layer.cornerRadius   = albumsBorderCorners!
+            
+        }
+        
+        /// for images handling
+        if (albumsImageBorderColor != nil)
+        {
+            cell.albumImageBackground.backgroundColor = UIColor.clear
+            cell.imageview2.layer.borderColor   = albumsImageBorderColor?.cgColor
+        }
+        
+        if (imagesBorderWidth != nil)
+        {
+            cell.imageview2.layer.borderWidth   = imagesBorderWidth!
+            //cell.albumImageBackground.layer.borderWidth = imagesBorderWidth!
+        }
+        
+        if (imagesCorners != nil)
+        {
+            //cell.albumImageBackground.layer.cornerRadius = albumsBorderCorners!
+            //cell.albumImageBackground.layer.borderWidth = albumsBorderCorners
+            cell.imageview2.layer.cornerRadius   = imagesCorners!
+        }
         return cell
     }
     
@@ -86,7 +159,15 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
         
         let assestVc                = self.storyboard?.instantiateViewController(withIdentifier: "FacebookAlbumImagesViewController") as! FacebookAlbumImagesViewController
         assestVc.facebookAlbums     = album
-        self.navigationController?.pushViewController(assestVc, animated: true)
+//        assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
+//        assestVc.phassetCollection  = assestsCollection[indexPath.item]
+        assestVc.backgroundColor    = backgroundColor
+        assestVc.imagesCorners      = imagesCorners
+        assestVc.selectedImageColor = selectedImageColor
+        assestVc.selectedMediaType  = self.selectedType?.rawValue
+        assestVc.delegate           = self
+        assestVc.selectionType      = selectionType
+        self.present(assestVc, animated: true, completion: nil)
     }
 
     /**************************************************************************************/
@@ -157,4 +238,12 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
             }
         }
     }
+    
+    func didFinishMediaPickingFromFacebook(_ mediaURL: [URL]) {
+        delegate?.didFinishSelectionMediaFromFacebook(mediaURL)
+    }
+    func didCancelPickingMediaFromFacebook() {
+        delegate?.didCancelFacebook()
+    }
+    
 }

@@ -11,6 +11,12 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import SDWebImage
 import Alamofire
+import Photos
+
+protocol WzSelectedMediaFromFacebookDelegate {
+    func didFinishMediaPickingFromFacebook(_ mediaURL : [URL])
+    func didCancelPickingMediaFromFacebook()
+}
 
 class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
@@ -21,14 +27,22 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
     var facebookAlbums                  = FacebookAlbums()
     var loopCounterForGetImagesAndData  = 0
     var facebookAlbumsData              = FacebookAlbumsData()
-    var selectedIndex                   = [Int : Bool]()
+    var selectedImagesIndex             = [Int]()//[Int : Bool]()
+    var delegate                        : WzSelectedMediaFromFacebookDelegate?
     
+    var backgroundColor             : UIColor?                = nil
+    var actvityIndicatorColor       : UIColor?                = nil
+    var imagesCorners               : CGFloat?                = nil
+    var selectedImageColor          : UIColor?                = nil
+    var selectedMediaType           : Int?                    = nil
+    var selectionType               : SelectionType?
     /**************************************************************************************/
     // MARK: -  ------------------------ Outlets  -----------------------------
     /**************************************************************************************/
     
     @IBOutlet weak var collectionviewImages : UICollectionView!
     @IBOutlet weak var activityIndicator    : UIActivityIndicatorView!
+    @IBOutlet weak var backgroundViewColor  : UIView!
     
     /**************************************************************************************/
     // MARK: -  ------------------------ Controllers life cycle -----------------------------
@@ -39,6 +53,18 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
 
         self.loopCounterForGetImagesAndData = 0
         getDataOfCurrentPage(nil)
+        
+        /// customised UI
+               
+        if backgroundColor != nil
+        {
+            backgroundViewColor.backgroundColor = backgroundColor
+        }
+        
+        if activityIndicatorViewColor != nil
+        {
+            activityIndicator.backgroundColor   = activityIndicatorViewColor
+        }
     }
     
     /**************************************************************************************/
@@ -71,6 +97,30 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
             cell.selectedIndicator.backgroundColor = UIColor.white
         }
         
+        if selectedImagesIndex.contains(indexPath.item)
+        {
+            var selectColor = UIColor()
+            if selectedImageColor != nil
+            {
+                selectColor = selectedImageColor!
+            }
+            else
+            {
+                selectColor = .blue
+            }
+            cell.selectedIndicator.backgroundColor = selectColor
+        }
+        else
+        {
+            cell.selectedIndicator.backgroundColor = UIColor.white
+        }
+        
+        if (imagesCorners != nil)
+        {
+            cell.imageView.layer.cornerRadius   = imagesCorners!
+        }
+        
+        
         if indexPath.item == facebookAlbumsData.imagesData.count - 1
         {
             getDataOfCurrentPage(facebookAlbumsData.paging.next)
@@ -91,6 +141,28 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
             selectedIndex[indexPath.item] = true
         }
         
+        if selectionType == SelectionType.singleSelection
+        {
+            selectedImagesIndex = [indexPath.item]
+        }
+        else
+        {
+            if selectionType == SelectionType.singleSelection
+            {
+                selectedImagesIndex = [indexPath.item]
+            }
+            else
+            {
+                if selectedImagesIndex.contains(indexPath.item)
+                {
+                    selectedImagesIndex.removeAll{$0 == indexPath.item}
+                }
+                else
+                {
+                    selectedImagesIndex.append(indexPath.item)
+                }
+            }
+        }
         collectionviewImages.reloadData()
     }
     
@@ -266,5 +338,32 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
             self.facebookAlbumsData.paging = pagingData
         }
     }
-
+    
+    /**************************************************************************************/
+    // MARK: -  ------------------------ Controllers lifeCycle -----------------------------
+    /**************************************************************************************/
+    
+    @IBAction func cancelBUttonTapped(_ sender: Any)
+    {
+        var mediaURL = [URL]()
+        for i in selectedMediaType
+        {
+            let imagesArray     = facebookAlbumsData.imagesData[i].imagesData.images
+            let imageUrl        = imagesArray[imagesArray.count - 2].source
+            mediaURL.append(imageUrl)
+        }
+        
+        if mediaURL.count > 0
+        {
+            delegate?.didFinishMediaPickingFromFacebook(mediaURL)
+        }
+    }
+    
+    /**************************************************************************************/
+    
+    @IBAction func doneButtonTapped(_ sender: Any)
+    {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
