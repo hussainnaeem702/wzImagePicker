@@ -139,15 +139,20 @@
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="u4W-mt-97b" id="ukL-Dg-HUT"/>
-                                            <outlet property="delegate" destination="u4W-mt-97b" id="csh-YB-guq"/>
+                                            <outlet property="dataSource" destination="kl6-DV-5NG" id="EjS-uG-Fu3"/>
+                                            <outlet property="delegate" destination="kl6-DV-5NG" id="dAl-hC-FO5"/>
                                         </connections>
                                     </collectionView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-DZ-ynZ">
+                                        <rect key="frame" x="169" y="290.5" width="37" height="37"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="hcI-r7-e53" firstAttribute="leading" secondItem="29R-m6-r4F" secondAttribute="leading" id="NDa-C9-3i5"/>
+                                    <constraint firstItem="Xi7-DZ-ynZ" firstAttribute="centerY" secondItem="29R-m6-r4F" secondAttribute="centerY" id="SNf-bW-hVm"/>
                                     <constraint firstAttribute="trailing" secondItem="hcI-r7-e53" secondAttribute="trailing" id="Vy3-mH-aKi"/>
+                                    <constraint firstItem="Xi7-DZ-ynZ" firstAttribute="centerX" secondItem="29R-m6-r4F" secondAttribute="centerX" id="aKQ-Rh-L51"/>
                                     <constraint firstItem="hcI-r7-e53" firstAttribute="top" secondItem="29R-m6-r4F" secondAttribute="top" id="hKR-4c-NjB"/>
                                     <constraint firstAttribute="bottom" secondItem="hcI-r7-e53" secondAttribute="bottom" id="lLQ-72-Juq"/>
                                 </constraints>
@@ -163,6 +168,10 @@
                         <viewLayoutGuide key="safeArea" id="SJT-iG-8Fs"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Facebook" id="Xmg-5o-dfN"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Xi7-DZ-ynZ" id="tqG-AP-5vK"/>
+                        <outlet property="collectionviewAlbums" destination="hcI-r7-e53" id="GDw-ke-pcu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcc-QN-vp9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -245,8 +254,8 @@
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="nYW-pO-eH0" id="625-rC-l0L"/>
-                                            <outlet property="delegate" destination="nYW-pO-eH0" id="yDh-wx-hMC"/>
+                                            <outlet property="dataSource" destination="8kj-Li-9eM" id="AYR-kY-azF"/>
+                                            <outlet property="delegate" destination="8kj-Li-9eM" id="UBp-u1-X1N"/>
                                         </connections>
                                     </collectionView>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dI8-E3-nOo">
@@ -296,6 +305,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FdH-fz-pYR"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="dI8-E3-nOo" id="6ew-g0-nux"/>
+                        <outlet property="collectionviewImages" destination="WST-fr-Z1a" id="HLN-ei-n2C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3a-uT-oJM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
