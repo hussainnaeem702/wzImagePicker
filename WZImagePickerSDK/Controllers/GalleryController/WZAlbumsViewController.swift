@@ -179,6 +179,13 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
                 break;
             }
         }
+    
+    }
+    
+    /**************************************************************************************/
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         /// customise UI changes according to set
         /**************************************************************************************/
@@ -208,13 +215,6 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
         {
             topButtonsSepretorView.backgroundColor = topButtonsSepratorviewBGColor
         }
-        
-    }
-    
-    /**************************************************************************************/
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
 
     /**************************************************************************************/

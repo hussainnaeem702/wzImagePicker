@@ -197,7 +197,7 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
                 
                 if (error == nil)
                 {
-                    print(result ?? "")
+                    //print(result ?? "")
                     
                     if let responseResult = result as? [String : Any]
                     {
@@ -264,7 +264,7 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
                 
                 if (error == nil)
                 {
-                    print(result ?? "")
+                    //print(result ?? "")
                     
                     if let data = result as? [String : Any]
                     {
@@ -287,13 +287,13 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
                 {
                 case .success(let value):
                     
-                    print(value)
+                    //print(value)
                     let data = value
 //                    {
-                    print(data)
+                    //print(data)
                         let dictionary = NSDictionary.init(object: data, forKey: "json" as NSCopying)
                         let jsonDict = dictionary.object(forKey: "json") as! NSDictionary
-                        print(jsonDict)
+                        //print(jsonDict)
 
                         if let dataDict = jsonDict as? [String : Any]
                         {
@@ -303,7 +303,7 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
                     
                 case .failure(let error):
                     
-                    print("error accoured \(error.localizedDescription)")
+                    //print("error accoured \(error.localizedDescription)")
                 }
             }
         }

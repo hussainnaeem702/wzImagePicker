@@ -65,13 +65,17 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
         loginManager.logIn(permissions: ["public_profile", "user_photos", "email", "user_friends"], from: self) { (result, error) in
             if error != nil
             {
-                print(error?.localizedDescription ?? "")
+                //print(error?.localizedDescription ?? "")
             }
             else
             {
                 self.getDataOfFacebookProfile()
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         /// customised UI
         
@@ -84,7 +88,6 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
             activityIndicator.backgroundColor   = activityIndicatorViewColor
         }
     }
-    
     /**************************************************************************************/
     // MARK: -  ------------------------ Collectionview Delegate and Datasource -----------------------------
     /**************************************************************************************/
@@ -182,12 +185,12 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
         grapthReq.start { (connection, result, error) in
             if (error == nil)
             {
-                print(result ?? "")
+               // print(result ?? "")
                 if let responseResult = result as? [String : Any]
                 {
                     if let data = CustomMethods.getDictArrayValue(keyString: "data", dictionary: responseResult)
                     {
-                        print(data)
+                        //print(data)
                         
                         if self.loopCounterForGetImagesAndData < data.count
                         {
@@ -205,15 +208,15 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
                                 
                                 if (error == nil)
                                 {
-                                    print(result ?? "")
+                                    //print(result ?? "")
                                     if let responseResult = result as? [String : Any]
                                     {
                                         if let picData = CustomMethods.getDictionaryValue(keyString: "picture", dictionary: responseResult)
                                         {
-                                            print(picData)
+                                           // print(picData)
                                             if let imageUrlData = CustomMethods.getDictionaryValue(keyString: "data", dictionary: picData)
                                             {
-                                                print(imageUrlData )
+                                               // print(imageUrlData )
                                                 let imageUrl        = CustomMethods.getStringValue(keyString: "url", dictionary: imageUrlData)
                                                 fbAlbum.imageUrl    = imageUrl
                                             }
@@ -235,7 +238,7 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
             }
             else
             {
-                print(error ?? "")
+               // print(error ?? "")
             }
         }
     }

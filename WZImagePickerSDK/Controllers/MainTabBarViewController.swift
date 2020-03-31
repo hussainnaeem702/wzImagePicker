@@ -57,7 +57,21 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
                 {
                     if let wzAlbums = controller as? WZAlbumsViewController
                     {
-                        wzAlbums.delegate   = self
+                        wzAlbums.delegate                       = self
+                        wzAlbums.backgroundColor                = backgroundColor
+                        wzAlbums.topSectionColor                = topSectionColor
+                        wzAlbums.highLightedIndicatorColor      = highLightedIndicatorColor
+                        wzAlbums.topButtonsTextColor            = topButtonsTextColor
+                        wzAlbums.albumsCellBackgoundColor       = albumsCellBackgoundColor
+                        wzAlbums.albumsImageBorderColor         = albumsImageBorderColor
+                        wzAlbums.albumsTextColor                = albumsTextColor
+                        wzAlbums.selectedImageColor             = selectedImageColor
+                        wzAlbums.topButtonsSepratorviewBGColor  = topButtonsSepratorviewBGColor
+                        wzAlbums.imagesBorderWidth              = imagesBorderWidth
+                        wzAlbums.albumsBorderCorners            = albumsBorderCorners
+                        wzAlbums.imagesCorners                  = imagesCorners
+                        wzAlbums.selectedType                   = selectedType
+                        wzAlbums.selectionType                  = selectionType
                     }
                 }
             }
