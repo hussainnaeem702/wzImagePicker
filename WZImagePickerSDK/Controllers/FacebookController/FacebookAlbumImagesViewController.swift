@@ -259,7 +259,7 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
         activityIndicator.startAnimating()
         if webUrl == nil
         {
-            let strAlbumid = "/\(facebookAlbums.album_id)/videos"//photos"
+            let strAlbumid = "/\(facebookAlbums.album_id)/photos"
             let imageReq = GraphRequest.init(graphPath: strAlbumid, httpMethod: .get)
             imageReq.start { (conn, result, error) in
                 
