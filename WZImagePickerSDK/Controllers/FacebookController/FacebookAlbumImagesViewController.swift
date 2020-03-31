@@ -303,7 +303,7 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
                     
                 case .failure(let error):
                     
-                    //print("error accoured \(error.localizedDescription)")
+                    print("error accoured \(error.localizedDescription)")
                 }
             }
         }
