@@ -346,7 +346,7 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
     @IBAction func cancelBUttonTapped(_ sender: Any)
     {
         var mediaURL = [URL]()
-        for i in selectedMediaType
+        for i in selectedImagesIndex
         {
             let imagesArray     = facebookAlbumsData.imagesData[i].imagesData.images
             let imageUrl        = imagesArray[imagesArray.count - 2].source
