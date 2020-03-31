@@ -263,7 +263,7 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
             let imageReq = GraphRequest.init(graphPath: strAlbumid, httpMethod: .get)
             imageReq.start { (conn, result, error) in
                 
-                activityIndicator.stopAnimating()
+                self.activityIndicator.stopAnimating()
                 if (error == nil)
                 {
                     //print(result ?? "")
@@ -305,7 +305,7 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
                     
                 case .failure(let error):
                     
-                    activityIndicator.stopAnimating()
+                    self.activityIndicator.stopAnimating()
                     print("error accoured \(error.localizedDescription)")
                 }
             }
