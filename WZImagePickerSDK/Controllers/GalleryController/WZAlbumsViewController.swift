@@ -25,21 +25,21 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
     var delegate                        : WzSelectedPictureDelegate?
     var selectedImagesIndex             = [Int]()
     
-    /// declarations for customisation of UI
-    var backgroundColor                 : UIColor?              = nil
-    var topSectionColor                 : UIColor?              = nil
-    var highLightedIndicatorColor       : UIColor?              = nil
-    var topButtonsTextColor             : UIColor?              = nil
-    var albumsCellBackgoundColor        : UIColor?              = nil
-    var albumsImageBorderColor          : UIColor?              = nil
-    var albumsTextColor                 : UIColor?              = nil
-    var selectedImageColor              : UIColor?              = nil
-    var topButtonsSepratorviewBGColor   : UIColor?              = nil
-    var imagesBorderWidth               : CGFloat?              = nil
-    var albumsBorderCorners             : CGFloat?              = nil
-    var imagesCorners                   : CGFloat?              = nil
-    var selectedType                    : SelectedMediaType?    = nil
-    var selectionType                   : SelectionType?        = SelectionType.multipleSelection
+//    /// declarations for customisation of UI
+//    var backgroundColor                 : UIColor?              = nil
+//    var topSectionColor                 : UIColor?              = nil
+//    var highLightedIndicatorColor       : UIColor?              = nil
+//    var topButtonsTextColor             : UIColor?              = nil
+//    var albumsCellBackgoundColor        : UIColor?              = nil
+//    var albumsImageBorderColor          : UIColor?              = nil
+//    var albumsTextColor                 : UIColor?              = nil
+//    var selectedImageColor              : UIColor?              = nil
+//    var topButtonsSepratorviewBGColor   : UIColor?              = nil
+//    var imagesBorderWidth               : CGFloat?              = nil
+//    var albumsBorderCorners             : CGFloat?              = nil
+//    var imagesCorners                   : CGFloat?              = nil
+//    var selectedType                    : SelectedMediaType?    = nil
+//    var selectionType                   : SelectionType?        = SelectionType.multipleSelection
     
     /**************************************************************************************/
     // MARK: -  --------------------------- Outlets ------------------------------
@@ -83,9 +83,9 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
                 let fetchOptions                = PHFetchOptions()
                 fetchOptions.sortDescriptors    = [NSSortDescriptor(key: "creationDate", ascending: false)]
                 
-                if (self.selectedType != nil)
+                if (CommonVariables.selectedType != nil)
                 {
-                    fetchOptions.predicate = NSPredicate(format: "mediaType == \(self.selectedType?.rawValue ?? 1)")
+                    fetchOptions.predicate = NSPredicate(format: "mediaType == \(CommonVariables.selectedType?.rawValue ?? 1)")
                 }
                 else
                 {
@@ -113,18 +113,18 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             case .authorized:
                 let fetchOptions             = PHFetchOptions()
                 fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-                if (self.selectedType != nil)
+                if (CommonVariables.selectedType != nil)
                 {
-                    fetchOptions.predicate = NSPredicate(format: "mediaType == \(self.selectedType?.rawValue ?? 1)")
+                    fetchOptions.predicate = NSPredicate(format: "mediaType == \(CommonVariables.selectedType?.rawValue ?? 1)")
                 }
                 else
                 {
                     fetchOptions.predicate = NSPredicate(format: "mediaType = %d || mediaType = %d", PHAssetMediaType.image.rawValue, PHAssetMediaType.video.rawValue)
                 }
                 
-                if (self.selectedType != nil)
+                if (CommonVariables.selectedType != nil)
                 {
-                    if self.selectedType?.rawValue == 1
+                    if CommonVariables.selectedType?.rawValue == 1
                     {
                         self.allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
                     }
@@ -190,30 +190,30 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
         /// customise UI changes according to set
         /**************************************************************************************/
         
-        if (backgroundColor != nil)
+        if (CommonVariables.backgroundColor != nil)
         {
-            backgorundView.backgroundColor = backgroundColor
+            backgorundView.backgroundColor = CommonVariables.backgroundColor
         }
         
-        if (topSectionColor != nil)
+        if (CommonVariables.topSectionColor != nil)
         {
-            topSectionView.backgroundColor = topSectionColor
+            topSectionView.backgroundColor = CommonVariables.topSectionColor
         }
         
-        if (highLightedIndicatorColor != nil)
+        if (CommonVariables.highLightedIndicatorColor != nil)
         {
-            highLightedIndicatorView.backgroundColor = highLightedIndicatorColor
+            highLightedIndicatorView.backgroundColor = CommonVariables.highLightedIndicatorColor
         }
         
-        if (topButtonsTextColor != nil)
+        if (CommonVariables.topButtonsTextColor != nil)
         {
-            albumsButton.setTitleColor(topButtonsTextColor, for: .normal)
-            picturesButton.setTitleColor(topButtonsTextColor, for: .normal)
+            albumsButton.setTitleColor(CommonVariables.topButtonsTextColor, for: .normal)
+            picturesButton.setTitleColor(CommonVariables.topButtonsTextColor, for: .normal)
         }
         
-        if (topButtonsSepratorviewBGColor != nil)
+        if (CommonVariables.topButtonsSepratorviewBGColor != nil)
         {
-            topButtonsSepretorView.backgroundColor = topButtonsSepratorviewBGColor
+            topButtonsSepretorView.backgroundColor = CommonVariables.topButtonsSepratorviewBGColor
         }
     }
 
@@ -247,43 +247,43 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             let assest  = assestsCollection[indexPath.item]
             cell.setBorderWidth(1 / UIScreen.main.scale)
             
-            cell.setAssestInCollectionview(assest, indexPath, self.selectedType?.rawValue )
+            cell.setAssestInCollectionview(assest, indexPath, CommonVariables.selectedType?.rawValue )
             
-            if (albumsCellBackgoundColor != nil)
+            if (CommonVariables.albumsCellBackgoundColor != nil)
             {
-                cell.mainBackgroundView.backgroundColor = albumsCellBackgoundColor
+                cell.mainBackgroundView.backgroundColor = CommonVariables.albumsCellBackgoundColor
             }
             
-            if (albumsTextColor != nil)
+            if (CommonVariables.albumsTextColor != nil)
             {
-                cell.albumsTitle.textColor = albumsTextColor
-                cell.numberOfPhotos.textColor = albumsTextColor
+                cell.albumsTitle.textColor = CommonVariables.albumsTextColor
+                cell.numberOfPhotos.textColor = CommonVariables.albumsTextColor
             }
             
-            if (albumsBorderCorners != nil)
+            if (CommonVariables.albumsBorderCorners != nil)
             {
-                cell.mainBackgroundView.layer.cornerRadius   = albumsBorderCorners!
+                cell.mainBackgroundView.layer.cornerRadius   = CommonVariables.albumsBorderCorners!
                 
             }
             
             /// for images handling
-            if (albumsImageBorderColor != nil)
+            if (CommonVariables.albumsImageBorderColor != nil)
             {
                 cell.albumImageBackground.backgroundColor = UIColor.clear
-                cell.imageview2.layer.borderColor   = albumsImageBorderColor?.cgColor
+                cell.imageview2.layer.borderColor   = CommonVariables.albumsImageBorderColor?.cgColor
             }
             
-            if (imagesBorderWidth != nil)
+            if (CommonVariables.imagesBorderWidth != nil)
             {
-                cell.imageview2.layer.borderWidth   = imagesBorderWidth!
+                cell.imageview2.layer.borderWidth   = CommonVariables.imagesBorderWidth!
                 //cell.albumImageBackground.layer.borderWidth = imagesBorderWidth!
             }
             
-            if (imagesCorners != nil)
+            if (CommonVariables.imagesCorners != nil)
             {
                 //cell.albumImageBackground.layer.cornerRadius = albumsBorderCorners!
                 //cell.albumImageBackground.layer.borderWidth = albumsBorderCorners
-                cell.imageview2.layer.cornerRadius   = imagesCorners!
+                cell.imageview2.layer.cornerRadius   = CommonVariables.imagesCorners!
             }
             
             return cell
@@ -299,9 +299,9 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             if selectedImagesIndex.contains(indexPath.item)
             {
                 var selectColor = UIColor()
-                if selectedImageColor != nil
+                if CommonVariables.selectedImageColor != nil
                 {
-                    selectColor = selectedImageColor!
+                    selectColor = CommonVariables.selectedImageColor!
                 }
                 else
                 {
@@ -314,9 +314,9 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
                 cell.selectedIndicator.backgroundColor = UIColor.white
             }
             
-            if (imagesCorners != nil)
+            if (CommonVariables.imagesCorners != nil)
             {
-                cell.imageView.layer.cornerRadius   = imagesCorners!
+                cell.imageView.layer.cornerRadius   = CommonVariables.imagesCorners!
             }
             
             cell.populateCellDataWithAssets(assest)
@@ -344,18 +344,18 @@ class WZAlbumsViewController: UIViewController, UICollectionViewDelegate, UIColl
             
             assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
             assestVc.phassetCollection  = assestsCollection[indexPath.item]
-            assestVc.backgroundColor    = backgroundColor
-            assestVc.imagesCorners      = imagesCorners
-            assestVc.selectedImageColor = selectedImageColor
-            assestVc.selectedMediaType  = self.selectedType?.rawValue
+//            assestVc.backgroundColor    = backgroundColor
+//            assestVc.imagesCorners      = imagesCorners
+//            assestVc.selectedImageColor = selectedImageColor
+//            assestVc.selectedMediaType  = CommonVariables.selectedType?.rawValue
             assestVc.delegate           = self
-            assestVc.selectionType      = selectionType
+//            assestVc.selectionType      = selectionType
             
             self.present(assestVc, animated: true, completion: nil)
         }
         else
         {
-            if selectionType == SelectionType.singleSelection
+            if CommonVariables.selectionType == SelectionType.singleSelection
             {
                 selectedImagesIndex = [indexPath.item]
             }

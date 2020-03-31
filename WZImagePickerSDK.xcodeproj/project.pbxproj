@@ -26,6 +26,7 @@
 		C287AB0F2431CD47009BF573 /* FacebookMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */; };
 		C287AB112431CD59009BF573 /* InstagramMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB102431CD59009BF573 /* InstagramMediaData.swift */; };
 		C2C5DD4B24330D2D00C59515 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C25143AE23FBCC9300E6B6D8 /* Info.plist */; };
+		C2C5DD4D2433563700C59515 /* CommonVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5DD4C2433563700C59515 /* CommonVariables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		C287AB0B2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAlbumImagesViewController.swift; sourceTree = "<group>"; };
 		C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookMediaData.swift; sourceTree = "<group>"; };
 		C287AB102431CD59009BF573 /* InstagramMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramMediaData.swift; sourceTree = "<group>"; };
+		C2C5DD4C2433563700C59515 /* CommonVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonVariables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				C2440ECE2406947B00F39604 /* CustomMethods.swift */,
 				C2440ECF2406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift */,
+				C2C5DD4C2433563700C59515 /* CommonVariables.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			files = (
 				C287AB0A2431CBD5009BF573 /* FacebookAlbumsViewController.swift in Sources */,
 				C2440ED92406947B00F39604 /* TopAlignCollectionviewFlowLayout.swift in Sources */,
+				C2C5DD4D2433563700C59515 /* CommonVariables.swift in Sources */,
 				C287AB0F2431CD47009BF573 /* FacebookMediaData.swift in Sources */,
 				C251CE9E242DCDB4000DF13B /* MainTabBarViewController.swift in Sources */,
 				C2440EDE2406947B00F39604 /* WZAssestViewController.swift in Sources */,

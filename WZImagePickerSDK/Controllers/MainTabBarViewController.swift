@@ -22,23 +22,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     
     var delegateCall       : WzPickerDelegateTabBar?
     
-    /// declarations for customisation of UI
-    var backgroundColor                 : UIColor?              = nil
-    var topSectionColor                 : UIColor?              = nil
-    var highLightedIndicatorColor       : UIColor?              = nil
-    var topButtonsTextColor             : UIColor?              = nil
-    var albumsCellBackgoundColor        : UIColor?              = nil
-    var albumsImageBorderColor          : UIColor?              = nil
-    var albumsTextColor                 : UIColor?              = nil
-    var selectedImageColor              : UIColor?              = nil
-    var topButtonsSepratorviewBGColor   : UIColor?              = nil
-    var activityIndicatorBgColor        : UIColor?              = nil
-    var imagesBorderWidth               : CGFloat?              = nil
-    var albumsBorderCorners             : CGFloat?              = nil
-    var imagesCorners                   : CGFloat?              = nil
-    var selectedType                    : SelectedMediaType?    = nil
-    var selectionType                   : SelectionType?        = SelectionType.multipleSelection
-    
     /**************************************************************************************/
     // MARK: -  ------------------------ Controllers LifeCycle -----------------------------
     /**************************************************************************************/
@@ -58,20 +41,20 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
                     if let wzAlbums = controller as? WZAlbumsViewController
                     {
                         wzAlbums.delegate                       = self
-                        wzAlbums.backgroundColor                = backgroundColor
-                        wzAlbums.topSectionColor                = topSectionColor
-                        wzAlbums.highLightedIndicatorColor      = highLightedIndicatorColor
-                        wzAlbums.topButtonsTextColor            = topButtonsTextColor
-                        wzAlbums.albumsCellBackgoundColor       = albumsCellBackgoundColor
-                        wzAlbums.albumsImageBorderColor         = albumsImageBorderColor
-                        wzAlbums.albumsTextColor                = albumsTextColor
-                        wzAlbums.selectedImageColor             = selectedImageColor
-                        wzAlbums.topButtonsSepratorviewBGColor  = topButtonsSepratorviewBGColor
-                        wzAlbums.imagesBorderWidth              = imagesBorderWidth
-                        wzAlbums.albumsBorderCorners            = albumsBorderCorners
-                        wzAlbums.imagesCorners                  = imagesCorners
-                        wzAlbums.selectedType                   = selectedType
-                        wzAlbums.selectionType                  = selectionType
+//                        wzAlbums.backgroundColor                = CommonVariables.backgroundColor
+//                        wzAlbums.topSectionColor                = CommonVariables.topSectionColor
+//                        wzAlbums.highLightedIndicatorColor      = CommonVariables.highLightedIndicatorColor
+//                        wzAlbums.topButtonsTextColor            = CommonVariables.topButtonsTextColor
+//                        wzAlbums.albumsCellBackgoundColor       = CommonVariables.albumsCellBackgoundColor
+//                        wzAlbums.albumsImageBorderColor         = CommonVariables.albumsImageBorderColor
+//                        wzAlbums.albumsTextColor                = CommonVariables.albumsTextColor
+//                        wzAlbums.selectedImageColor             = CommonVariables.selectedImageColor
+//                        wzAlbums.topButtonsSepratorviewBGColor  = CommonVariables.topButtonsSepratorviewBGColor
+//                        wzAlbums.imagesBorderWidth              = CommonVariables.imagesBorderWidth
+//                        wzAlbums.albumsBorderCorners            = CommonVariables.albumsBorderCorners
+//                        wzAlbums.imagesCorners                  = CommonVariables.imagesCorners
+//                        wzAlbums.selectedType                   = CommonVariables.selectedType
+//                        wzAlbums.selectionType                  = CommonVariables.selectionType
                     }
                 }
             }
@@ -90,20 +73,20 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
             if let wzAlbums = viewController as? WZAlbumsViewController
             {
                 wzAlbums.delegate                       = self
-                wzAlbums.backgroundColor                = backgroundColor
-                wzAlbums.topSectionColor                = topSectionColor
-                wzAlbums.highLightedIndicatorColor      = highLightedIndicatorColor
-                wzAlbums.topButtonsTextColor            = topButtonsTextColor
-                wzAlbums.albumsCellBackgoundColor       = albumsCellBackgoundColor
-                wzAlbums.albumsImageBorderColor         = albumsImageBorderColor
-                wzAlbums.albumsTextColor                = albumsTextColor
-                wzAlbums.selectedImageColor             = selectedImageColor
-                wzAlbums.topButtonsSepratorviewBGColor  = topButtonsSepratorviewBGColor
-                wzAlbums.imagesBorderWidth              = imagesBorderWidth
-                wzAlbums.albumsBorderCorners            = albumsBorderCorners
-                wzAlbums.imagesCorners                  = imagesCorners
-                wzAlbums.selectedType                   = selectedType
-                wzAlbums.selectionType                  = selectionType
+//                wzAlbums.backgroundColor                = CommonVariables.backgroundColor
+//                wzAlbums.topSectionColor                = CommonVariables.topSectionColor
+//                wzAlbums.highLightedIndicatorColor      = CommonVariables.highLightedIndicatorColor
+//                wzAlbums.topButtonsTextColor            = CommonVariables.topButtonsTextColor
+//                wzAlbums.albumsCellBackgoundColor       = CommonVariables.albumsCellBackgoundColor
+//                wzAlbums.albumsImageBorderColor         = CommonVariables.albumsImageBorderColor
+//                wzAlbums.albumsTextColor                = CommonVariables.albumsTextColor
+//                wzAlbums.selectedImageColor             = CommonVariables.selectedImageColor
+//                wzAlbums.topButtonsSepratorviewBGColor  = CommonVariables.topButtonsSepratorviewBGColor
+//                wzAlbums.imagesBorderWidth              = CommonVariables.imagesBorderWidth
+//                wzAlbums.albumsBorderCorners            = CommonVariables.albumsBorderCorners
+//                wzAlbums.imagesCorners                  = CommonVariables.imagesCorners
+//                wzAlbums.selectedType                   = CommonVariables.selectedType
+//                wzAlbums.selectionType                  = CommonVariables.selectionType
             }
         }
         else if viewController.isKind(of: WZCameraViewController.self)
@@ -118,21 +101,21 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
             if let wzFacebook = viewController as? FacebookAlbumsViewController
             {
                 wzFacebook.delegate                       = self
-                wzFacebook.backgroundColor                = backgroundColor
-                wzFacebook.activityIndicatorViewColor     = activityIndicatorBgColor
+//                wzFacebook.backgroundColor                = CommonVariables.backgroundColor
+//                wzFacebook.activityIndicatorViewColor     = CommonVariables.activityIndicatorBgColor
 //                wzFacebook.topSectionColor                = topSectionColor
 //                wzFacebook.highLightedIndicatorColor      = highLightedIndicatorColor
 //                wzFacebook.topButtonsTextColor            = topButtonsTextColor
-                wzFacebook.albumsCellBackgoundColor       = albumsCellBackgoundColor
-                wzFacebook.albumsImageBorderColor         = albumsImageBorderColor
-                wzFacebook.albumsTextColor                = albumsTextColor
-                wzFacebook.selectedImageColor             = selectedImageColor
+//                wzFacebook.albumsCellBackgoundColor       = CommonVariables.albumsCellBackgoundColor
+//                wzFacebook.albumsImageBorderColor         = CommonVariables.albumsImageBorderColor
+//                wzFacebook.albumsTextColor                = CommonVariables.albumsTextColor
+//                wzFacebook.selectedImageColor             = CommonVariables.selectedImageColor
 //                wzFacebook.topButtonsSepratorviewBGColor  = topButtonsSepratorviewBGColor
-                wzFacebook.imagesBorderWidth              = imagesBorderWidth
-                wzFacebook.albumsBorderCorners            = albumsBorderCorners
-                wzFacebook.imagesCorners                  = imagesCorners
-                wzFacebook.selectedType                   = selectedType
-                wzFacebook.selectionType                  = selectionType
+//                wzFacebook.imagesBorderWidth              = CommonVariables.imagesBorderWidth
+//                wzFacebook.albumsBorderCorners            = CommonVariables.albumsBorderCorners
+//                wzFacebook.imagesCorners                  = CommonVariables.imagesCorners
+//                wzFacebook.selectedType                   = CommonVariables.selectedType
+//                wzFacebook.selectionType                  = CommonVariables.selectionType
             }
         }
         

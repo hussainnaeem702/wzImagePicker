@@ -48,84 +48,86 @@ public class WZPickerController: NSObject, WzPickerDelegateTabBar {
         let storyboard = UIStoryboard(name: "WzPicker", bundle: podBundle)
         //let wzAlbums   = storyboard.instantiateViewController(withIdentifier: "WZAlbumsViewController") as! WZAlbumsViewController
         if let wzTabBar = storyboard.instantiateViewController(withIdentifier: "MainTabBarViewController") as? MainTabBarViewController {
+            
+            
+            CommonVariables.backgroundColor                 = backgroundColor
+            CommonVariables.topSectionColor                 = topSelectionButtonColor
+            CommonVariables.highLightedIndicatorColor       = topHighlightedIndicatorColor
+            CommonVariables.albumsCellBackgoundColor        = albumsCellBackgoundColor
+            CommonVariables.albumsImageBorderColor          = albumsImageBorderColors
+            CommonVariables.albumsBorderCorners             = albumsBorderCorners
+            CommonVariables.imagesCorners                   = imagesCorners
+            CommonVariables.imagesBorderWidth               = imagesBorderWidth
+            CommonVariables.albumsTextColor                 = albumsTextColor
+            CommonVariables.selectedImageColor              = selectedImageColor
+            CommonVariables.topButtonsTextColor             = topButtonTextColor
+            CommonVariables.selectedType                    = selectedMediaType
+            CommonVariables.selectionType                   = selectionType
+            CommonVariables.topButtonsSepratorviewBGColor   = topButtonSepratorViewColor
+            CommonVariables.activityIndicatorBgColor        = activityIndicatorBgColor
+            wzTabBar.delegateCall                           = self
+            
+            
+            fromController.present(wzTabBar, animated: true, completion: nil)
             if (backgroundColor != nil)
             {
-                wzTabBar.backgroundColor    = backgroundColor
             }
             
             if (topSelectionButtonColor != nil)
             {
-                wzTabBar.topSectionColor    = topSelectionButtonColor
             }
             
             if (topHighlightedIndicatorColor != nil)
             {
-                wzTabBar.highLightedIndicatorColor    = topHighlightedIndicatorColor
             }
             
             if (albumsCellBackgoundColor != nil)
             {
-                wzTabBar.albumsCellBackgoundColor    = albumsCellBackgoundColor
             }
             
             if (albumsImageBorderColors != nil)
             {
-                wzTabBar.albumsImageBorderColor    = albumsImageBorderColors
             }
             
             if (albumsBorderCorners != nil)
             {
-                wzTabBar.albumsBorderCorners    = albumsBorderCorners
             }
             
             if (imagesCorners != nil)
             {
-                wzTabBar.imagesCorners    = imagesCorners
             }
             
             if (imagesBorderWidth != nil)
             {
-                wzTabBar.imagesBorderWidth    = imagesBorderWidth
             }
             
             if (albumsTextColor != nil)
             {
-                wzTabBar.albumsTextColor    = albumsTextColor
             }
             
             if (selectedImageColor != nil)
             {
-                wzTabBar.selectedImageColor    = selectedImageColor
             }
             
             if (topButtonTextColor != nil)
             {
-                wzTabBar.topButtonsTextColor     = topButtonTextColor
             }
             
             if (selectedMediaType != nil)
             {
-                wzTabBar.selectedType       = selectedMediaType
             }
             
             if (selectionType != nil)
             {
-                wzTabBar.selectionType      = selectionType
             }
             
             if (topButtonSepratorViewColor != nil)
             {
-                wzTabBar.topButtonsSepratorviewBGColor    = topButtonSepratorViewColor
             }
             
             if (activityIndicatorBgColor != nil)
             {
-                wzTabBar.activityIndicatorBgColor   = activityIndicatorBgColor
             }
-            wzTabBar.delegateCall = self
-            
-            
-            fromController.present(wzTabBar, animated: true, completion: nil)
         }
     }
     

@@ -30,12 +30,13 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
     var selectedImagesIndex             = [Int]()//[Int : Bool]()
     var delegate                        : WzSelectedMediaFromFacebookDelegate?
     
-    var backgroundColor             : UIColor?                = nil
-    var actvityIndicatorColor       : UIColor?                = nil
-    var imagesCorners               : CGFloat?                = nil
-    var selectedImageColor          : UIColor?                = nil
-    var selectedMediaType           : Int?                    = nil
-    var selectionType               : SelectionType?
+//    var backgroundColor             : UIColor?                = nil
+//    var actvityIndicatorColor       : UIColor?                = nil
+//    var imagesCorners               : CGFloat?                = nil
+//    var selectedImageColor          : UIColor?                = nil
+//    var selectedMediaType           : Int?                    = nil
+//    var selectionType               : SelectionType?
+    
     /**************************************************************************************/
     // MARK: -  ------------------------ Outlets  -----------------------------
     /**************************************************************************************/
@@ -56,14 +57,14 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
         
         /// customised UI
                
-        if backgroundColor != nil
+        if CommonVariables.backgroundColor != nil
         {
-            backgroundViewColor.backgroundColor = backgroundColor
+            backgroundViewColor.backgroundColor = CommonVariables.backgroundColor
         }
         
-        if actvityIndicatorColor != nil
+        if CommonVariables.activityIndicatorBgColor != nil
         {
-            activityIndicator.backgroundColor   = actvityIndicatorColor
+            activityIndicator.backgroundColor   = CommonVariables.activityIndicatorBgColor
         }
     }
     
@@ -100,9 +101,9 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
         if selectedImagesIndex.contains(indexPath.item)
         {
             var selectColor = UIColor()
-            if selectedImageColor != nil
+            if CommonVariables.selectedImageColor != nil
             {
-                selectColor = selectedImageColor!
+                selectColor = CommonVariables.selectedImageColor!
             }
             else
             {
@@ -115,9 +116,9 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
             cell.selectedIndicator.backgroundColor = UIColor.white
         }
         
-        if (imagesCorners != nil)
+        if (CommonVariables.imagesCorners != nil)
         {
-            cell.imageView.layer.cornerRadius   = imagesCorners!
+            cell.imageView.layer.cornerRadius   = CommonVariables.imagesCorners!
         }
         
         
@@ -141,13 +142,13 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
 //            selectedIndex[indexPath.item] = true
 //        }
         
-        if selectionType == SelectionType.singleSelection
+        if CommonVariables.selectionType == SelectionType.singleSelection
         {
             selectedImagesIndex = [indexPath.item]
         }
         else
         {
-            if selectionType == SelectionType.singleSelection
+            if CommonVariables.selectionType == SelectionType.singleSelection
             {
                 selectedImagesIndex = [indexPath.item]
             }

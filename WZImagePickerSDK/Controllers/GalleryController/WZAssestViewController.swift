@@ -27,11 +27,11 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
     var delegate            : WzSelectedSingleAlbumsPictureDelegate?
     var selectedImagesIndex = [Int]()
     
-    var backgroundColor     : UIColor?                = nil
-    var imagesCorners       : CGFloat?                = nil
-    var selectedImageColor  : UIColor?                = nil
-    var selectedMediaType   : Int?                    = nil
-    var selectionType                                 : SelectionType?
+//    var backgroundColor     : UIColor?                = nil
+//    var imagesCorners       : CGFloat?                = nil
+//    var selectedImageColor  : UIColor?                = nil
+//    var selectedMediaType   : Int?                    = nil
+//    var selectionType                                 : SelectionType?
     
 //    var totalCountReq                                 = 0
 //    var currentPageCounter                            = 1
@@ -57,9 +57,9 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
 
         let fetchOptions                = PHFetchOptions()
         //fetchOptions.predicate          = NSPredicate(format: "mediaType == \(self.selectedMediaType)") // NSPredicate(format: "title = %@", albumTitle) //
-        if (selectedMediaType != nil)
+        if (CommonVariables.selectedType?.rawValue != nil)
         {
-            fetchOptions.predicate = NSPredicate(format: "mediaType == \(selectedMediaType ?? 1)")
+            fetchOptions.predicate = NSPredicate(format: "mediaType == \(CommonVariables.selectedType?.rawValue ?? 1)")
         }
         else
         {
@@ -71,9 +71,9 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //print(resultCollection)
         
-        if (backgroundColor != nil)
+        if (CommonVariables.backgroundColor != nil)
         {
-            pictureBackgoundView.backgroundColor = backgroundColor
+            pictureBackgoundView.backgroundColor = CommonVariables.backgroundColor
         }
         
 //        collectionviewForAllImages.register(UINib(nibName: "WZAssestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WZAssestCollectionViewCell")
@@ -98,9 +98,9 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
         if selectedImagesIndex.contains(indexPath.item)
         {
             var selectColor = UIColor()
-            if selectedImageColor != nil
+            if CommonVariables.selectedImageColor != nil
             {
-                selectColor = selectedImageColor!
+                selectColor = CommonVariables.selectedImageColor!
             }
             else
             {
@@ -113,9 +113,9 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
             cell.selectedIndicator.backgroundColor = UIColor.white
         }
         
-        if (imagesCorners != nil)
+        if (CommonVariables.imagesCorners != nil)
         {
-            cell.imageView.layer.cornerRadius   = imagesCorners!
+            cell.imageView.layer.cornerRadius   = CommonVariables.imagesCorners!
         }
         
         //cell.populateCellsData(assestImage ?? nil)
@@ -139,13 +139,13 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
     /**************************************************************************************/
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if selectionType == SelectionType.singleSelection
+        if CommonVariables.selectionType == SelectionType.singleSelection
         {
             selectedImagesIndex = [indexPath.item]
         }
         else
         {
-            if selectionType == SelectionType.singleSelection
+            if CommonVariables.selectionType == SelectionType.singleSelection
             {
                 selectedImagesIndex = [indexPath.item]
             }

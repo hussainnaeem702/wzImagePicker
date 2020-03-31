@@ -27,22 +27,22 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
     var loopCounterForGetImagesAndData  = 0
     var delegate                        : WzPassMediaFromFacebookDelegate?
     
-    /// declarations for customisation of UI
-    var backgroundColor                 : UIColor?              = nil
-    var activityIndicatorViewColor      : UIColor?              = nil
-//    var topSectionColor                 : UIColor?              = nil
-//    var highLightedIndicatorColor       : UIColor?              = nil
-//    var topButtonsTextColor             : UIColor?              = nil
-    var albumsCellBackgoundColor        : UIColor?              = nil
-    var albumsImageBorderColor          : UIColor?              = nil
-    var albumsTextColor                 : UIColor?              = nil
-    var selectedImageColor              : UIColor?              = nil
-    //var topButtonsSepratorviewBGColor   : UIColor?              = nil
-    var imagesBorderWidth               : CGFloat?              = nil
-    var albumsBorderCorners             : CGFloat?              = nil
-    var imagesCorners                   : CGFloat?              = nil
-    var selectedType                    : SelectedMediaType?    = nil
-    var selectionType                   : SelectionType?        = SelectionType.multipleSelection
+//    /// declarations for customisation of UI
+//    var backgroundColor                 : UIColor?              = nil
+//    var activityIndicatorViewColor      : UIColor?              = nil
+////    var topSectionColor                 : UIColor?              = nil
+////    var highLightedIndicatorColor       : UIColor?              = nil
+////    var topButtonsTextColor             : UIColor?              = nil
+//    var albumsCellBackgoundColor        : UIColor?              = nil
+//    var albumsImageBorderColor          : UIColor?              = nil
+//    var albumsTextColor                 : UIColor?              = nil
+//    var selectedImageColor              : UIColor?              = nil
+//    //var topButtonsSepratorviewBGColor   : UIColor?              = nil
+//    var imagesBorderWidth               : CGFloat?              = nil
+//    var albumsBorderCorners             : CGFloat?              = nil
+//    var imagesCorners                   : CGFloat?              = nil
+//    var selectedType                    : SelectedMediaType?    = nil
+//    var selectionType                   : SelectionType?        = SelectionType.multipleSelection
     
     /**************************************************************************************/
     // MARK: -  ------------------------ Outlets  -----------------------------
@@ -79,13 +79,13 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
         
         /// customised UI
         
-        if backgroundColor != nil
+        if CommonVariables.backgroundColor != nil
         {
-            backgroundViewColor.backgroundColor = backgroundColor
+            backgroundViewColor.backgroundColor = CommonVariables.backgroundColor
         }
-        if activityIndicatorViewColor != nil
+        if CommonVariables.activityIndicatorBgColor != nil
         {
-            activityIndicator.backgroundColor   = activityIndicatorViewColor
+            activityIndicator.backgroundColor   = CommonVariables.activityIndicatorBgColor
         }
     }
     /**************************************************************************************/
@@ -108,41 +108,41 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
         
         cell.populateCellsDataForFacebookSDk(fbAlbum)
         
-        if (albumsCellBackgoundColor != nil)
+        if (CommonVariables.albumsCellBackgoundColor != nil)
         {
-            cell.mainBackgroundView.backgroundColor = albumsCellBackgoundColor
+            cell.mainBackgroundView.backgroundColor = CommonVariables.albumsCellBackgoundColor
         }
         
-        if (albumsTextColor != nil)
+        if (CommonVariables.albumsTextColor != nil)
         {
-            cell.albumsTitle.textColor = albumsTextColor
-            cell.numberOfPhotos.textColor = albumsTextColor
+            cell.albumsTitle.textColor = CommonVariables.albumsTextColor
+            cell.numberOfPhotos.textColor = CommonVariables.albumsTextColor
         }
         
-        if (albumsBorderCorners != nil)
+        if (CommonVariables.albumsBorderCorners != nil)
         {
-            cell.mainBackgroundView.layer.cornerRadius   = albumsBorderCorners!
+            cell.mainBackgroundView.layer.cornerRadius   = CommonVariables.albumsBorderCorners!
             
         }
         
         /// for images handling
-        if (albumsImageBorderColor != nil)
+        if (CommonVariables.albumsImageBorderColor != nil)
         {
             cell.albumImageBackground.backgroundColor = UIColor.clear
-            cell.imageview2.layer.borderColor   = albumsImageBorderColor?.cgColor
+            cell.imageview2.layer.borderColor   = CommonVariables.albumsImageBorderColor?.cgColor
         }
         
-        if (imagesBorderWidth != nil)
+        if (CommonVariables.imagesBorderWidth != nil)
         {
-            cell.imageview2.layer.borderWidth   = imagesBorderWidth!
+            cell.imageview2.layer.borderWidth   = CommonVariables.imagesBorderWidth!
             //cell.albumImageBackground.layer.borderWidth = imagesBorderWidth!
         }
         
-        if (imagesCorners != nil)
+        if (CommonVariables.imagesCorners != nil)
         {
             //cell.albumImageBackground.layer.cornerRadius = albumsBorderCorners!
             //cell.albumImageBackground.layer.borderWidth = albumsBorderCorners
-            cell.imageview2.layer.cornerRadius   = imagesCorners!
+            cell.imageview2.layer.cornerRadius   = CommonVariables.imagesCorners!
         }
         return cell
     }
@@ -164,13 +164,13 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
         assestVc.facebookAlbums         = album
 //        assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
 //        assestVc.phassetCollection  = assestsCollection[indexPath.item]
-        assestVc.backgroundColor        = backgroundColor
-        assestVc.actvityIndicatorColor  = activityIndicatorViewColor
-        assestVc.imagesCorners          = imagesCorners
-        assestVc.selectedImageColor     = selectedImageColor
-        assestVc.selectedMediaType      = self.selectedType?.rawValue
+//        assestVc.backgroundColor        = backgroundColor
+//        assestVc.actvityIndicatorColor  = activityIndicatorViewColor
+//        assestVc.imagesCorners          = imagesCorners
+//        assestVc.selectedImageColor     = selectedImageColor
+//        assestVc.selectedMediaType      = self.selectedType?.rawValue
         assestVc.delegate               = self
-        assestVc.selectionType          = selectionType
+//        assestVc.selectionType          = selectionType
         self.present(assestVc, animated: true, completion: nil)
     }
 
