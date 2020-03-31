@@ -136,7 +136,7 @@
                                             <outlet property="delegate" destination="kl6-DV-5NG" id="dAl-hC-FO5"/>
                                         </connections>
                                     </collectionView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-DZ-ynZ">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-DZ-ynZ">
                                         <rect key="frame" x="169" y="290.5" width="37" height="37"/>
                                     </activityIndicatorView>
                                 </subviews>

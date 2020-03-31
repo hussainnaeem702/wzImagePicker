@@ -30,9 +30,9 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
 //    /// declarations for customisation of UI
 //    var backgroundColor                 : UIColor?              = nil
 //    var activityIndicatorViewColor      : UIColor?              = nil
-////    var topSectionColor                 : UIColor?              = nil
-////    var highLightedIndicatorColor       : UIColor?              = nil
-////    var topButtonsTextColor             : UIColor?              = nil
+//    var topSectionColor                 : UIColor?              = nil
+//    var highLightedIndicatorColor       : UIColor?              = nil
+//    var topButtonsTextColor             : UIColor?              = nil
 //    var albumsCellBackgoundColor        : UIColor?              = nil
 //    var albumsImageBorderColor          : UIColor?              = nil
 //    var albumsTextColor                 : UIColor?              = nil
@@ -245,9 +245,11 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
     
     func didFinishMediaPickingFromFacebook(_ mediaURL: [URL]) {
         delegate?.didFinishSelectionMediaFromFacebook(mediaURL)
+        dismiss(animated: true, completion: nil)
     }
     func didCancelPickingMediaFromFacebook() {
         delegate?.didCancelFacebook()
+        dismiss(animated: true, completion: nil)
     }
     
 }
