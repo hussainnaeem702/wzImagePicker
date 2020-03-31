@@ -157,16 +157,17 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
     {
         let album      = facebookAlbums[indexPath.item]
         
-        let assestVc                = self.storyboard?.instantiateViewController(withIdentifier: "FacebookAlbumImagesViewController") as! FacebookAlbumImagesViewController
-        assestVc.facebookAlbums     = album
+        let assestVc                    = self.storyboard?.instantiateViewController(withIdentifier: "FacebookAlbumImagesViewController") as! FacebookAlbumImagesViewController
+        assestVc.facebookAlbums         = album
 //        assestVc.albumTitle         = assestsCollection[indexPath.item].localizedTitle ?? ""
 //        assestVc.phassetCollection  = assestsCollection[indexPath.item]
-        assestVc.backgroundColor    = backgroundColor
-        assestVc.imagesCorners      = imagesCorners
-        assestVc.selectedImageColor = selectedImageColor
-        assestVc.selectedMediaType  = self.selectedType?.rawValue
-        assestVc.delegate           = self
-        assestVc.selectionType      = selectionType
+        assestVc.backgroundColor        = backgroundColor
+        assestVc.actvityIndicatorColor  = activityIndicatorViewColor
+        assestVc.imagesCorners          = imagesCorners
+        assestVc.selectedImageColor     = selectedImageColor
+        assestVc.selectedMediaType      = self.selectedType?.rawValue
+        assestVc.delegate               = self
+        assestVc.selectionType          = selectionType
         self.present(assestVc, animated: true, completion: nil)
     }
 

@@ -61,9 +61,9 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
             backgroundViewColor.backgroundColor = backgroundColor
         }
         
-        if activityIndicatorViewColor != nil
+        if actvityIndicatorColor != nil
         {
-            activityIndicator.backgroundColor   = activityIndicatorViewColor
+            activityIndicator.backgroundColor   = actvityIndicatorColor
         }
     }
     
@@ -88,14 +88,14 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
         let placeHoderImage = CustomMethods.placeholderImageWithSize(cell.imageView.frame.size)
         cell.imageView.sd_setImage(with: URL(string: imageUrl), placeholderImage: placeHoderImage)
         
-        if (selectedIndex[indexPath.item] == true)
-        {
-            cell.selectedIndicator.backgroundColor = .blue
-        }
-        else
-        {
-            cell.selectedIndicator.backgroundColor = UIColor.white
-        }
+//        if (selectedIndex[indexPath.item] == true)
+//        {
+//            cell.selectedIndicator.backgroundColor = .blue
+//        }
+//        else
+//        {
+//            cell.selectedIndicator.backgroundColor = UIColor.white
+//        }
         
         if selectedImagesIndex.contains(indexPath.item)
         {
@@ -132,14 +132,14 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
     /**************************************************************************************/
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if selectedIndex[indexPath.item] == true
-        {
-            selectedIndex[indexPath.item] = false
-        }
-        else
-        {
-            selectedIndex[indexPath.item] = true
-        }
+//        if selectedIndex[indexPath.item] == true
+//        {
+//            selectedIndex[indexPath.item] = false
+//        }
+//        else
+//        {
+//            selectedIndex[indexPath.item] = true
+//        }
         
         if selectionType == SelectionType.singleSelection
         {
@@ -228,17 +228,17 @@ class FacebookAlbumImagesViewController: UIViewController, UICollectionViewDeleg
         else
         {
             /// code for selected items
-            for i in 0..<self.facebookAlbumsData.imagesData.count
-            {
-                if let val = self.selectedIndex[i]
-                {
-                    self.selectedIndex[i] = val
-                }
-                else
-                {
-                    self.selectedIndex[i] = false
-                }
-            }
+//            for i in 0..<self.facebookAlbumsData.imagesData.count
+//            {
+//                if let val = self.selectedIndex[i]
+//                {
+//                    self.selectedIndex[i] = val
+//                }
+//                else
+//                {
+//                    self.selectedIndex[i] = false
+//                }
+//            }
             
             collectionviewImages.reloadData()
             activityIndicator.stopAnimating()

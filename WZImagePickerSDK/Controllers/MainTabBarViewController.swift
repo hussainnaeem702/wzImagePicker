@@ -32,6 +32,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
     var albumsTextColor                 : UIColor?              = nil
     var selectedImageColor              : UIColor?              = nil
     var topButtonsSepratorviewBGColor   : UIColor?              = nil
+    var activityIndicatorBgColor        : UIColor?              = nil
     var imagesBorderWidth               : CGFloat?              = nil
     var albumsBorderCorners             : CGFloat?              = nil
     var imagesCorners                   : CGFloat?              = nil
@@ -98,12 +99,13 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
                 wzCamera.delegate = self
             }
         }
-        else if viewController.isKind(of: FacebookAlbumsViewController)
+        else if viewController.isKind(of: FacebookAlbumsViewController.self)
         {
             if let wzFacebook = viewController as? FacebookAlbumsViewController
             {
                 wzFacebook.delegate                       = self
                 wzFacebook.backgroundColor                = backgroundColor
+                wzFacebook.activityIndicatorViewColor     = activityIndicatorBgColor
 //                wzFacebook.topSectionColor                = topSectionColor
 //                wzFacebook.highLightedIndicatorColor      = highLightedIndicatorColor
 //                wzFacebook.topButtonsTextColor            = topButtonsTextColor
@@ -111,7 +113,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
                 wzFacebook.albumsImageBorderColor         = albumsImageBorderColor
                 wzFacebook.albumsTextColor                = albumsTextColor
                 wzFacebook.selectedImageColor             = selectedImageColor
-                wzFacebook.topButtonsSepratorviewBGColor  = topButtonsSepratorviewBGColor
+//                wzFacebook.topButtonsSepratorviewBGColor  = topButtonsSepratorviewBGColor
                 wzFacebook.imagesBorderWidth              = imagesBorderWidth
                 wzFacebook.albumsBorderCorners            = albumsBorderCorners
                 wzFacebook.imagesCorners                  = imagesCorners
