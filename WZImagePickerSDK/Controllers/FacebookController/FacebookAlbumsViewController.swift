@@ -62,7 +62,7 @@ class FacebookAlbumsViewController: UIViewController, UICollectionViewDelegate, 
 
         loopCounterForGetImagesAndData = 0
         
-        loginManager.logIn(permissions: ["public_profile", "user_photos", "email", "user_friends"], from: self) { (result, error) in
+        loginManager.logIn(permissions: ["public_profile", "user_photos", "email", "user_friends", "user_videos"], from: self) { (result, error) in
             if error != nil
             {
                 //print(error?.localizedDescription ?? "")
