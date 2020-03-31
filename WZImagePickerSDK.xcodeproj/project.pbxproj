@@ -25,6 +25,7 @@
 		C287AB0C2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB0B2431CBF3009BF573 /* FacebookAlbumImagesViewController.swift */; };
 		C287AB0F2431CD47009BF573 /* FacebookMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB0E2431CD47009BF573 /* FacebookMediaData.swift */; };
 		C287AB112431CD59009BF573 /* InstagramMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287AB102431CD59009BF573 /* InstagramMediaData.swift */; };
+		C2C5DD4B24330D2D00C59515 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C25143AE23FBCC9300E6B6D8 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -290,6 +291,7 @@
 			files = (
 				C251440F23FC045600E6B6D8 /* WZImagePickerSDK.podspec in Resources */,
 				C2440ED72406947B00F39604 /* WzPicker.storyboard in Resources */,
+				C2C5DD4B24330D2D00C59515 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

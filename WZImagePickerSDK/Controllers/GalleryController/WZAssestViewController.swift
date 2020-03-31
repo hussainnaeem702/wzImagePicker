@@ -167,7 +167,7 @@ class WZAssestViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBAction func cancelBarButtonTapped(_ sender: Any)
     {
-        delegate?.didCancelForSelection()
+        //delegate?.didCancelForSelection()
         dismiss(animated: true, completion: nil)
     }
     
